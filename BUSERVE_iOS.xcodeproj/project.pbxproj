@@ -26,6 +26,9 @@
 		48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */; };
 		48CBCA2A2A6799AF00765CE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA292A6799AF00765CE9 /* Alamofire */; };
 		48CBCA2D2A679B5800765CE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA2C2A679B5800765CE9 /* Then */; };
+		BE98EE092A6986EC00FEA9E2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE082A6986EC00FEA9E2 /* MyPageViewController.swift */; };
+		BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */; };
+		BE98EE0E2A6998F200FEA9E2 /* ReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE0D2A6998F200FEA9E2 /* ReservationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +52,9 @@
 		6BF218724F226604CEC55F71 /* Pods-BUSERVE_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.release.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUSERVE_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BE3E27736A47E3610D7B46 /* Pods-BUSERVE_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.debug.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BE98EE082A6986EC00FEA9E2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		BE98EE0D2A6998F200FEA9E2 /* ReservationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +93,8 @@
 		488199002A6791CD00D7C698 /* BUSERVE_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BE98EE0A2A6988D900FEA9E2 /* Extension */,
+				BE98EE072A69866800FEA9E2 /* MyPage */,
 				48CBCA152A67936300765CE9 /* Font */,
 				488199012A6791CD00D7C698 /* AppDelegate.swift */,
 				488199032A6791CD00D7C698 /* SceneDelegate.swift */,
@@ -116,6 +124,23 @@
 			path = "글꼴";
 			sourceTree = "<group>";
 		};
+		BE98EE072A69866800FEA9E2 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				BE98EE082A6986EC00FEA9E2 /* MyPageViewController.swift */,
+				BE98EE0D2A6998F200FEA9E2 /* ReservationDetailsViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		BE98EE0A2A6988D900FEA9E2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		C5494A3BD196DADD31DC2E51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +155,6 @@
 				B2BE3E27736A47E3610D7B46 /* Pods-BUSERVE_iOS.debug.xcconfig */,
 				6BF218724F226604CEC55F71 /* Pods-BUSERVE_iOS.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -185,7 +209,7 @@
 			);
 			mainGroup = 488198F52A6791CD00D7C698;
 			packageReferences = (
-				48CBCA122A6792D200765CE9 /* XCRemoteSwiftPackageReference "lottie-spm.git" */,
+				48CBCA122A6792D200765CE9 /* XCRemoteSwiftPackageReference "lottie-spm" */,
 				48CBCA282A6799AF00765CE9 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				48CBCA2B2A679B5800765CE9 /* XCRemoteSwiftPackageReference "Then" */,
 			);
@@ -252,7 +276,10 @@
 			files = (
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
+				BE98EE0E2A6998F200FEA9E2 /* ReservationDetailsViewController.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
+				BE98EE092A6986EC00FEA9E2 /* MyPageViewController.swift in Sources */,
+				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +499,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		48CBCA122A6792D200765CE9 /* XCRemoteSwiftPackageReference "lottie-spm.git" */ = {
+		48CBCA122A6792D200765CE9 /* XCRemoteSwiftPackageReference "lottie-spm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/airbnb/lottie-spm.git";
 			requirement = {
@@ -501,7 +528,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		48CBCA132A6792D200765CE9 /* Lottie */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 48CBCA122A6792D200765CE9 /* XCRemoteSwiftPackageReference "lottie-spm.git" */;
+			package = 48CBCA122A6792D200765CE9 /* XCRemoteSwiftPackageReference "lottie-spm" */;
 			productName = Lottie;
 		};
 		48CBCA292A6799AF00765CE9 /* Alamofire */ = {
