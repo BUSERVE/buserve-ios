@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		04DBB6E89894E19CD2DE4A61 /* Pods_BUSERVE_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */; };
+		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
+		4871B95D2A6BA2AD00309A11 /* white_bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4871B95C2A6BA2AD00309A11 /* white_bus.png */; };
+		4871B95F2A6BA2DA00309A11 /* black_bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4871B95E2A6BA2DA00309A11 /* black_bus.png */; };
 		488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488199012A6791CD00D7C698 /* AppDelegate.swift */; };
 		488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488199032A6791CD00D7C698 /* SceneDelegate.swift */; };
 		488199062A6791CD00D7C698 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 488199052A6791CD00D7C698 /* ViewController.swift */; };
@@ -26,12 +29,13 @@
 		48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */; };
 		48CBCA2A2A6799AF00765CE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA292A6799AF00765CE9 /* Alamofire */; };
 		48CBCA2D2A679B5800765CE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA2C2A679B5800765CE9 /* Then */; };
-		BE98EE092A6986EC00FEA9E2 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE082A6986EC00FEA9E2 /* MyPageViewController.swift */; };
 		BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */; };
-		BE98EE0E2A6998F200FEA9E2 /* ReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE0D2A6998F200FEA9E2 /* ReservationDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
+		4871B95C2A6BA2AD00309A11 /* white_bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_bus.png; sourceTree = "<group>"; };
+		4871B95E2A6BA2DA00309A11 /* black_bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_bus.png; sourceTree = "<group>"; };
 		488198FE2A6791CD00D7C698 /* BUSERVE_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BUSERVE_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		488199012A6791CD00D7C698 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		488199032A6791CD00D7C698 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,9 +56,7 @@
 		6BF218724F226604CEC55F71 /* Pods-BUSERVE_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.release.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUSERVE_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BE3E27736A47E3610D7B46 /* Pods-BUSERVE_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.debug.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		BE98EE082A6986EC00FEA9E2 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		BE98EE0D2A6998F200FEA9E2 /* ReservationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4871B9582A6B9A2500309A11 /* Seat pay */ = {
+			isa = PBXGroup;
+			children = (
+				4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */,
+			);
+			path = "Seat pay";
+			sourceTree = "<group>";
+		};
+		4871B95B2A6BA29000309A11 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				4871B95C2A6BA2AD00309A11 /* white_bus.png */,
+				4871B95E2A6BA2DA00309A11 /* black_bus.png */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
 		488198F52A6791CD00D7C698 = {
 			isa = PBXGroup;
 			children = (
@@ -93,8 +112,9 @@
 		488199002A6791CD00D7C698 /* BUSERVE_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				4871B95B2A6BA29000309A11 /* Icon */,
+				4871B9582A6B9A2500309A11 /* Seat pay */,
 				BE98EE0A2A6988D900FEA9E2 /* Extension */,
-				BE98EE072A69866800FEA9E2 /* MyPage */,
 				48CBCA152A67936300765CE9 /* Font */,
 				488199012A6791CD00D7C698 /* AppDelegate.swift */,
 				488199032A6791CD00D7C698 /* SceneDelegate.swift */,
@@ -122,15 +142,6 @@
 			);
 			name = Font;
 			path = "글꼴";
-			sourceTree = "<group>";
-		};
-		BE98EE072A69866800FEA9E2 /* MyPage */ = {
-			isa = PBXGroup;
-			children = (
-				BE98EE082A6986EC00FEA9E2 /* MyPageViewController.swift */,
-				BE98EE0D2A6998F200FEA9E2 /* ReservationDetailsViewController.swift */,
-			);
-			path = MyPage;
 			sourceTree = "<group>";
 		};
 		BE98EE0A2A6988D900FEA9E2 /* Extension */ = {
@@ -227,7 +238,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4871B95F2A6BA2DA00309A11 /* black_bus.png in Resources */,
 				48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */,
+				4871B95D2A6BA2AD00309A11 /* white_bus.png in Resources */,
 				48CBCA262A67988000765CE9 /* Pretendard-Thin.otf in Resources */,
 				48CBCA252A67987E00765CE9 /* Pretendard-SemiBold.otf in Resources */,
 				48CBCA242A67987B00765CE9 /* Pretendard-Medium.otf in Resources */,
@@ -274,11 +287,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */,
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
-				BE98EE0E2A6998F200FEA9E2 /* ReservationDetailsViewController.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
-				BE98EE092A6986EC00FEA9E2 /* MyPageViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
