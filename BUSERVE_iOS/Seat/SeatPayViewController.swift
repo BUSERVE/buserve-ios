@@ -114,4 +114,10 @@ class SeatPayViewController: UIViewController {
         BottomLabel.textColor = UIColor(red: 0.53, green: 0.56, blue: 0.59, alpha: 1.00)
         BottomLabel.font = UIFont(name: "Pretendard-Regular", size: 14)
     }
+    
+    @IBAction func payClick(_ sender: Any) {
+        self.performSegue(withIdentifier: "seatReservationComplete", sender: self)
+    }
+    
+    
 }

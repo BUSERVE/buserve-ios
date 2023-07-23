@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04DBB6E89894E19CD2DE4A61 /* Pods_BUSERVE_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */; };
+		485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */; };
 		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
 		4871B95D2A6BA2AD00309A11 /* white_bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4871B95C2A6BA2AD00309A11 /* white_bus.png */; };
 		4871B95F2A6BA2DA00309A11 /* black_bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4871B95E2A6BA2DA00309A11 /* black_bus.png */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatReservationComplete.swift; sourceTree = "<group>"; };
 		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
 		4871B95C2A6BA2AD00309A11 /* white_bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_bus.png; sourceTree = "<group>"; };
 		4871B95E2A6BA2DA00309A11 /* black_bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = black_bus.png; sourceTree = "<group>"; };
@@ -74,12 +76,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4871B9582A6B9A2500309A11 /* Seat pay */ = {
+		4871B9582A6B9A2500309A11 /* Seat */ = {
 			isa = PBXGroup;
 			children = (
 				4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */,
+				485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */,
 			);
-			path = "Seat pay";
+			path = Seat;
 			sourceTree = "<group>";
 		};
 		4871B95B2A6BA29000309A11 /* Icon */ = {
@@ -113,7 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				4871B95B2A6BA29000309A11 /* Icon */,
-				4871B9582A6B9A2500309A11 /* Seat pay */,
+				4871B9582A6B9A2500309A11 /* Seat */,
 				BE98EE0A2A6988D900FEA9E2 /* Extension */,
 				48CBCA152A67936300765CE9 /* Font */,
 				488199012A6791CD00D7C698 /* AppDelegate.swift */,
@@ -289,6 +292,7 @@
 			files = (
 				4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */,
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
+				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
