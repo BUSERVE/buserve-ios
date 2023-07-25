@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		04DBB6E89894E19CD2DE4A61 /* Pods_BUSERVE_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
-		483962DE2A6E5042006ADC6E /* Cancle.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* Cancle.png */; };
+		483962DE2A6E5042006ADC6E /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* cancel.png */; };
 		483962DF2A6E5042006ADC6E /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DD2A6E5042006ADC6E /* Check.png */; };
 		485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */; };
 		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
@@ -21,6 +21,8 @@
 		488199092A6791CD00D7C698 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 488199072A6791CD00D7C698 /* Main.storyboard */; };
 		4881990B2A6791CF00D7C698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881990A2A6791CF00D7C698 /* Assets.xcassets */; };
 		4881990E2A6791CF00D7C698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4881990C2A6791CF00D7C698 /* LaunchScreen.storyboard */; };
+		4895C9172A6FB852004DCEFB /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4895C9162A6FB852004DCEFB /* marker.png */; };
+		4895C9192A6FC893004DCEFB /* MapTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4895C9182A6FC893004DCEFB /* MapTouchController.swift */; };
 		48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */; };
 		48CBCA142A6792D200765CE9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA132A6792D200765CE9 /* Lottie */; };
 		48CBCA1F2A67986800765CE9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA172A67937500765CE9 /* Pretendard-Black.otf */; };
@@ -39,7 +41,7 @@
 
 /* Begin PBXFileReference section */
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
-		483962DC2A6E5042006ADC6E /* Cancle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancle.png; sourceTree = "<group>"; };
+		483962DC2A6E5042006ADC6E /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		483962DD2A6E5042006ADC6E /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
 		485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatReservationComplete.swift; sourceTree = "<group>"; };
 		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		4881990A2A6791CF00D7C698 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4881990D2A6791CF00D7C698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4881990F2A6791CF00D7C698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4895C9162A6FB852004DCEFB /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
+		4895C9182A6FC893004DCEFB /* MapTouchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTouchController.swift; sourceTree = "<group>"; };
 		48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		48CBCA162A67937500765CE9 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		48CBCA172A67937500765CE9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -97,8 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				4871B95C2A6BA2AD00309A11 /* white_bus.png */,
-				483962DC2A6E5042006ADC6E /* Cancle.png */,
+				483962DC2A6E5042006ADC6E /* cancel.png */,
 				483962DD2A6E5042006ADC6E /* Check.png */,
+				4895C9162A6FB852004DCEFB /* marker.png */,
 				4871B95E2A6BA2DA00309A11 /* black_bus.png */,
 			);
 			path = Icon;
@@ -146,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */,
+				4895C9182A6FC893004DCEFB /* MapTouchController.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			files = (
 				4871B95F2A6BA2DA00309A11 /* black_bus.png in Resources */,
 				48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */,
+				4895C9172A6FB852004DCEFB /* marker.png in Resources */,
 				4871B95D2A6BA2AD00309A11 /* white_bus.png in Resources */,
 				48CBCA262A67988000765CE9 /* Pretendard-Thin.otf in Resources */,
 				48CBCA252A67987E00765CE9 /* Pretendard-SemiBold.otf in Resources */,
@@ -275,7 +282,7 @@
 				483962DF2A6E5042006ADC6E /* Check.png in Resources */,
 				48CBCA1F2A67986800765CE9 /* Pretendard-Black.otf in Resources */,
 				4881990E2A6791CF00D7C698 /* LaunchScreen.storyboard in Resources */,
-				483962DE2A6E5042006ADC6E /* Cancle.png in Resources */,
+				483962DE2A6E5042006ADC6E /* cancel.png in Resources */,
 				4881990B2A6791CF00D7C698 /* Assets.xcassets in Resources */,
 				488199092A6791CD00D7C698 /* Main.storyboard in Resources */,
 			);
@@ -335,6 +342,7 @@
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
 				48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
+				4895C9192A6FC893004DCEFB /* MapTouchController.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,

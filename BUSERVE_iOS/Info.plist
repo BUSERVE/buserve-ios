@@ -4,6 +4,12 @@
 <dict>
 	<key>NMFClientId</key>
 	<string>u20em2fg3q</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>사용자의 현재 위치가 지도상에 표시되며 경로, 주변 검색 결과 및 예상 이동 시간을 제공하는 데 사용됩니다.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>사용자의 현재 위치가 지도상에 표시되며 경로, 주변 검색 결과 및 예상 이동 시간을 제공하는 데 사용됩니다.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>사용자의 현재 위치가 지도상에 표시되며 경로, 주변 검색 결과 및 예상 이동 시간을 제공하는 데 사용됩니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Black.otf</string>

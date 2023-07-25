@@ -126,13 +126,28 @@
                     <view key="view" contentMode="scaleToFill" id="Qz6-rM-wna">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cym-lD-5JD" customClass="NMFLocationButton">
+                                <rect key="frame" x="288" y="588" width="89" height="80"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Ak1-3P-5MD"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ak1-3P-5MD" firstAttribute="bottom" secondItem="cym-lD-5JD" secondAttribute="bottom" constant="150" id="7yT-fn-oER"/>
+                            <constraint firstItem="Ak1-3P-5MD" firstAttribute="trailing" secondItem="cym-lD-5JD" secondAttribute="trailing" constant="16" id="XBb-UD-cAb"/>
+                            <constraint firstItem="cym-lD-5JD" firstAttribute="leading" secondItem="Ak1-3P-5MD" secondAttribute="leading" constant="288" id="XPW-PL-Kk2"/>
+                            <constraint firstItem="cym-lD-5JD" firstAttribute="top" secondItem="Ak1-3P-5MD" secondAttribute="top" constant="529" id="XTp-2z-guM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Btn" destination="cym-lD-5JD" id="lh2-1U-f1v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Csm-vC-4TW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1926" y="-756"/>
+            <point key="canvasLocation" x="1925.9541984732823" y="-756.33802816901414"/>
         </scene>
         <!--Seat Pay View Controller-->
         <scene sceneID="6mh-oo-vyX">

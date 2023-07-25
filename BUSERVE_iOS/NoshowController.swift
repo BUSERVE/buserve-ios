@@ -75,7 +75,7 @@ class Noshow: UIViewController {
             i.tintColor = UIColor.white
             if i == ClickBtn.first{
                 i.backgroundColor = UIColor(red: 0.80, green: 0.83, blue: 0.85, alpha: 1.00)
-                i.setImage(UIImage(named: "Cancle.png"), for: .normal)
+                i.setImage(UIImage(named: "Cancel.png"), for: .normal)
             }else{
                 i.backgroundColor = UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
                 i.setImage(UIImage(named: "Check.png"), for: .normal)
