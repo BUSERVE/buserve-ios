@@ -22,7 +22,6 @@
 		4881990B2A6791CF00D7C698 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4881990A2A6791CF00D7C698 /* Assets.xcassets */; };
 		4881990E2A6791CF00D7C698 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4881990C2A6791CF00D7C698 /* LaunchScreen.storyboard */; };
 		4895C9172A6FB852004DCEFB /* marker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4895C9162A6FB852004DCEFB /* marker.png */; };
-		4895C9192A6FC893004DCEFB /* MapTouchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4895C9182A6FC893004DCEFB /* MapTouchController.swift */; };
 		48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */; };
 		48CBCA142A6792D200765CE9 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA132A6792D200765CE9 /* Lottie */; };
 		48CBCA1F2A67986800765CE9 /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA172A67937500765CE9 /* Pretendard-Black.otf */; };
@@ -56,7 +55,6 @@
 		4881990D2A6791CF00D7C698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4881990F2A6791CF00D7C698 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4895C9162A6FB852004DCEFB /* marker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = marker.png; sourceTree = "<group>"; };
-		4895C9182A6FC893004DCEFB /* MapTouchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTouchController.swift; sourceTree = "<group>"; };
 		48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 		48CBCA162A67937500765CE9 /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		48CBCA172A67937500765CE9 /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 			isa = PBXGroup;
 			children = (
 				48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */,
-				4895C9182A6FC893004DCEFB /* MapTouchController.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -342,7 +339,6 @@
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
 				48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
-				4895C9192A6FC893004DCEFB /* MapTouchController.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,

@@ -13,10 +13,8 @@ class SeatPayViewController: UIViewController {
     
     @IBOutlet var TitleLabel: [UILabel]! //Title Label array
     
-    @IBOutlet weak var NumberImg: UIImageView! //bus number img
     @IBOutlet weak var BusStopImg: UIImageView! //bus stop img
     
-    @IBOutlet weak var BusNumberTxt: UILabel! //BusNumber Text
     @IBOutlet weak var BusNameTxt: UILabel! //BusName Text
     
     @IBOutlet var DetailInformation: [UILabel]! //Detail Information Text
@@ -27,9 +25,10 @@ class SeatPayViewController: UIViewController {
     
     @IBOutlet weak var BottomLabel: UILabel!
     
+    @IBOutlet weak var busNumberBtn: UIButton!
+    
     /* View IBOutlet */
     
-    @IBOutlet weak var BusNumberView: UIView!
     @IBOutlet weak var BusStopView: UIView!
     @IBOutlet weak var DetailView: UIView!
     @IBOutlet weak var MoneyView: UIView!
@@ -48,24 +47,24 @@ class SeatPayViewController: UIViewController {
             i.font = UIFont(name: "Pretendard-Bold", size: 20)
         }
         
-        //BusImg
-        NumberImg.image = UIImage(named: "white_bus.png")
-        NumberImg.contentMode = .scaleAspectFit
+        busNumberBtn.setImage(UIImage(named: "white_bus.png"), for: .normal)
+        busNumberBtn.tintColor = UIColor.white
+        busNumberBtn.setTitleColor(UIColor.white, for: .normal)
+        busNumberBtn.setTitle("9802", for: .normal)
+        busNumberBtn.titleLabel?.font = UIFont(name: "Pretendard-Bold", size: 18)
+        busNumberBtn.backgroundColor = UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
+        busNumberBtn.layer.cornerRadius = 8
+
+        
+        
         
         BusStopImg.image = UIImage(named: "black_bus.png")
         BusStopImg.contentMode = .scaleAspectFit
         
         
-        //BusInformation Title
-        BusNumberTxt.textColor = UIColor.white
         BusNameTxt.font = UIFont(name: "Pretendard-Bold", size: 18)
-        
         BusNameTxt.textColor = UIColor(red: 0.20, green: 0.23, blue: 0.25, alpha: 1.00)
         BusNameTxt.font = UIFont(name: "Pretendard-Bold", size: 18)
-        
-        //BusInforView
-        BusNumberView.backgroundColor = UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
-        BusNumberView.layer.cornerRadius = 8
         
         BusStopView.backgroundColor = UIColor.white
         BusStopView.layer.borderColor = UIColor(red: 0.80, green: 0.83, blue: 0.85, alpha: 1.00).cgColor

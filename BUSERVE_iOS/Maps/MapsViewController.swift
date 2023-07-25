@@ -74,14 +74,14 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
                 marker.captionText = "내 위치"
                 marker.width = 24
                 marker.height = 30
-                
+              
                 marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
                     print("마커 터치")
                     return true // 이벤트 소비, -mapView:didTapMap:point 이벤트는 발생하지 않음
                 }
                 
                 marker.mapView = self.mapView
-                
+             
                 /* informationWindow */
                 let information = NMFInfoWindow()
                 let dataSource = NMFInfoWindowDefaultTextSource.data()
