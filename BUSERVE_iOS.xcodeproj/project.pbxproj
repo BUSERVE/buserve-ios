@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04DBB6E89894E19CD2DE4A61 /* Pods_BUSERVE_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */; };
+		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		483962DE2A6E5042006ADC6E /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* cancel.png */; };
 		483962DF2A6E5042006ADC6E /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DD2A6E5042006ADC6E /* Check.png */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		483962DC2A6E5042006ADC6E /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		483962DD2A6E5042006ADC6E /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */,
+				3FD3CDD42A703CED005C405C /* FontExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
+				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
 			);
