@@ -125,4 +125,8 @@ extension UIFont {
     static var caption2: UIFont {
         return UIFont(name: "Pretendard-Regular", size: 10)!
     }
+    
+    static var LoginTitle: UIFont {
+        return UIFont(name: "Pretendard-SemiBold", size: 27)!
+    }
 }
