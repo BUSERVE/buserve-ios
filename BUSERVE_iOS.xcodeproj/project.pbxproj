@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		04DBB6E89894E19CD2DE4A61 /* Pods_BUSERVE_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */; };
 		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
+		3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD92A704265005C405C /* LoginViewController.swift */; };
+		3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		483962DE2A6E5042006ADC6E /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* cancel.png */; };
 		483962DF2A6E5042006ADC6E /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DD2A6E5042006ADC6E /* Check.png */; };
@@ -41,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		3FD3CDD92A704265005C405C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButtonView.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		483962DC2A6E5042006ADC6E /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		483962DD2A6E5042006ADC6E /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
@@ -88,6 +92,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FD3CDD62A70422A005C405C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3CDD82A704250005C405C /* ViewController */,
+				3FD3CDD72A70424A005C405C /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3FD3CDD72A70424A005C405C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FD3CDD82A704250005C405C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3CDD92A704265005C405C /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4871B9582A6B9A2500309A11 /* Seat */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +159,7 @@
 		488199002A6791CD00D7C698 /* BUSERVE_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				3FD3CDD62A70422A005C405C /* Login */,
 				48C5F7F52A6EBBEC001B4691 /* Maps */,
 				4871B95B2A6BA29000309A11 /* Icon */,
 				4871B9582A6B9A2500309A11 /* Seat */,
@@ -345,7 +375,9 @@
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
+				3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
+				3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
