@@ -11,6 +11,9 @@
 		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
 		3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD92A704265005C405C /* LoginViewController.swift */; };
 		3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */; };
+		3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDD2A72565D005C405C /* CompletedSignUpViewController.swift */; };
+		3FD3CDE02A725679005C405C /* CompletedSignUpLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDF2A725679005C405C /* CompletedSignUpLabelView.swift */; };
+		3FD3CDE22A72570D005C405C /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDE12A72570D005C405C /* BottomButtonView.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		483962DE2A6E5042006ADC6E /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* cancel.png */; };
 		483962DF2A6E5042006ADC6E /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DD2A6E5042006ADC6E /* Check.png */; };
@@ -45,6 +48,9 @@
 		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		3FD3CDD92A704265005C405C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButtonView.swift; sourceTree = "<group>"; };
+		3FD3CDDD2A72565D005C405C /* CompletedSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedSignUpViewController.swift; sourceTree = "<group>"; };
+		3FD3CDDF2A725679005C405C /* CompletedSignUpLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedSignUpLabelView.swift; sourceTree = "<group>"; };
+		3FD3CDE12A72570D005C405C /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		483962DC2A6E5042006ADC6E /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		483962DD2A6E5042006ADC6E /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
@@ -105,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */,
+				3FD3CDDF2A725679005C405C /* CompletedSignUpLabelView.swift */,
+				3FD3CDE12A72570D005C405C /* BottomButtonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				3FD3CDD92A704265005C405C /* LoginViewController.swift */,
+				3FD3CDDD2A72565D005C405C /* CompletedSignUpViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -368,9 +377,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */,
+				3FD3CDE22A72570D005C405C /* BottomButtonView.swift in Sources */,
 				4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */,
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
 				48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */,
+				3FD3CDE02A725679005C405C /* CompletedSignUpLabelView.swift in Sources */,
+				3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
