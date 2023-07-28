@@ -14,7 +14,8 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
     var locationManager = CLLocationManager()
     var mapView: NMFMapView!
     
-    @IBOutlet weak var Btn: NMFLocationButton!
+    @IBOutlet weak var locationBtn: CurrentLocationBtn!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,11 +27,10 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         mapView.allowsScrolling = true
         mapView.isIndoorMapEnabled = true
         
-        Btn.backgroundColor = .clear
-        Btn.mapView = mapView
-        
+        locationBtn.setMapView(mapView)
+
         view.addSubview(mapView)
-        view.addSubview(Btn)
+        view.addSubview(locationBtn)
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 88).isActive = true
@@ -49,10 +49,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         self.locationManager.requestAlwaysAuthorization()
         DispatchQueue.global().async {
             if CLLocationManager.locationServicesEnabled(){
-                print("위치 서비스 on\n")
                 self.locationManager.startUpdatingLocation()
-            }else{
-                print("위치 서비스 off\n")
             }
         }
     }
@@ -62,31 +59,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         switch locationManager.authorizationStatus{
         case .authorizedAlways, .authorizedWhenInUse:
             DispatchQueue.main.async {
-                /* cameraMove */
-                let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.5666102, lng: 126.9783881))
-                cameraUpdate.animation = .easeIn
-                self.mapView.moveCamera(cameraUpdate)
-             
-                /* currentPosition Marker */
-                let marker = NMFMarker()
-                marker.position = NMGLatLng(lat: 37.5670135, lng: 126.9783740)
-                marker.iconImage = NMFOverlayImage(name: "marker.png")
-                marker.captionText = "내 위치"
-                marker.width = 24
-                marker.height = 30
-              
-                marker.touchHandler = { (overlay: NMFOverlay) -> Bool in
-                    print("마커 터치")
-                    return true // 이벤트 소비, -mapView:didTapMap:point 이벤트는 발생하지 않음
-                }
-                
-                marker.mapView = self.mapView
-             
-                /* informationWindow */
-                let information = NMFInfoWindow()
-                let dataSource = NMFInfoWindowDefaultTextSource.data()
-                dataSource.title = "내 위치"
-                information.dataSource = dataSource
+                self.mapControll()
             }
         case .denied, .restricted:
             print("위치 서비스 권한 없음")
@@ -98,19 +71,31 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         }
     }
     
-    /* printLocationManager */
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("didUpdate")
-        if let location = locations.first{
-            print("위도: \(location.coordinate.latitude)")
-            print("경도: \(location.coordinate.longitude)")
-        }
+    func mapControll(){
+        /* cameraMove */
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0,
+                                                               lng: locationManager.location?.coordinate.longitude ?? 0))
+        cameraUpdate.animation = .easeIn
+        self.mapView.moveCamera(cameraUpdate)
+     
+        /* currentPosition Marker */
+        let marker = NMFMarker()
+        marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0,
+                                    lng:locationManager.location?.coordinate.longitude ?? 0)
+        marker.iconImage = NMFOverlayImage(name: "marker.png")
+        marker.captionText = "내 위치"
+        marker.width = 24
+        marker.height = 30
+        
+        marker.mapView = self.mapView
+     
+        /* informationWindow */
+        let information = NMFInfoWindow()
+        let dataSource = NMFInfoWindowDefaultTextSource.data()
+        dataSource.title = "내 위치"
+        information.dataSource = dataSource
     }
     
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
     
     /* Alter */
     func locationDisable(){

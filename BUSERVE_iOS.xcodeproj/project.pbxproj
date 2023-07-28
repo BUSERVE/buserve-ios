@@ -11,6 +11,8 @@
 		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
 		3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD92A704265005C405C /* LoginViewController.swift */; };
 		3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */; };
+		4824517E2A738F5100413DC6 /* CurrentLocationBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4824517D2A738F5100413DC6 /* CurrentLocationBtn.swift */; };
+		482451802A73907C00413DC6 /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 4824517F2A73907C00413DC6 /* location.png */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		483962DE2A6E5042006ADC6E /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* cancel.png */; };
 		483962DF2A6E5042006ADC6E /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DD2A6E5042006ADC6E /* Check.png */; };
@@ -45,6 +47,8 @@
 		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		3FD3CDD92A704265005C405C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButtonView.swift; sourceTree = "<group>"; };
+		4824517D2A738F5100413DC6 /* CurrentLocationBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationBtn.swift; sourceTree = "<group>"; };
+		4824517F2A73907C00413DC6 /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		483962DC2A6E5042006ADC6E /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		483962DD2A6E5042006ADC6E /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
@@ -129,6 +133,7 @@
 		4871B95B2A6BA29000309A11 /* Icon */ = {
 			isa = PBXGroup;
 			children = (
+				4824517F2A73907C00413DC6 /* location.png */,
 				4871B95C2A6BA2AD00309A11 /* white_bus.png */,
 				483962DC2A6E5042006ADC6E /* cancel.png */,
 				483962DD2A6E5042006ADC6E /* Check.png */,
@@ -181,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */,
+				4824517D2A738F5100413DC6 /* CurrentLocationBtn.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -309,6 +315,7 @@
 				48CBCA222A67987300765CE9 /* Pretendard-Regular.otf in Resources */,
 				48CBCA212A67986E00765CE9 /* Pretendard-Light.otf in Resources */,
 				48CBCA202A67986C00765CE9 /* Pretendard-ExtraBold.otf in Resources */,
+				482451802A73907C00413DC6 /* location.png in Resources */,
 				483962DF2A6E5042006ADC6E /* Check.png in Resources */,
 				48CBCA1F2A67986800765CE9 /* Pretendard-Black.otf in Resources */,
 				4881990E2A6791CF00D7C698 /* LaunchScreen.storyboard in Resources */,
@@ -374,6 +381,7 @@
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
+				4824517E2A738F5100413DC6 /* CurrentLocationBtn.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
