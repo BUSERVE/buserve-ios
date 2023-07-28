@@ -13,8 +13,11 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var mapView: NMFMapView!
+    let marker = NMFMarker()
+
     
     @IBOutlet weak var locationBtn: CurrentLocationBtn!
+    
     
     
     override func viewDidLoad() {
@@ -26,11 +29,12 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         mapView.allowsZooming = true
         mapView.allowsScrolling = true
         mapView.isIndoorMapEnabled = true
-        
-        locationBtn.setMapView(mapView)
 
+        locationBtn.setMapView(mapView)
         view.addSubview(mapView)
         view.addSubview(locationBtn)
+        
+        
         
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 88).isActive = true
@@ -40,6 +44,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         
         
         setLoactionManager()
+
         
     }
     
@@ -79,15 +84,15 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         self.mapView.moveCamera(cameraUpdate)
      
         /* currentPosition Marker */
-        let marker = NMFMarker()
         marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0,
                                     lng:locationManager.location?.coordinate.longitude ?? 0)
         marker.iconImage = NMFOverlayImage(name: "marker.png")
         marker.captionText = "내 위치"
         marker.width = 24
         marker.height = 30
-        
+    
         marker.mapView = self.mapView
+        
      
         /* informationWindow */
         let information = NMFInfoWindow()

@@ -13,6 +13,7 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
     
+    let marker = NMFMarker()
     var mapView: NMFMapView!
     
     func setMapView(_ mapView: NMFMapView) {
@@ -30,6 +31,8 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
         setUpView()
     }
     
+    
+    
     func setUpView(){
         self.layer.cornerRadius = self.layer.frame.width/2
         self.backgroundColor = .white
@@ -45,19 +48,19 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
     }
     
     func searchLocation(){
-        let locationLatitude = locationManager.location?.coordinate.latitude
-        let locationLogitude = locationManager.location?.coordinate.longitude
-        
+//        let locationLatitude = locationManager.location?.coordinate.latitude
+//        let locationLogitude = locationManager.location?.coordinate.longitude
+      
         /* camera */
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationLatitude ?? 0,
-                                                               lng: locationLogitude ?? 0))
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.505112,
+                                                               lng: 126.957095))
         cameraUpdate.animation = .easeIn
         mapView.moveCamera(cameraUpdate)
         
         /* currentPosition Marker */
-        let marker = NMFMarker()
-        marker.position = NMGLatLng(lat: locationLatitude ?? 0,
-                                    lng: locationLogitude ?? 0)
+        
+        marker.position = NMGLatLng(lat: 37.505112,
+                                    lng: 126.957095)
         marker.iconImage = NMFOverlayImage(name: "marker.png")
         marker.captionText = "내 위치"
         marker.width = 24
