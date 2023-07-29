@@ -13,12 +13,11 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
     
     var locationManager = CLLocationManager()
     var mapView: NMFMapView!
+    
     let marker = NMFMarker()
-
     
+    @IBOutlet weak var MapCheckView: MapCheckControll!
     @IBOutlet weak var locationBtn: CurrentLocationBtn!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,23 +28,24 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         mapView.allowsZooming = true
         mapView.allowsScrolling = true
         mapView.isIndoorMapEnabled = true
+        mapView.zoomLevel = 15
 
         locationBtn.setMapView(mapView)
+        
         view.addSubview(mapView)
+        view.addSubview(MapCheckView)
         view.addSubview(locationBtn)
         
-        
-        
+        /* mapContraints */
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 88).isActive = true
         mapView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         mapView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
         
-        
         setLoactionManager()
-
         
+        locationBtn.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
     }
     
     func setLoactionManager(){
@@ -64,6 +64,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         switch locationManager.authorizationStatus{
         case .authorizedAlways, .authorizedWhenInUse:
             DispatchQueue.main.async {
+                print("권한있음")
                 self.mapControll()
             }
         case .denied, .restricted:
@@ -90,15 +91,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         marker.captionText = "내 위치"
         marker.width = 24
         marker.height = 30
-    
         marker.mapView = self.mapView
-        
-     
-        /* informationWindow */
-        let information = NMFInfoWindow()
-        let dataSource = NMFInfoWindowDefaultTextSource.data()
-        dataSource.title = "내 위치"
-        information.dataSource = dataSource
     }
     
     
@@ -115,4 +108,8 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         alterController.addAction(checkAction)
         self.present(alterController, animated: true, completion: nil)
     }
-}
+    
+    @objc func buttonClicked() {
+            marker.mapView = nil
+        }
+    }

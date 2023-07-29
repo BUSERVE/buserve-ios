@@ -12,69 +12,66 @@ import NMapsMap
 class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
-    
     let marker = NMFMarker()
     var mapView: NMFMapView!
     
     func setMapView(_ mapView: NMFMapView) {
-            self.mapView = mapView
-        }
-    
+        self.mapView = mapView
+    }
     override init(frame: CGRect){
         super.init(frame: frame)
-        setUpView()
         
     }
-    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setUpView()
     }
-    
-    
-    
     func setUpView(){
         self.layer.cornerRadius = self.layer.frame.width/2
         self.backgroundColor = .white
         self.setImage(UIImage(named: "location.png"), for: .normal)
         self.addTarget(self, action: #selector(self.locationInfor), for: .touchUpInside)
+        
+        self.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        self.layer.masksToBounds = false
+        self.layer.shadowOffset = CGSize(width: 2, height: 2) // 위치조정
+        self.layer.shadowRadius = 8 // 반경
+        self.layer.shadowOpacity = 1 // alpha값  */
     }
-
+         
+       
     @objc func locationInfor(){
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.startUpdatingLocation()
-        searchLocation()
-    }
-    
-    func searchLocation(){
-//        let locationLatitude = locationManager.location?.coordinate.latitude
-//        let locationLogitude = locationManager.location?.coordinate.longitude
-      
-        /* camera */
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: 37.505112,
-                                                               lng: 126.957095))
-        cameraUpdate.animation = .easeIn
-        mapView.moveCamera(cameraUpdate)
-        
-        /* currentPosition Marker */
-        
-        marker.position = NMGLatLng(lat: 37.505112,
-                                    lng: 126.957095)
-        marker.iconImage = NMFOverlayImage(name: "marker.png")
-        marker.captionText = "내 위치"
-        marker.width = 24
-        marker.height = 30
-        marker.mapView = mapView
-        
-        /* informationWindow */
-        let information = NMFInfoWindow()
-        let dataSource = NMFInfoWindowDefaultTextSource.data()
-        dataSource.title = "내 위치"
-        information.dataSource = dataSource
-    }
-
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled(){
+                self.locationManager.startUpdatingLocation()
+                DispatchQueue.main.async {
+                    searchLocation()
+                }
+            }
+        }
+        func searchLocation(){
+            let locationLatitude = self.locationManager.location?.coordinate.latitude
+            let locationLogitude = self.locationManager.location?.coordinate.longitude
+            
+            /* camera */
+            let cameraMove = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationLatitude ?? 0, lng: locationLogitude ?? 0))
+            cameraMove.animation = .easeIn
+            self.mapView.moveCamera(cameraMove)
+            
+            /* currentPosition Marker */
+            marker.mapView = nil // maker init
+            marker.position = NMGLatLng(lat: locationLatitude ?? 0,
+                                        lng: locationLogitude ?? 0)
+            marker.iconImage = NMFOverlayImage(name: "marker.png")
+            marker.captionText = "내 위치"
+            marker.width = 24
+            marker.height = 30
+            marker.mapView = mapView
+        }
+        func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+            print(error)
+        }
     }
 }

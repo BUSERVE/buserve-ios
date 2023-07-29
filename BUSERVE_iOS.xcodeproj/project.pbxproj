@@ -40,6 +40,10 @@
 		48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */; };
 		48CBCA2A2A6799AF00765CE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA292A6799AF00765CE9 /* Alamofire */; };
 		48CBCA2D2A679B5800765CE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA2C2A679B5800765CE9 /* Then */; };
+		48D30AEC2A754018001F61E6 /* MapCheckControll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30AEB2A754018001F61E6 /* MapCheckControll.swift */; };
+		48D30AEE2A754C69001F61E6 /* CheckBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30AED2A754C69001F61E6 /* CheckBtn.swift */; };
+		48D30AF02A754F87001F61E6 /* MapMainSignTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30AEF2A754F87001F61E6 /* MapMainSignTitle.swift */; };
+		48D30AF22A755213001F61E6 /* MapSubSignTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48D30AF12A755213001F61E6 /* MapSubSignTitle.swift */; };
 		BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +79,10 @@
 		48CBCA1C2A67937600765CE9 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		48CBCA1E2A67937700765CE9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		48D30AEB2A754018001F61E6 /* MapCheckControll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCheckControll.swift; sourceTree = "<group>"; };
+		48D30AED2A754C69001F61E6 /* CheckBtn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBtn.swift; sourceTree = "<group>"; };
+		48D30AEF2A754F87001F61E6 /* MapMainSignTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapMainSignTitle.swift; sourceTree = "<group>"; };
+		48D30AF12A755213001F61E6 /* MapSubSignTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSubSignTitle.swift; sourceTree = "<group>"; };
 		6BF218724F226604CEC55F71 /* Pods-BUSERVE_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.release.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUSERVE_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BE3E27736A47E3610D7B46 /* Pods-BUSERVE_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.debug.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,6 +195,10 @@
 			children = (
 				48C5F7F82A6EBD0B001B4691 /* MapsViewController.swift */,
 				4824517D2A738F5100413DC6 /* CurrentLocationBtn.swift */,
+				48D30AEB2A754018001F61E6 /* MapCheckControll.swift */,
+				48D30AED2A754C69001F61E6 /* CheckBtn.swift */,
+				48D30AEF2A754F87001F61E6 /* MapMainSignTitle.swift */,
+				48D30AF12A755213001F61E6 /* MapSubSignTitle.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -381,7 +393,11 @@
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
 				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
+				48D30AEC2A754018001F61E6 /* MapCheckControll.swift in Sources */,
 				4824517E2A738F5100413DC6 /* CurrentLocationBtn.swift in Sources */,
+				48D30AEE2A754C69001F61E6 /* CheckBtn.swift in Sources */,
+				48D30AF02A754F87001F61E6 /* MapMainSignTitle.swift in Sources */,
+				48D30AF22A755213001F61E6 /* MapSubSignTitle.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
