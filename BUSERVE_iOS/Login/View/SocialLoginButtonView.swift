@@ -76,9 +76,9 @@ enum socialLoginType: String {
     var titleColor: UIColor {
         switch self {
         case .kakao, .google:
-            return .Body!
+            return .Body
         case .apple:
-            return .Background!
+            return .Background
         }
     }
     
