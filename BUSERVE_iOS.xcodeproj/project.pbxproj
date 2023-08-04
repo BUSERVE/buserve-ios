@@ -35,7 +35,18 @@
 		48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */; };
 		48CBCA2A2A6799AF00765CE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA292A6799AF00765CE9 /* Alamofire */; };
 		48CBCA2D2A679B5800765CE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA2C2A679B5800765CE9 /* Then */; };
+		BE2E57392A761DF500AF2C30 /* BuserveHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57302A761DF500AF2C30 /* BuserveHelpViewController.swift */; };
+		BE2E573A2A761DF500AF2C30 /* ReservationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57312A761DF500AF2C30 /* ReservationDetailsViewController.swift */; };
+		BE2E573B2A761DF500AF2C30 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57322A761DF500AF2C30 /* WithdrawViewController.swift */; };
+		BE2E573C2A761DF500AF2C30 /* ReservationDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57332A761DF500AF2C30 /* ReservationDetail.swift */; };
+		BE2E573D2A761DF500AF2C30 /* BusMoneyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57342A761DF500AF2C30 /* BusMoneyViewController.swift */; };
+		BE2E573E2A761DF500AF2C30 /* MyInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57352A761DF500AF2C30 /* MyInformationViewController.swift */; };
+		BE2E573F2A761DF500AF2C30 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57362A761DF500AF2C30 /* MyPageViewController.swift */; };
+		BE2E57402A761DF500AF2C30 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57372A761DF500AF2C30 /* LogOutViewController.swift */; };
+		BE2E57412A761DF500AF2C30 /* ReservationDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2E57382A761DF500AF2C30 /* ReservationDetailCell.swift */; };
 		BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */; };
+		BECCE5B52A7CD94400693D19 /* BusMoneyChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCE5B42A7CD94400693D19 /* BusMoneyChargeViewController.swift */; };
+		BECCE5B92A7CF52400693D19 /* ChargeCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BECCE5B82A7CF52400693D19 /* ChargeCompleteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,7 +79,18 @@
 		6BF218724F226604CEC55F71 /* Pods-BUSERVE_iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.release.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.release.xcconfig"; sourceTree = "<group>"; };
 		9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BUSERVE_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BE3E27736A47E3610D7B46 /* Pods-BUSERVE_iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BUSERVE_iOS.debug.xcconfig"; path = "Target Support Files/Pods-BUSERVE_iOS/Pods-BUSERVE_iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		BE2E57302A761DF500AF2C30 /* BuserveHelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuserveHelpViewController.swift; sourceTree = "<group>"; };
+		BE2E57312A761DF500AF2C30 /* ReservationDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationDetailsViewController.swift; sourceTree = "<group>"; };
+		BE2E57322A761DF500AF2C30 /* WithdrawViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
+		BE2E57332A761DF500AF2C30 /* ReservationDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationDetail.swift; sourceTree = "<group>"; };
+		BE2E57342A761DF500AF2C30 /* BusMoneyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusMoneyViewController.swift; sourceTree = "<group>"; };
+		BE2E57352A761DF500AF2C30 /* MyInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyInformationViewController.swift; sourceTree = "<group>"; };
+		BE2E57362A761DF500AF2C30 /* MyPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		BE2E57372A761DF500AF2C30 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
+		BE2E57382A761DF500AF2C30 /* ReservationDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReservationDetailCell.swift; sourceTree = "<group>"; };
 		BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		BECCE5B42A7CD94400693D19 /* BusMoneyChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMoneyChargeViewController.swift; sourceTree = "<group>"; };
+		BECCE5B82A7CF52400693D19 /* ChargeCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeCompleteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +150,8 @@
 		488199002A6791CD00D7C698 /* BUSERVE_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BECCE5B32A7CD92000693D19 /* ChargePage */,
+				BE2E572F2A761DF500AF2C30 /* MyPage */,
 				48C5F7F52A6EBBEC001B4691 /* Maps */,
 				4871B95B2A6BA29000309A11 /* Icon */,
 				4871B9582A6B9A2500309A11 /* Seat */,
@@ -170,12 +194,37 @@
 			path = "글꼴";
 			sourceTree = "<group>";
 		};
+		BE2E572F2A761DF500AF2C30 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				BE2E57362A761DF500AF2C30 /* MyPageViewController.swift */,
+				BE2E57312A761DF500AF2C30 /* ReservationDetailsViewController.swift */,
+				BE2E57322A761DF500AF2C30 /* WithdrawViewController.swift */,
+				BE2E57332A761DF500AF2C30 /* ReservationDetail.swift */,
+				BE2E57382A761DF500AF2C30 /* ReservationDetailCell.swift */,
+				BE2E57342A761DF500AF2C30 /* BusMoneyViewController.swift */,
+				BE2E57352A761DF500AF2C30 /* MyInformationViewController.swift */,
+				BE2E57372A761DF500AF2C30 /* LogOutViewController.swift */,
+				BE2E57302A761DF500AF2C30 /* BuserveHelpViewController.swift */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
 		BE98EE0A2A6988D900FEA9E2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
 				BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		BECCE5B32A7CD92000693D19 /* ChargePage */ = {
+			isa = PBXGroup;
+			children = (
+				BECCE5B42A7CD94400693D19 /* BusMoneyChargeViewController.swift */,
+				BECCE5B82A7CF52400693D19 /* ChargeCompleteViewController.swift */,
+			);
+			path = ChargePage;
 			sourceTree = "<group>";
 		};
 		C5494A3BD196DADD31DC2E51 /* Frameworks */ = {
@@ -335,12 +384,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */,
+				BE2E573E2A761DF500AF2C30 /* MyInformationViewController.swift in Sources */,
+				BECCE5B52A7CD94400693D19 /* BusMoneyChargeViewController.swift in Sources */,
 				4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */,
+				BECCE5B92A7CF52400693D19 /* ChargeCompleteViewController.swift in Sources */,
+				BE2E573A2A761DF500AF2C30 /* ReservationDetailsViewController.swift in Sources */,
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
 				48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */,
+				BE2E573B2A761DF500AF2C30 /* WithdrawViewController.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
+				BE2E573C2A761DF500AF2C30 /* ReservationDetail.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
+				BE2E573F2A761DF500AF2C30 /* MyPageViewController.swift in Sources */,
+				BE2E573D2A761DF500AF2C30 /* BusMoneyViewController.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
+				BE2E57412A761DF500AF2C30 /* ReservationDetailCell.swift in Sources */,
+				BE2E57392A761DF500AF2C30 /* BuserveHelpViewController.swift in Sources */,
+				BE2E57402A761DF500AF2C30 /* LogOutViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -489,6 +549,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9S44MNK86W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BUSERVE_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -517,6 +578,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9S44MNK86W;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BUSERVE_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
