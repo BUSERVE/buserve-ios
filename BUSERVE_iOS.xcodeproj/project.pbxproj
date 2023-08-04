@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		04DBB6E89894E19CD2DE4A61 /* Pods_BUSERVE_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ACB655BD5900A313A2565D4 /* Pods_BUSERVE_iOS.framework */; };
+		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
+		3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD92A704265005C405C /* LoginViewController.swift */; };
+		3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */; };
+		3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDD2A72565D005C405C /* CompletedSignUpViewController.swift */; };
+		3FD3CDE02A725679005C405C /* CompletedSignUpLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDF2A725679005C405C /* CompletedSignUpLabelView.swift */; };
+		3FD3CDE22A72570D005C405C /* BottomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDE12A72570D005C405C /* BottomButtonView.swift */; };
+		3FD4F2BA2A7747A20097E107 /* BookmarkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F2B92A7747A20097E107 /* BookmarkViewController.swift */; };
+		3FD4F2BE2A7749530097E107 /* BusDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F2BD2A7749530097E107 /* BusDataTableViewCell.swift */; };
+		3FD4F2C02A774B5A0097E107 /* BusDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F2BF2A774B5A0097E107 /* BusDataModel.swift */; };
+		3FD4F2C22A77560C0097E107 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4F2C12A77560C0097E107 /* ButtonExtension.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		483962DE2A6E5042006ADC6E /* cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DC2A6E5042006ADC6E /* cancel.png */; };
 		483962DF2A6E5042006ADC6E /* Check.png in Resources */ = {isa = PBXBuildFile; fileRef = 483962DD2A6E5042006ADC6E /* Check.png */; };
@@ -50,6 +60,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
+		3FD3CDD92A704265005C405C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButtonView.swift; sourceTree = "<group>"; };
+		3FD3CDDD2A72565D005C405C /* CompletedSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedSignUpViewController.swift; sourceTree = "<group>"; };
+		3FD3CDDF2A725679005C405C /* CompletedSignUpLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedSignUpLabelView.swift; sourceTree = "<group>"; };
+		3FD3CDE12A72570D005C405C /* BottomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButtonView.swift; sourceTree = "<group>"; };
+		3FD4F2B92A7747A20097E107 /* BookmarkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewController.swift; sourceTree = "<group>"; };
+		3FD4F2BD2A7749530097E107 /* BusDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataTableViewCell.swift; sourceTree = "<group>"; };
+		3FD4F2BF2A774B5A0097E107 /* BusDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataModel.swift; sourceTree = "<group>"; };
+		3FD4F2C12A77560C0097E107 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		483962DC2A6E5042006ADC6E /* cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancel.png; sourceTree = "<group>"; };
 		483962DD2A6E5042006ADC6E /* Check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Check.png; sourceTree = "<group>"; };
@@ -108,6 +128,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3FD3CDD62A70422A005C405C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3CDD82A704250005C405C /* ViewController */,
+				3FD3CDD72A70424A005C405C /* View */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		3FD3CDD72A70424A005C405C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */,
+				3FD3CDDF2A725679005C405C /* CompletedSignUpLabelView.swift */,
+				3FD3CDE12A72570D005C405C /* BottomButtonView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FD3CDD82A704250005C405C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FD3CDD92A704265005C405C /* LoginViewController.swift */,
+				3FD3CDDD2A72565D005C405C /* CompletedSignUpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3FD4F2B62A7747590097E107 /* BookMark */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4F2BF2A774B5A0097E107 /* BusDataModel.swift */,
+				3FD4F2B72A77476A0097E107 /* ViewController */,
+				3FD4F2B82A7747750097E107 /* View */,
+			);
+			path = BookMark;
+			sourceTree = "<group>";
+		};
+		3FD4F2B72A77476A0097E107 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4F2B92A7747A20097E107 /* BookmarkViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		3FD4F2B82A7747750097E107 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4F2BD2A7749530097E107 /* BusDataTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		4871B9582A6B9A2500309A11 /* Seat */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +226,8 @@
 			children = (
 				BECCE5B32A7CD92000693D19 /* ChargePage */,
 				BE2E572F2A761DF500AF2C30 /* MyPage */,
+				3FD4F2B62A7747590097E107 /* BookMark */,
+				3FD3CDD62A70422A005C405C /* Login */,
 				48C5F7F52A6EBBEC001B4691 /* Maps */,
 				4871B95B2A6BA29000309A11 /* Icon */,
 				4871B9582A6B9A2500309A11 /* Seat */,
@@ -214,6 +290,8 @@
 			isa = PBXGroup;
 			children = (
 				BE98EE0B2A6988F100FEA9E2 /* ColorExtension.swift */,
+				3FD3CDD42A703CED005C405C /* FontExtension.swift */,
+				3FD4F2C12A77560C0097E107 /* ButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -386,12 +464,19 @@
 				483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */,
 				BE2E573E2A761DF500AF2C30 /* MyInformationViewController.swift in Sources */,
 				BECCE5B52A7CD94400693D19 /* BusMoneyChargeViewController.swift in Sources */,
+				3FD3CDE22A72570D005C405C /* BottomButtonView.swift in Sources */,
 				4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */,
 				BECCE5B92A7CF52400693D19 /* ChargeCompleteViewController.swift in Sources */,
 				BE2E573A2A761DF500AF2C30 /* ReservationDetailsViewController.swift in Sources */,
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
+				3FD4F2BA2A7747A20097E107 /* BookmarkViewController.swift in Sources */,
+				3FD4F2C22A77560C0097E107 /* ButtonExtension.swift in Sources */,
 				48C5F7F92A6EBD0B001B4691 /* MapsViewController.swift in Sources */,
 				BE2E573B2A761DF500AF2C30 /* WithdrawViewController.swift in Sources */,
+				3FD4F2C02A774B5A0097E107 /* BusDataModel.swift in Sources */,
+				3FD3CDE02A725679005C405C /* CompletedSignUpLabelView.swift in Sources */,
+				3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */,
+				3FD4F2BE2A7749530097E107 /* BusDataTableViewCell.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				BE2E573C2A761DF500AF2C30 /* ReservationDetail.swift in Sources */,
 				488199022A6791CD00D7C698 /* AppDelegate.swift in Sources */,
@@ -401,7 +486,11 @@
 				BE2E57412A761DF500AF2C30 /* ReservationDetailCell.swift in Sources */,
 				BE2E57392A761DF500AF2C30 /* BuserveHelpViewController.swift in Sources */,
 				BE2E57402A761DF500AF2C30 /* LogOutViewController.swift in Sources */,
+				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
+				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
+				3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
+				3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +638,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S44MNK86W;
+				DEVELOPMENT_TEAM = N3H27N59VG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BUSERVE_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -578,7 +667,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9S44MNK86W;
+				DEVELOPMENT_TEAM = N3H27N59VG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BUSERVE_iOS/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
