@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     private lazy var onBoardBusButton = OnBoardBusButtonView()
     private lazy var homeTitleLabel = HomeTitleLabelView()
     private lazy var busSerachTextField =  BusSerachTextField()
-    private lazy var busTableView = BusDataTableView(data: busDataModel)
+    private lazy var busTableView = BusDataTableView(data: busDataModel, isSortBookMark: false)
 
     private lazy var homeScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -64,7 +64,7 @@ class HomeViewController: UIViewController {
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: .valueChanged)
-        refreshControl.tintColor = UIColor.red
+        refreshControl.tintColor = UIColor.MainColor
         return refreshControl
     }()
     
