@@ -12,6 +12,7 @@ class BusDataTableView: UITableView {
     // MARK: - Properties
     
     var busData: [BusDataModel] = []
+    var isSortBookMark: Bool = false
     
     // MARK: - Life Cycles
     
@@ -21,15 +22,23 @@ class BusDataTableView: UITableView {
         self.separatorStyle = .none
         
         self.register(BusTableViewCell.self, forCellReuseIdentifier: "BusCellId")
-        self.isScrollEnabled = false
         self.delegate = self
         self.dataSource = self
     }
     
-    convenience init(data: [BusDataModel]) {
+    convenience init(data: [BusDataModel], isSortBookMark: Bool) {
         self.init(frame: .zero, style: .plain)
+        self.isSortBookMark = isSortBookMark
         self.busData = data
-        self.sortBusData()
+        
+        isSortBookMark ? self.sortBookmarkData() : self.sortBusData()
+        
+        if isSortBookMark {
+            self.isScrollEnabled = true
+        } else {
+            self.isScrollEnabled = false
+        }
+        
     }
     
     required init?(coder: NSCoder) {
@@ -42,10 +51,16 @@ class BusDataTableView: UITableView {
     private func sortBusData() {
         self.busData.sort { $0.isBookmark && !$1.isBookmark }
     }
+    
+    /// BookMark 페이지에서 Bookmark 된 데이터만 정렬해주는 함수
+    private func sortBookmarkData() {
+        self.busData = self.busData.filter{ $0.isBookmark == true }
+    }
 }
 
     // MARK: - TableView Delegate
 
+/// TableView 는 Cell 간격을 둘 수 없어 짝수번째의 Cell 에 데이터를 입력, 홀수번째는 빈 Cell 로 간격을 설정
 extension BusDataTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return busData.count * 2
