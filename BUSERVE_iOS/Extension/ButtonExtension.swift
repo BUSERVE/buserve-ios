@@ -72,7 +72,7 @@ extension UIButton.Configuration {
         configuration.baseForegroundColor = style.textColor
         configuration.background.strokeColor = style.strokeColor
         configuration.background.strokeWidth = 1
-        configuration.background.cornerRadius = 16
+        configuration.background.cornerRadius = 15
         
         
         var titleContainer = AttributeContainer()
