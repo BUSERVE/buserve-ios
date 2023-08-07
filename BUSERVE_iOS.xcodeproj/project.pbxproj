@@ -16,6 +16,9 @@
 		3F22B5CB2A7D0C400067D01C /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */; };
 		3F3624B02A7DF0EB0066E531 /* BusDataTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */; };
 		3F3624B22A7DF1FB0066E531 /* BusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */; };
+		3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */; };
+		3F7DBD042A80680000410404 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD032A80680000410404 /* SocialLoginManager.swift */; };
+		3F7DBD062A806E3200410404 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD052A806E3200410404 /* LoginUseCase.swift */; };
 		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
 		3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD92A704265005C405C /* LoginViewController.swift */; };
 		3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */; };
@@ -76,6 +79,9 @@
 		3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataTableView.swift; sourceTree = "<group>"; };
 		3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTableViewCell.swift; sourceTree = "<group>"; };
+		3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateAdapter.swift; sourceTree = "<group>"; };
+		3F7DBD032A80680000410404 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
+		3F7DBD052A806E3200410404 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		3FD3CDD92A704265005C405C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButtonView.swift; sourceTree = "<group>"; };
@@ -173,9 +179,20 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		3F7DBD002A80675D00410404 /* SocialLogin */ = {
+			isa = PBXGroup;
+			children = (
+				3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */,
+				3F7DBD032A80680000410404 /* SocialLoginManager.swift */,
+				3F7DBD052A806E3200410404 /* LoginUseCase.swift */,
+			);
+			path = SocialLogin;
+			sourceTree = "<group>";
+		};
 		3FD3CDD62A70422A005C405C /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				3F7DBD002A80675D00410404 /* SocialLogin */,
 				3FD3CDD82A704250005C405C /* ViewController */,
 				3FD3CDD72A70424A005C405C /* View */,
 			);
@@ -511,6 +528,7 @@
 			files = (
 				3F22B5C92A7CFDA70067D01C /* BusSerachTextField.swift in Sources */,
 				3F22B5C32A7CD6290067D01C /* OnBoardBusButtonView.swift in Sources */,
+				3F7DBD042A80680000410404 /* SocialLoginManager.swift in Sources */,
 				483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */,
 				BE2E573E2A761DF500AF2C30 /* MyInformationViewController.swift in Sources */,
 				BECCE5B52A7CD94400693D19 /* BusMoneyChargeViewController.swift in Sources */,
@@ -532,6 +550,7 @@
 				3F3624B02A7DF0EB0066E531 /* BusDataTableView.swift in Sources */,
 				3FD3CDE02A725679005C405C /* CompletedSignUpLabelView.swift in Sources */,
 				3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */,
+				3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */,
 				3FD4F2BE2A7749530097E107 /* BusDataTableViewCell.swift in Sources */,
 				485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */,
 				BE2E573C2A761DF500AF2C30 /* ReservationDetail.swift in Sources */,
@@ -547,6 +566,7 @@
 				3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
 				3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */,
+				3F7DBD062A806E3200410404 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
