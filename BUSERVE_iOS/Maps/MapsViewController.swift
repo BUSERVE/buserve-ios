@@ -7,16 +7,15 @@
 
 import UIKit
 import NMapsMap
+import MapKit
 import CoreLocation
 
-class MapsViewController: UIViewController, CLLocationManagerDelegate{
+class MapsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     var locationManager = CLLocationManager()
     var mapView: NMFMapView!
-    
     let marker = NMFMarker()
     
-    @IBOutlet weak var MapCheckView: MapCheckControll!
     @IBOutlet weak var locationBtn: CurrentLocationBtn!
     
     override func viewDidLoad() {
@@ -29,11 +28,10 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         mapView.allowsScrolling = true
         mapView.isIndoorMapEnabled = true
         mapView.zoomLevel = 15
-
+        
         locationBtn.setMapView(mapView)
         
         view.addSubview(mapView)
-        view.addSubview(MapCheckView)
         view.addSubview(locationBtn)
         
         /* mapContraints */
@@ -42,7 +40,6 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate{
         mapView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
         mapView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
         mapView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: 0).isActive = true
-        
         setLoactionManager()
         
         locationBtn.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)

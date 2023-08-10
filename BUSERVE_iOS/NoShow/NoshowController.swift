@@ -21,7 +21,7 @@ class Noshow: UIViewController {
         
         
         
-        TitleLabel.font = UIFont(name: "Pretendard-Bold", size: 24)
+        TitleLabel.font = UIFont(name: "Pretendard-SemiBold", size: 24)
         TitleLabel.textColor = UIColor(red: 0.20, green: 0.23, blue: 0.25, alpha: 1.00)
         
         
@@ -47,7 +47,7 @@ class Noshow: UIViewController {
             paragraphStyle.lineBreakStrategy = .pushOut
             
             /* Set font of LineNumber and Line */
-            if let font = UIFont(name: "Pretendard-Regular", size: 15), let partBold = UIFont(name: "Pretendard-Bold", size: 15){
+            if let font = UIFont(name: "Pretendard-Regular", size: 15), let partBold = UIFont(name: "Pretendard-SemiBold", size: 15){
                 let pointer = NSMutableAttributedString(
                     string: "\(index+1). \(line)\n",
                     attributes: [.font: font])

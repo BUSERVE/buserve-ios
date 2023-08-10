@@ -18,6 +18,7 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
     func setMapView(_ mapView: NMFMapView) {
         self.mapView = mapView
     }
+    
     override init(frame: CGRect){
         super.init(frame: frame)
         
@@ -38,8 +39,7 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
         self.layer.shadowRadius = 8 // 반경
         self.layer.shadowOpacity = 1 // alpha값  */
     }
-         
-       
+        
     @objc func locationInfor(){
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -52,8 +52,8 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
             }
         }
         func searchLocation(){
-            let locationLatitude = self.locationManager.location?.coordinate.latitude
-            let locationLogitude = self.locationManager.location?.coordinate.longitude
+            let locationLatitude = 37.476767
+            let locationLogitude = 126.983310
             
             /* camera */
             let cameraMove = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationLatitude ?? 0, lng: locationLogitude ?? 0))
@@ -69,6 +69,8 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
             marker.width = 24
             marker.height = 30
             marker.mapView = mapView
+            
+            
         }
         func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
             print(error)
