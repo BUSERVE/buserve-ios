@@ -16,6 +16,9 @@
 			dependencies = (
 			);
 			name = NMapsGeometry;
+			packageProductDependencies = (
+				48FB18F42A85240E00ABA58A /* Alamofire */,
+			);
 			productName = NMapsGeometry;
 		};
 		8E049F5F4E3BDC647F924FEF22D49D90 /* NMapsMap */ = {
@@ -275,6 +278,9 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			packageReferences = (
+				48FB18F32A85240E00ABA58A /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 250EFEFF96D92C6280FFE162C0EC9CDC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -677,6 +683,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		48FB18F32A85240E00ABA58A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		48FB18F42A85240E00ABA58A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 48FB18F32A85240E00ABA58A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }
