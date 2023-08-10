@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func tapv(_ sender: Any) {
-        showPopUp(attributedMessage: "버스 좌석을 예약하시려면 \n 노쇼 방지를 위해서 \n 위치 인증이 필요해요.".toAttributedString(), rightActionTitle: "위치 인증하기")
+        showPopUp(attributedMessage: "버스 좌석을 예약하시려면 \n 노쇼 방지를 위해서 \n 위치 인증이 필요해요.".toAttributedString(), leftActionTitle: "sss", rightActionTitle: "위치 인증하기")
     }
 }
 
