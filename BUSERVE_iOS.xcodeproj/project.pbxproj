@@ -19,6 +19,7 @@
 		3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */; };
 		3F7DBD042A80680000410404 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD032A80680000410404 /* SocialLoginManager.swift */; };
 		3F7DBD062A806E3200410404 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD052A806E3200410404 /* LoginUseCase.swift */; };
+		3F7DBD0C2A87380600410404 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD0B2A87380600410404 /* TabBarViewController.swift */; };
 		3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD42A703CED005C405C /* FontExtension.swift */; };
 		3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDD92A704265005C405C /* LoginViewController.swift */; };
 		3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */; };
@@ -108,6 +109,7 @@
 		3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateAdapter.swift; sourceTree = "<group>"; };
 		3F7DBD032A80680000410404 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
 		3F7DBD052A806E3200410404 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		3F7DBD0B2A87380600410404 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		3FD3CDD42A703CED005C405C /* FontExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontExtension.swift; sourceTree = "<group>"; };
 		3FD3CDD92A704265005C405C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3FD3CDDB2A7042DE005C405C /* SocialLoginButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButtonView.swift; sourceTree = "<group>"; };
@@ -366,6 +368,7 @@
 				4881990A2A6791CF00D7C698 /* Assets.xcassets */,
 				4881990C2A6791CF00D7C698 /* LaunchScreen.storyboard */,
 				4881990F2A6791CF00D7C698 /* Info.plist */,
+				3F7DBD0B2A87380600410404 /* TabBarViewController.swift */,
 			);
 			path = BUSERVE_iOS;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				3F22B5C52A7CE7720067D01C /* ImageExtension.swift in Sources */,
 				3F3624B02A7DF0EB0066E531 /* BusDataTableView.swift in Sources */,
 				3FD3CDE02A725679005C405C /* CompletedSignUpLabelView.swift in Sources */,
+				3F7DBD0C2A87380600410404 /* TabBarViewController.swift in Sources */,
 				48FB18E82A85229800ABA58A /* SeatCollectionViewCell.swift in Sources */,
 				48FB18D72A85227E00ABA58A /* BusReserveViewController.swift in Sources */,
 				3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */,
