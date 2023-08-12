@@ -87,3 +87,6 @@ iOSInjectionProject/
 
 # End of https://www.toptal.com/developers/gitignore/api/swif
 
+
+
+.DS_Store
