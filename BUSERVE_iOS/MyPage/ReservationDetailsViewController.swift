@@ -45,7 +45,7 @@ class ReservationDetailsViewController: UIViewController {
         self.busNumberView.layer.cornerRadius = 8.0
         self.busStationView.layer.cornerRadius = 8.0
         self.busStationView.layer.borderWidth = 1.0
-        self.busStationView.layer.borderColor = UIColor.Tertiary?.cgColor
+        self.busStationView.layer.borderColor = UIColor.Tertiary.cgColor
         self.recentReservationView.layer.cornerRadius = 16.0
     }
     @objc func backButtonTapped() {

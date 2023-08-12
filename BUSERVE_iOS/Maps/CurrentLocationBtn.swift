@@ -52,8 +52,8 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
             }
         }
         func searchLocation(){
-            let locationLatitude = 37.476767
-            let locationLogitude = 126.983310
+            let locationLatitude = 37.5670135
+            let locationLogitude = 126.9783740
             
             /* camera */
             let cameraMove = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationLatitude ?? 0, lng: locationLogitude ?? 0))
@@ -76,4 +76,5 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
             print(error)
         }
     }
+
 }

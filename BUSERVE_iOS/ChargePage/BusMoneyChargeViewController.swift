@@ -45,7 +45,7 @@ class BusMoneyChargeViewController: UIViewController {
     
     private func configureView() {
         self.busMoneyChargeView.layer.cornerRadius = 16.0
-        self.busMoneyChargeView.layer.borderColor = UIColor.MainColor?.cgColor
+        self.busMoneyChargeView.layer.borderColor = UIColor.MainColor.cgColor
         self.busMoneyChargeView.layer.borderWidth = 2.0
         self.busMoneyChargeTextField.borderStyle = .none
         self.busMoneyChargeButton.layer.cornerRadius = 16.0

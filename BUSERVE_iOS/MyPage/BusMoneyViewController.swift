@@ -33,7 +33,7 @@ class BusMoneyViewController: UIViewController {
         navigationController?.navigationBar.tintColor = UIColor.Body
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         myBusMoneyView.layer.cornerRadius = 16.0
-        myBusMoneyView.layer.borderColor = UIColor.MainColor?.cgColor
+        myBusMoneyView.layer.borderColor = UIColor.MainColor.cgColor
         myBusMoneyView.layer.borderWidth = 2.0
         chargeBusMoneyButton.layer.cornerRadius = 16.0
         changePaymentMethodButton.layer.cornerRadius = 16.0

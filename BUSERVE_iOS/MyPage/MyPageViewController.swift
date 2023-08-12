@@ -27,9 +27,9 @@ class MyPageViewController: UIViewController {
         self.myInformationMangementView.layer.cornerRadius = 16.0
         self.buserveHelpView.layer.cornerRadius = 16.0
         self.myInformationMangementView.layer.borderWidth = 1.0
-        self.myInformationMangementView.layer.borderColor = UIColor.Tertiary?.cgColor
+        self.myInformationMangementView.layer.borderColor = UIColor.Tertiary.cgColor
         self.buserveHelpView.layer.borderWidth = 1.0
-        self.buserveHelpView.layer.borderColor = UIColor.Tertiary?.cgColor
+        self.buserveHelpView.layer.borderColor = UIColor.Tertiary.cgColor
     }
     
     private func tapGestureRecognizer() {

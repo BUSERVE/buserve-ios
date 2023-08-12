@@ -62,7 +62,8 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         case .authorizedAlways, .authorizedWhenInUse:
             DispatchQueue.main.async {
                 print("권한있음")
-                self.mapControll()
+                self.mapCameraControll()
+                self.mapMarker()
             }
         case .denied, .restricted:
             print("위치 서비스 권한 없음")
@@ -74,13 +75,15 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         }
     }
     
-    func mapControll(){
+    func mapCameraControll(){
         /* cameraMove */
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0,
+        var cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0,
                                                                lng: locationManager.location?.coordinate.longitude ?? 0))
         cameraUpdate.animation = .easeIn
         self.mapView.moveCamera(cameraUpdate)
-     
+    }
+    
+    func mapMarker(){
         /* currentPosition Marker */
         marker.position = NMGLatLng(lat: locationManager.location?.coordinate.latitude ?? 0,
                                     lng:locationManager.location?.coordinate.longitude ?? 0)
