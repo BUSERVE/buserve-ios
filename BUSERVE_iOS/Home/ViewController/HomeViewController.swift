@@ -81,6 +81,11 @@ class HomeViewController: UIViewController {
         view.backgroundColor = .white
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     // MARK: - methods or layouts
     
     private func addSubviews() {
