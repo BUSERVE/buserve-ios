@@ -11,11 +11,17 @@ class HomeViewController: UIViewController {
 
     // MARK: - Properties
     
+    weak var delegate: HomeViewControllerDelegate?
     private lazy var onBoardBusButton = OnBoardBusButtonView()
     private lazy var homeTitleLabel = HomeTitleLabelView()
-    private lazy var busSerachTextField =  BusSerachTextField()
+    private lazy var busSearchTextField =  BusSearchTextField()
     private lazy var busTableView = BusDataTableView(data: busDataModel, isSortBookMark: false)
-
+    private lazy var searchBusTableView = BusDataTableView()
+    private lazy var placeHolderView = PlaceHolderView()
+    
+    private var busSearchTextFieldLeadingConstraint: NSLayoutConstraint!
+    private var busSearchTextFieldTopConstraint: NSLayoutConstraint!
+    
     private lazy var homeScrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.frame = view.bounds
@@ -68,13 +74,31 @@ class HomeViewController: UIViewController {
         return refreshControl
     }()
     
+    private lazy var backButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "chevron.left")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 20, weight: .semibold)), for: .normal)
+        button.tintColor = UIColor.Body
+        button.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
+        button.isHidden = true
+        return button
+    }()
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let tabBarVC = self.tabBarController as? TabBarViewController {
+            self.delegate = tabBarVC
+        }
+        
+        self.placeHolderView.isHidden = true
+        busSearchTextField.searchDelegate = self
+        busSearchTextField.delegate = self
+        
         addSubviews()
         configureConstraints()
+        hideKeyboardWhenTappedAround()
         
         onBoardBusButton.addTarget(self, action: #selector(getOnBusClicked), for: .touchUpInside)
         
@@ -86,7 +110,7 @@ class HomeViewController: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
-    // MARK: - methods or layouts
+    // MARK: - layouts
     
     private func addSubviews() {
         
@@ -94,16 +118,19 @@ class HomeViewController: UIViewController {
         homeScrollView.addSubview(contentView)
         homeScrollView.addSubview(refreshControl)
 
-        [topStackView, busSerachTextField, butTableTitleLabel, busTableView].forEach { contentView.addSubview($0) }
+        [topStackView, busSearchTextField, butTableTitleLabel, busTableView, backButton, searchBusTableView, placeHolderView].forEach { contentView.addSubview($0) }
         
-        topStackView.translatesAutoresizingMaskIntoConstraints = false
-        homeScrollView.translatesAutoresizingMaskIntoConstraints = false
-        busSerachTextField.translatesAutoresizingMaskIntoConstraints = false
-        butTableTitleLabel.translatesAutoresizingMaskIntoConstraints = false
-        busTableView.translatesAutoresizingMaskIntoConstraints = false
+        [topStackView, homeScrollView, busSearchTextField, butTableTitleLabel ,busTableView, backButton, searchBusTableView, placeHolderView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func configureConstraints() {
+        
+        busSearchTextFieldLeadingConstraint = busSearchTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20)
+        busSearchTextFieldLeadingConstraint.isActive = true
+        
+        busSearchTextFieldTopConstraint = busSearchTextField.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 32)
+        busSearchTextFieldTopConstraint.isActive = true
+        
         NSLayoutConstraint.activate([
             homeScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             homeScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -122,12 +149,12 @@ class HomeViewController: UIViewController {
             topStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
 
 
-            busSerachTextField.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 32),
-            busSerachTextField.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            busSerachTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -27),
+            busSearchTextFieldTopConstraint,
+            busSearchTextFieldLeadingConstraint,
+            busSearchTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -27),
 
 
-            butTableTitleLabel.topAnchor.constraint(equalTo: busSerachTextField.bottomAnchor, constant: 46),
+            butTableTitleLabel.topAnchor.constraint(equalTo: busSearchTextField.bottomAnchor, constant: 46),
             butTableTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             butTableTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
 
@@ -136,10 +163,28 @@ class HomeViewController: UIViewController {
             busTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             busTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             busTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            busTableView.heightAnchor.constraint(equalToConstant: CGFloat(busDataModel.count) * 160.0)
+            busTableView.heightAnchor.constraint(equalToConstant: CGFloat(busDataModel.count) * 160.0),
+            
+            backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            backButton.centerYAnchor.constraint(equalTo: busSearchTextField.centerYAnchor),
+            backButton.widthAnchor.constraint(equalToConstant: 24), // 버튼의 폭 설정
+            backButton.heightAnchor.constraint(equalToConstant: 24) // 버튼의 높이 설정
         ])
     }
     
+    // MARK: - methods
+    
+    /// 다른 화면을 터치 시 키보드가 내려가는 메서드
+    func hideKeyboardWhenTappedAround() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
+    /// busTableView 의 데이터를 다시 로드하는 메서드
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         busTableView.busData.sort { $0.isBookmark && !$1.isBookmark }
         busTableView.reloadData()
@@ -151,4 +196,154 @@ class HomeViewController: UIViewController {
     @objc func getOnBusClicked(_ sender: UIButton) {
         print("탑승하기 버튼 Clicked")
     }
+}
+
+// MARK: - Animation extension
+
+extension HomeViewController {
+    @objc func backButtonTapped() {
+        // 뒤로가기 버튼을 숨기고, 기존 뷰를 표시하고 검색 텍스트 필드를 원래 위치로 이동
+        backButton.isHidden = true
+        homeScrollView.isScrollEnabled = true // 스크롤을 가능하게 변경
+        busSearchTextField.resignFirstResponder() // TextField 의 선택을 해제
+        busSearchTextField.text = ""
+        busSearchTextField.placeholder = "예약하려는 버스를 검색해주세요."
+        
+        searchBusTableView.searchBusData(busNumber: "")
+        searchBusTableView.reloadData()
+        
+        UIView.animate(withDuration: 0.3) {
+            self.moveAutoLayoutBusSearchTextField(.down)
+            self.showHideAnimationView(.show)
+            self.upDownAnimationTabbar(.up)
+
+        } completion: { _ in
+            self.searchBusTableView.isHidden = true
+        }
+    }
+    
+    /// BusSearchTexstField 를 움직이게 하는 메서드
+    func moveAutoLayoutBusSearchTextField(_ animation: AnimationView) {
+        // 기존 제약 조건 비활성화
+        self.busSearchTextFieldTopConstraint.isActive = false
+        self.busSearchTextFieldLeadingConstraint.isActive = false
+        
+        // 새로운 제약 조건 설정
+        switch animation {
+        case .up:
+            self.busSearchTextFieldTopConstraint = self.busSearchTextField.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 10)
+            self.busSearchTextFieldLeadingConstraint = self.busSearchTextField.leadingAnchor.constraint(equalTo: self.backButton.trailingAnchor, constant: 8)
+        case .down:
+            self.busSearchTextFieldTopConstraint = self.busSearchTextField.topAnchor.constraint(equalTo: self.topStackView.bottomAnchor, constant: 32)
+            self.busSearchTextFieldLeadingConstraint = self.busSearchTextField.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20)
+        }
+        
+        // 새로운 제약 조건 활성화
+        self.busSearchTextFieldTopConstraint.isActive = true
+        self.busSearchTextFieldLeadingConstraint.isActive = true
+        
+        self.view.layoutIfNeeded()
+    }
+    
+    /// View 를 숨기고 나타내는 애니메이션을 동작하는 메서드
+    func showHideAnimationView(_ animation: ToogleView) {
+        switch animation {
+        case .show:
+            self.topStackView.alpha = 1
+            self.busTableView.alpha = 1
+            self.butTableTitleLabel.alpha = 1
+            self.searchBusTableView.alpha = 0
+            self.placeHolderView.alpha = 0
+            
+            self.topStackView.isHidden = false
+            self.busTableView.isHidden = false
+            self.butTableTitleLabel.isHidden = false
+            self.searchBusTableView.isHidden = true
+            self.placeHolderView.isHidden = true
+            
+        case .hide:
+            self.topStackView.alpha = 0
+            self.busTableView.alpha = 0
+            self.butTableTitleLabel.alpha = 0
+            self.searchBusTableView.alpha = 1
+            self.placeHolderView.alpha = 1
+            
+            self.topStackView.isHidden = true
+            self.busTableView.isHidden = true
+            self.butTableTitleLabel.isHidden = true
+            self.placeHolderView.isHidden = false
+        }
+    }
+    
+    /// TabBar 가 올라오고 내려가는 애니메이션을 동작하는 메서드
+    func upDownAnimationTabbar(_ animation: AnimationTabbar) {
+        switch animation {
+        case .up:
+            self.tabBarController?.tabBar.alpha = 1
+            self.someFunctionWhereYouWantToShowTabBar()
+        case .down:
+            self.tabBarController?.tabBar.alpha = 0
+            self.someFunctionWhereYouWantToHideTabBar()
+        }
+    }
+    
+    func someFunctionWhereYouWantToHideTabBar() {
+        delegate?.shouldHideTabBar(true)
+    }
+    
+    func someFunctionWhereYouWantToShowTabBar() {
+        delegate?.shouldHideTabBar(false)
+    }
+}
+
+// MARK: - extension
+
+extension HomeViewController: BusSearchTextFieldDelegate {
+    /// TextField 의 Text 가 변경될 때 마다 동작하는 메서드
+    func busSearchTextFieldDidChange(_ textField: BusSearchTextField, text: String?) {
+        print(text)
+        if ((text?.isEmpty) ?? true) {
+            placeHolderView.isHidden = false
+            searchBusTableView.isHidden = true
+        } else {
+            placeHolderView.isHidden = true
+            searchBusTableView.isHidden = false
+        }
+        
+        searchBusTableView.searchBusData(busNumber: text ?? "")
+        searchBusTableView.reloadData()
+    }
+}
+
+extension HomeViewController: UITextFieldDelegate {
+    /// TextField 를 선택 시 동작하는 메서드
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+
+        backButton.isHidden = false
+        homeScrollView.isScrollEnabled = false
+        busSearchTextField.placeholder = "버스 검색"
+        
+        UIView.animate(withDuration: 0.3) {
+            self.moveAutoLayoutBusSearchTextField(.up)
+            self.showHideAnimationView(.hide)
+            self.upDownAnimationTabbar(.down)
+
+            NSLayoutConstraint.activate([
+                self.placeHolderView.topAnchor.constraint(equalTo: self.busSearchTextField.bottomAnchor, constant: 144),
+                self.placeHolderView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
+                
+                self.searchBusTableView.topAnchor.constraint(equalTo: self.busSearchTextField.bottomAnchor, constant: 20),
+                self.searchBusTableView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 20),
+                self.searchBusTableView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
+                self.searchBusTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
+            ])
+        } completion: { _ in
+            print("애니메이션 끝남")
+            self.searchBusTableView.isHidden = false
+        }
+    }
+}
+
+protocol HomeViewControllerDelegate: AnyObject {
+    func shouldHideTabBar(_ hide: Bool)
 }

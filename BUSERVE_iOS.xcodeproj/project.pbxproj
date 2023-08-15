@@ -12,10 +12,12 @@
 		3F22B5C32A7CD6290067D01C /* OnBoardBusButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5C22A7CD6290067D01C /* OnBoardBusButtonView.swift */; };
 		3F22B5C52A7CE7720067D01C /* ImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5C42A7CE7710067D01C /* ImageExtension.swift */; };
 		3F22B5C72A7CE83A0067D01C /* HomeTitleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5C62A7CE83A0067D01C /* HomeTitleLabelView.swift */; };
-		3F22B5C92A7CFDA70067D01C /* BusSerachTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5C82A7CFDA70067D01C /* BusSerachTextField.swift */; };
+		3F22B5C92A7CFDA70067D01C /* BusSearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5C82A7CFDA70067D01C /* BusSearchTextField.swift */; };
 		3F22B5CB2A7D0C400067D01C /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */; };
 		3F3624B02A7DF0EB0066E531 /* BusDataTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */; };
 		3F3624B22A7DF1FB0066E531 /* BusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */; };
+		3F78D46F2A8BC40600815CCD /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78D46E2A8BC40600815CCD /* PlaceHolderView.swift */; };
+		3F78D4712A8BC56900815CCD /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78D4702A8BC56900815CCD /* AnimationModel.swift */; };
 		3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */; };
 		3F7DBD042A80680000410404 /* SocialLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD032A80680000410404 /* SocialLoginManager.swift */; };
 		3F7DBD062A806E3200410404 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD052A806E3200410404 /* LoginUseCase.swift */; };
@@ -102,10 +104,12 @@
 		3F22B5C22A7CD6290067D01C /* OnBoardBusButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardBusButtonView.swift; sourceTree = "<group>"; };
 		3F22B5C42A7CE7710067D01C /* ImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageExtension.swift; sourceTree = "<group>"; };
 		3F22B5C62A7CE83A0067D01C /* HomeTitleLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleLabelView.swift; sourceTree = "<group>"; };
-		3F22B5C82A7CFDA70067D01C /* BusSerachTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusSerachTextField.swift; sourceTree = "<group>"; };
+		3F22B5C82A7CFDA70067D01C /* BusSearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusSearchTextField.swift; sourceTree = "<group>"; };
 		3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataTableView.swift; sourceTree = "<group>"; };
 		3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTableViewCell.swift; sourceTree = "<group>"; };
+		3F78D46E2A8BC40600815CCD /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
+		3F78D4702A8BC56900815CCD /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
 		3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateAdapter.swift; sourceTree = "<group>"; };
 		3F7DBD032A80680000410404 /* SocialLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginManager.swift; sourceTree = "<group>"; };
 		3F7DBD052A806E3200410404 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			children = (
 				3F22B5BF2A7CD4940067D01C /* ViewController */,
 				3F22B5BE2A7CD48C0067D01C /* View */,
+				3F78D4702A8BC56900815CCD /* AnimationModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -218,9 +223,10 @@
 			children = (
 				3F22B5C22A7CD6290067D01C /* OnBoardBusButtonView.swift */,
 				3F22B5C62A7CE83A0067D01C /* HomeTitleLabelView.swift */,
-				3F22B5C82A7CFDA70067D01C /* BusSerachTextField.swift */,
+				3F22B5C82A7CFDA70067D01C /* BusSearchTextField.swift */,
 				3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */,
 				3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */,
+				3F78D46E2A8BC40600815CCD /* PlaceHolderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -645,7 +651,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F22B5C92A7CFDA70067D01C /* BusSerachTextField.swift in Sources */,
+				3F78D4712A8BC56900815CCD /* AnimationModel.swift in Sources */,
+				3F22B5C92A7CFDA70067D01C /* BusSearchTextField.swift in Sources */,
 				3F22B5C32A7CD6290067D01C /* OnBoardBusButtonView.swift in Sources */,
 				3F7DBD042A80680000410404 /* SocialLoginManager.swift in Sources */,
 				48FB18912A85214300ABA58A /* PopUpViewController.swift in Sources */,
@@ -697,6 +704,7 @@
 				48FB18E62A85229800ABA58A /* BusSeatSelectViewController.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				48FB18E92A85229800ABA58A /* CollectionTitle.swift in Sources */,
+				3F78D46F2A8BC40600815CCD /* PlaceHolderView.swift in Sources */,
 				BE2E57412A761DF500AF2C30 /* ReservationDetailCell.swift in Sources */,
 				BE2E57392A761DF500AF2C30 /* BuserveHelpViewController.swift in Sources */,
 				48FB18F22A8522BD00ABA58A /* BusStopTableViewCell.swift in Sources */,
