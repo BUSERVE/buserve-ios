@@ -306,7 +306,7 @@ extension HomeViewController {
             
             if let originalPlaceholder = busSearchTextField.placeholder {
                 let attributes: [NSAttributedString.Key: Any] = [
-                    .foregroundColor: (traitCollection.userInterfaceStyle == .dark) ? UIColor.Tertiary : UIColor.Secondary,
+                    .foregroundColor: UIColor.Secondary_TertiaryColor,
                     .font: UIFont.systemFont(ofSize: 16)
                 ]
 
