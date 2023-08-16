@@ -71,7 +71,8 @@ class BusSearchTextField: UITextField, UITextFieldDelegate {
         layer.masksToBounds = false
         layer.shadowOpacity = 0.6
 
-        layer.backgroundColor = UIColor.white.cgColor
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: bounds.height / 2).cgPath
+        layer.backgroundColor = UIColor.DarkModeSecondBackground.cgColor
     }
     
     required init?(coder: NSCoder) {
