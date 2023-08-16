@@ -28,8 +28,6 @@ class BookmarkViewController: UIViewController {
         configureConstraints()
         
         busDataListView.refreshControl = refreshControl
-
-        view.backgroundColor = .white
     }
     
     // MARK: - methods or layouts

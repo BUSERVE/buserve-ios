@@ -17,7 +17,7 @@ extension UIButton.Configuration {
         }
         
         var backgroundColor: UIColor? {
-            return .Background
+            return .ButtonAlertBackground
         }
         
         var textColor: UIColor? {
@@ -49,20 +49,21 @@ extension UIButton.Configuration {
         }
         
         var image: UIImage? {
+            let config = UIImage.SymbolConfiguration(pointSize: 15, weight: .regular, scale: .medium)
             switch self {
             case .bookmarked:
-                let image = UIImage(systemName: "star.fill")
+                let image = UIImage(systemName: "star.fill", withConfiguration: config)
                 image?.withTintColor(.SubColor, renderingMode: .alwaysOriginal)
                 return image
             case .notBookmarked:
-                let image = UIImage(systemName: "star")
+                let image = UIImage(systemName: "star", withConfiguration: config)
                 image?.withTintColor(.Secondary, renderingMode: .alwaysOriginal)
                 return image
             }
         }
     }
     
-    static func bookmarkButtonStyle(style: BookmarkButtonStyle) -> UIButton.Configuration {
+    static func bookmarkButtonStyle(style: BookmarkButtonStyle, traitCollection: UITraitCollection) -> UIButton.Configuration {
         var configuration = UIButton.Configuration.filled()
         configuration.baseBackgroundColor = style.backgroundColor
         
@@ -71,9 +72,14 @@ extension UIButton.Configuration {
         configuration.imagePadding = 8
         configuration.baseForegroundColor = style.textColor
         configuration.background.strokeColor = style.strokeColor
-        configuration.background.strokeWidth = 1
-        configuration.background.cornerRadius = 15
         
+        if traitCollection.userInterfaceStyle == .dark {
+            configuration.background.strokeWidth = (style == .bookmarked) ? 1 : 0
+        } else {
+            configuration.background.strokeWidth = 1
+        }
+        
+        configuration.background.cornerRadius = 15
         
         var titleContainer = AttributeContainer()
         titleContainer.font = style.font

@@ -101,8 +101,6 @@ class HomeViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         
         onBoardBusButton.addTarget(self, action: #selector(getOnBusClicked), for: .touchUpInside)
-        
-        view.backgroundColor = .white
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -298,6 +296,28 @@ extension HomeViewController {
 }
 
 // MARK: - extension
+
+extension HomeViewController {
+    /// ( 라이트, 다크 ) 모드가 변경되었을 때 TableView 의 UI 색상을 업데이트
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            
+            if let originalPlaceholder = busSearchTextField.placeholder {
+                let attributes: [NSAttributedString.Key: Any] = [
+                    .foregroundColor: UIColor.Secondary_TertiaryColor,
+                    .font: UIFont.systemFont(ofSize: 16)
+                ]
+
+                busSearchTextField.attributedPlaceholder = NSAttributedString(string: originalPlaceholder, attributes: attributes)
+            }
+            busSearchTextField.textColor = (traitCollection.userInterfaceStyle == .dark) ? .white : UIColor.Body
+            busTableView.reloadData()
+            searchBusTableView.reloadData()
+        }
+    }
+}
 
 extension HomeViewController: BusSearchTextFieldDelegate {
     /// TextField 의 Text 가 변경될 때 마다 동작하는 메서드

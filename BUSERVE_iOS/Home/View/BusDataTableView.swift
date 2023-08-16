@@ -20,7 +20,7 @@ class BusDataTableView: UITableView {
         super.init(frame: frame, style: style)
         
         self.separatorStyle = .none
-        
+        self.backgroundColor = .Background
         self.register(BusTableViewCell.self, forCellReuseIdentifier: "BusCellId")
         self.delegate = self
         self.dataSource = self
@@ -83,8 +83,9 @@ extension BusDataTableView: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row % 2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BusCellId", for: indexPath) as! BusTableViewCell
             
+            cell.backgroundColor = .DarkModeSecondBackground
             cell.selectionStyle = .none
-            cell.layer.borderWidth = 1
+            cell.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
             cell.layer.cornerRadius = 16
             cell.layer.borderColor = UIColor.Tertiary.cgColor
             
@@ -106,6 +107,7 @@ extension BusDataTableView: UITableViewDelegate, UITableViewDataSource {
             
         } else {
             let cell = UITableViewCell()
+            cell.backgroundColor = .Background
             cell.selectionStyle = .none
             return cell
         }

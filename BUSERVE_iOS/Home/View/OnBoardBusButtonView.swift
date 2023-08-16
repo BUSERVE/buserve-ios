@@ -41,7 +41,7 @@ class OnBoardBusButtonView: UIButton {
         configuration.imagePlacement = NSDirectionalRectEdge.top
         
         configuration.subtitle = "탑승하기"
-        configuration.baseForegroundColor = .Secondary
+        configuration.baseForegroundColor = .Secondary_TertiaryColor
         configuration.buttonSize = .small
         
         self.titleLabel?.font = .captionBold1

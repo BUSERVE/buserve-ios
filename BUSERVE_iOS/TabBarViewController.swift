@@ -18,10 +18,13 @@ class TabBarViewController: UITabBarController {
         
         self.selectedIndex = 0
         self.tabBar.tintColor = .MainColor
- 
-        self.tabBar.barTintColor = UIColor.white
-        self.tabBar.layer.masksToBounds = true
+        self.tabBar.barTintColor = .DarkModeSecondBackground
+        self.tabBar.isTranslucent = false // 시스템 상 블러 효과가 기본으로 적용되어 있어 제거해주는 역할
+        self.tabBar.layer.cornerRadius = 30.0
+
+        self.tabBar.layer.borderColor = (traitCollection.userInterfaceStyle == .dark) ? UIColor.Secondary.cgColor : UIColor.Tertiary.cgColor
         
+        self.tabBar.layer.masksToBounds = true
         setupTabItems()
     }
     
@@ -107,10 +110,10 @@ extension UITabBarController {
     func updateViewLayoutsForTabBar(hidden: Bool) {
         if hidden {
             // tabBar가 숨겨져 있으면 전체 뷰의 높이를 tabBar의 높이만큼 늘려줍니다.
-            selectedViewController?.view.frame.size.height = view.frame.height + tabBar.frame.height - 55
+            selectedViewController?.view.frame.size.height = view.frame.height + tabBar.frame.height - 36
         } else {
             // tabBar가 표시되면 전체 뷰의 높이를 원래대로 되돌립니다.
-            selectedViewController?.view.frame.size.height = view.frame.height + 55
+            selectedViewController?.view.frame.size.height = view.frame.height + 36
         }
     }
 

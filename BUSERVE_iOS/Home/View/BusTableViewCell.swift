@@ -16,7 +16,7 @@ class BusTableViewCell: UITableViewCell {
     
     lazy var busImage: UIImageView = {
        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
-        image.image = UIImage(named: "bus")
+        image.image = (traitCollection.userInterfaceStyle == .dark) ? UIImage(named: "DarkModeBus") : UIImage(named: "LightModeBus")
         image.contentMode = .scaleAspectFit
         image.clipsToBounds = true
         return image
@@ -108,6 +108,8 @@ class BusTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        self.backgroundColor = .Background
+        
         self.addSubview(topStackView)
         contentView.addSubview(bottomStackView)
         
@@ -149,9 +151,18 @@ class BusTableViewCell: UITableViewCell {
     
     func settingBookmarkButton(isBookmarked: Bool) {
         if isBookmarked {
-            bookmarkButton.configuration = UIButton.Configuration.bookmarkButtonStyle(style: .bookmarked)
+            bookmarkButton.configuration = UIButton.Configuration.bookmarkButtonStyle(style: .bookmarked, traitCollection: self.traitCollection)
         } else {
-            bookmarkButton.configuration = UIButton.Configuration.bookmarkButtonStyle(style: .notBookmarked)
+            bookmarkButton.configuration = UIButton.Configuration.bookmarkButtonStyle(style: .notBookmarked, traitCollection: self.traitCollection)
+        }
+    }
+    
+    /// ( 라이트, 다크 ) 모드가 변경되었을 때 TableView 의 UI 색상을 업데이트
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            busImage.image = (traitCollection.userInterfaceStyle == .dark) ? UIImage(named: "DarkModeBus") : UIImage(named: "LightModeBus")
         }
     }
 }
