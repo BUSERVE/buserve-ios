@@ -15,12 +15,26 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.selectedIndex = 0
+        self.tabBar.tintColor = .MainColor
+ 
+        self.tabBar.barTintColor = UIColor.white
+        self.tabBar.layer.masksToBounds = true
+        
         setupTabItems()
     }
     
     override func viewDidLayoutSubviews() {
        super.viewDidLayoutSubviews()
 
+        self.tabBar.isHidden = false
+        
+        var tabFrame = self.tabBar.frame
+        tabFrame.size.height = 100
+        tabFrame.origin.y = self.view.frame.size.height - 100
+        self.tabBar.frame = tabFrame
+        
         setupTabBarLayout()
    }
 
@@ -28,18 +42,6 @@ class TabBarViewController: UITabBarController {
     // MARK: - Tab Setup
     
     private func setupTabBarLayout() {
-        self.selectedIndex = 0
-        self.tabBar.tintColor = .MainColor
- 
-        self.tabBar.barTintColor = UIColor.white
-        self.tabBar.layer.masksToBounds = true
-        
-        
-        var tabFrame = self.tabBar.frame
-        tabFrame.size.height = 100
-        tabFrame.origin.y = self.view.frame.size.height - 94
-        self.tabBar.frame = tabFrame
-        
         let roundedCorners: UIRectCorner = [.topLeft, .topRight]
         let cornerRadii = CGSize(width: 25, height: 25)
         let path = UIBezierPath(roundedRect: self.tabBar.bounds, byRoundingCorners: roundedCorners, cornerRadii: cornerRadii)
@@ -53,7 +55,6 @@ class TabBarViewController: UITabBarController {
         borderLayer.strokeColor = UIColor.Tertiary.cgColor
         borderLayer.fillColor = nil
         self.tabBar.layer.addSublayer(borderLayer)
-        
     }
     
     private func setupTabItems() {
@@ -98,5 +99,40 @@ class TabBarViewController: UITabBarController {
         navigation.tabBarItem.selectedImage = selectedImage
         
         return navigation
+    }
+}
+// MARK: - extension
+
+extension UITabBarController {
+    func updateViewLayoutsForTabBar(hidden: Bool) {
+        if hidden {
+            // tabBar가 숨겨져 있으면 전체 뷰의 높이를 tabBar의 높이만큼 늘려줍니다.
+            selectedViewController?.view.frame.size.height = view.frame.height + tabBar.frame.height - 55
+        } else {
+            // tabBar가 표시되면 전체 뷰의 높이를 원래대로 되돌립니다.
+            selectedViewController?.view.frame.size.height = view.frame.height + 55
+        }
+    }
+
+    func hideTabBarAnimated(hide:Bool) {
+        UIView.animate(withDuration: 0.5, animations: {
+            if hide {
+                self.tabBar.transform = CGAffineTransform(translationX: 0, y: self.tabBar.frame.height)
+                self.tabBar.isHidden = true
+            } else {
+                self.tabBar.transform = CGAffineTransform(translationX: 0, y: 0)
+                self.tabBar.isHidden = false
+            }
+        }) { (finished) in
+            if finished {
+                self.updateViewLayoutsForTabBar(hidden: hide)
+            }
+        }
+    }
+}
+
+extension UITabBarController: HomeViewControllerDelegate {
+    func shouldHideTabBar(_ hide: Bool) {
+        hideTabBarAnimated(hide: hide)
     }
 }

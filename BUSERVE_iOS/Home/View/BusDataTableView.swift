@@ -31,7 +31,7 @@ class BusDataTableView: UITableView {
         self.isSortBookMark = isSortBookMark
         self.busData = data
         
-        isSortBookMark ? self.sortBookmarkData() : self.sortBusData()
+        isSortBookMark ? self.filterBookmarkBusData() : self.sortBookmarkBusData()
         
         if isSortBookMark {
             self.isScrollEnabled = true
@@ -48,13 +48,18 @@ class BusDataTableView: UITableView {
     // MARK: - methods or layouts
     
     /// 즐겨찾은 버스를 상단으로 정렬해주는 함수
-    private func sortBusData() {
+    private func sortBookmarkBusData() {
         self.busData.sort { $0.isBookmark && !$1.isBookmark }
     }
     
     /// BookMark 페이지에서 Bookmark 된 데이터만 정렬해주는 함수
-    private func sortBookmarkData() {
+    private func filterBookmarkBusData() {
         self.busData = self.busData.filter{ $0.isBookmark == true }
+    }
+    
+    /// BookMark 페이지에서 Bookmark 된 데이터만 정렬해주는 함수
+    func searchBusData(busNumber: String) {
+        self.busData = busDataModel.filter{ $0.busNumber.contains(busNumber) }
     }
 }
 
