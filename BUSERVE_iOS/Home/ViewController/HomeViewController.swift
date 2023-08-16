@@ -217,6 +217,8 @@ extension HomeViewController {
             self.showHideAnimationView(.show)
             self.upDownAnimationTabbar(.up)
 
+            
+            self.view.layoutIfNeeded()
         } completion: { _ in
             self.searchBusTableView.isHidden = true
         }
@@ -271,7 +273,6 @@ extension HomeViewController {
             self.topStackView.isHidden = true
             self.busTableView.isHidden = true
             self.butTableTitleLabel.isHidden = true
-            self.placeHolderView.isHidden = false
         }
     }
     
@@ -301,7 +302,6 @@ extension HomeViewController {
 extension HomeViewController: BusSearchTextFieldDelegate {
     /// TextField 의 Text 가 변경될 때 마다 동작하는 메서드
     func busSearchTextFieldDidChange(_ textField: BusSearchTextField, text: String?) {
-        print(text)
         if ((text?.isEmpty) ?? true) {
             placeHolderView.isHidden = false
             searchBusTableView.isHidden = true
@@ -327,7 +327,13 @@ extension HomeViewController: UITextFieldDelegate {
             self.moveAutoLayoutBusSearchTextField(.up)
             self.showHideAnimationView(.hide)
             self.upDownAnimationTabbar(.down)
-
+            
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            print("애니메이션 끝남")
+            self.searchBusTableView.isHidden = false
+            self.placeHolderView.isHidden = false
+            
             NSLayoutConstraint.activate([
                 self.placeHolderView.topAnchor.constraint(equalTo: self.busSearchTextField.bottomAnchor, constant: 144),
                 self.placeHolderView.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor),
@@ -337,9 +343,6 @@ extension HomeViewController: UITextFieldDelegate {
                 self.searchBusTableView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20),
                 self.searchBusTableView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor)
             ])
-        } completion: { _ in
-            print("애니메이션 끝남")
-            self.searchBusTableView.isHidden = false
         }
     }
 }

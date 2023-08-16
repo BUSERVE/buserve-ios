@@ -42,7 +42,6 @@ class TabBarViewController: UITabBarController {
     // MARK: - Tab Setup
     
     private func setupTabBarLayout() {
-        
         let roundedCorners: UIRectCorner = [.topLeft, .topRight]
         let cornerRadii = CGSize(width: 25, height: 25)
         let path = UIBezierPath(roundedRect: self.tabBar.bounds, byRoundingCorners: roundedCorners, cornerRadii: cornerRadii)
@@ -56,7 +55,6 @@ class TabBarViewController: UITabBarController {
         borderLayer.strokeColor = UIColor.Tertiary.cgColor
         borderLayer.fillColor = nil
         self.tabBar.layer.addSublayer(borderLayer)
-        
     }
     
     private func setupTabItems() {
@@ -121,11 +119,9 @@ extension UITabBarController {
             if hide {
                 self.tabBar.transform = CGAffineTransform(translationX: 0, y: self.tabBar.frame.height)
                 self.tabBar.isHidden = true
-                self.view.setNeedsLayout()
             } else {
                 self.tabBar.transform = CGAffineTransform(translationX: 0, y: 0)
                 self.tabBar.isHidden = false
-                self.view.setNeedsLayout()
             }
         }) { (finished) in
             if finished {
