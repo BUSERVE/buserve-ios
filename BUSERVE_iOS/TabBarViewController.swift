@@ -38,7 +38,6 @@ class TabBarViewController: UITabBarController {
         setupTopLineTabBarLayout()
    }
 
-    
     // MARK: - Tab Setup
     
     private func setupTopLineTabBarLayout() {
