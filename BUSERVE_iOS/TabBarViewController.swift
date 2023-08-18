@@ -21,9 +21,6 @@ class TabBarViewController: UITabBarController {
         self.tabBar.barTintColor = .DarkModeSecondBackground
         self.tabBar.isTranslucent = false // 시스템 상 블러 효과가 기본으로 적용되어 있어 제거해주는 역할
         self.tabBar.layer.cornerRadius = 30.0
-
-        self.tabBar.layer.borderColor = (traitCollection.userInterfaceStyle == .dark) ? UIColor.Secondary.cgColor : UIColor.Tertiary.cgColor
-        
         self.tabBar.layer.masksToBounds = true
         setupTabItems()
     }
@@ -38,26 +35,57 @@ class TabBarViewController: UITabBarController {
         tabFrame.origin.y = self.view.frame.size.height - 100
         self.tabBar.frame = tabFrame
         
-        setupTabBarLayout()
+        setupTopLineTabBarLayout()
    }
 
     
     // MARK: - Tab Setup
     
-    private func setupTabBarLayout() {
-        let roundedCorners: UIRectCorner = [.topLeft, .topRight]
-        let cornerRadii = CGSize(width: 25, height: 25)
-        let path = UIBezierPath(roundedRect: self.tabBar.bounds, byRoundingCorners: roundedCorners, cornerRadii: cornerRadii)
-        let maskLayer = CAShapeLayer()
-        maskLayer.path = path.cgPath
-        self.tabBar.layer.mask = maskLayer
-        
-        let borderLayer = CAShapeLayer()
-        borderLayer.path = path.cgPath
-        borderLayer.lineWidth = 1.5
-        borderLayer.strokeColor = UIColor.Tertiary.cgColor
-        borderLayer.fillColor = nil
-        self.tabBar.layer.addSublayer(borderLayer)
+    private func setupTopLineTabBarLayout() {
+        let layer = CAShapeLayer()
+        let path = UIBezierPath()
+
+        let cornerRadius: CGFloat = 30.0 // 탭바의 라운드 처리된 부분의 반경입니다.
+
+        // 좌측 상단 시작점
+        path.move(to: CGPoint(x: 0, y: cornerRadius))
+
+        // 좌측 상단 라운드 처리된 부분 그림
+        path.addArc(withCenter: CGPoint(x: cornerRadius, y: cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: .pi,
+                    endAngle: 1.5 * .pi,
+                    clockwise: true)
+
+        // 상단 우측까지 그림
+        path.addLine(to: CGPoint(x: tabBar.bounds.width - cornerRadius, y: 0))
+
+        // 우측 상단 라운드 처리된 부분 그림
+        path.addArc(withCenter: CGPoint(x: tabBar.bounds.width - cornerRadius, y: cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: 1.5 * .pi,
+                    endAngle: 2 * .pi,
+                    clockwise: true)
+
+        layer.path = path.cgPath
+        layer.strokeColor = UIColor.Tertiary_SecondaryColor.cgColor //(traitCollection.userInterfaceStyle == .dark) ? UIColor.Secondary.cgColor : UIColor.Tertiary.cgColor // 테두리 색상 설정
+        layer.lineWidth = 1.5 // 테두리 두께 설정
+        layer.fillColor = UIColor.clear.cgColor
+
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = CGRect(x: 0, y: 0, width: tabBar.bounds.width, height: cornerRadius * 2) // gradientLayer의 크기 설정
+        gradientLayer.colors = [UIColor.clear.cgColor,
+                                layer.strokeColor!,
+                                layer.strokeColor!,
+                                UIColor.clear.cgColor] // 알파값이 변화하는 그라디언트
+
+        let roundPercent = cornerRadius / tabBar.bounds.width
+        gradientLayer.locations = [0, NSNumber(value: Float(roundPercent)), NSNumber(value: 1.0 - Float(roundPercent)), 1]
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+
+        tabBar.layer.addSublayer(layer)
+        layer.mask = gradientLayer  // gradientLayer를 mask로 설정하여 두께를 조절
     }
     
     private func setupTabItems() {
