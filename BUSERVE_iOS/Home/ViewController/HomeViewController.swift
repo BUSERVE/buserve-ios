@@ -95,7 +95,7 @@ class HomeViewController: UIViewController {
         self.placeHolderView.isHidden = true
         busSearchTextField.searchDelegate = self
         busSearchTextField.delegate = self
-        
+        busTableView.viewControllerDelegate = self
         addSubviews()
         configureConstraints()
         hideKeyboardWhenTappedAround()
@@ -215,7 +215,6 @@ extension HomeViewController {
             self.showHideAnimationView(.show)
             self.upDownAnimationTabbar(.up)
 
-            
             self.view.layoutIfNeeded()
         } completion: { _ in
             self.searchBusTableView.isHidden = true
@@ -369,4 +368,37 @@ extension HomeViewController: UITextFieldDelegate {
 
 protocol HomeViewControllerDelegate: AnyObject {
     func shouldHideTabBar(_ hide: Bool)
+}
+
+extension HomeViewController: BusTableViewCellDelegate {
+    func didTapReservationButton() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let message = "버스 좌석을 예약하시려면\n노쇼 방지를 위해서\n위치 인증이 필요해요."
+        let attributedString = NSMutableAttributedString(string: message)
+        
+        // PopUpViewController 인스턴스 생성
+        let popUpVC = PopUpViewController(attributedMessageText: attributedString)
+
+        // 버튼 및 동작 추가 (옵션)
+        popUpVC.addActionBtn(title: "취소", titleColor: .Secondary, backgroundColor: .ButtonAlertBackground) {
+            popUpVC.dismiss(animated: true, completion: nil)
+        }
+        
+        // 버튼 및 동작 추가 (옵션)
+        popUpVC.addActionBtn(title: "위치 인증하기", titleColor: .white, backgroundColor: .MainColor) {
+            guard let noshow = storyboard.instantiateViewController(withIdentifier: "NoShow") as? Noshow else {
+                print("Failed to instantiate Noshow")
+                return
+            }
+
+            popUpVC.dismiss(animated: true) {
+                print("PopUp dismissed")
+                noshow.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(noshow, animated: true)
+            }
+        }
+        
+        // 팝업 뷰 컨트롤러 띄우기
+        self.present(popUpVC, animated: true, completion: nil)
+    }
 }

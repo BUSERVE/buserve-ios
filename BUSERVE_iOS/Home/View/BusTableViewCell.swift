@@ -13,6 +13,7 @@ class BusTableViewCell: UITableViewCell {
 
     static let busCellId = "BusCellId"
     var onBookmarkButtonTap: (() -> Void)?
+    weak var delegate: BusTableViewCellDelegate?
     
     lazy var busImage: UIImageView = {
        let image = UIImageView(frame: CGRect(x: 0, y: 0, width: 18, height: 18))
@@ -146,7 +147,7 @@ class BusTableViewCell: UITableViewCell {
     }
 
     @objc func reservationButtonClicked(_ sender: UIButton) {
-        print("좌석 예약하기")
+        delegate?.didTapReservationButton()
     }
     
     func settingBookmarkButton(isBookmarked: Bool) {
@@ -165,4 +166,8 @@ class BusTableViewCell: UITableViewCell {
             busImage.image = (traitCollection.userInterfaceStyle == .dark) ? UIImage(named: "DarkModeBus") : UIImage(named: "LightModeBus")
         }
     }
+}
+
+protocol BusTableViewCellDelegate: AnyObject {
+    func didTapReservationButton()
 }

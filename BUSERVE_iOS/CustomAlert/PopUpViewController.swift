@@ -16,7 +16,7 @@ class PopUpViewController: UIViewController {
 
     private lazy var containerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = .ButtonAlertBackground // .white
         view.layer.cornerRadius = 16
         view.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
 
@@ -47,7 +47,7 @@ class PopUpViewController: UIViewController {
         label.text = messageText
         label.textAlignment = .center
         label.font = UIFont(name: "Pretendard-Regular", size: 16)
-        label.textColor = UIColor(red: 0.204, green: 0.227, blue: 0.251, alpha: 1)
+        label.textColor = .Body // UIColor(red: 0.204, green: 0.227, blue: 0.251, alpha: 1)
         label.numberOfLines = 0
 
         if let attributedMessageText = attributedMessageText?.mutableCopy() as? NSMutableAttributedString {

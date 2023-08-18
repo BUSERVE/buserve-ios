@@ -13,6 +13,7 @@ class BusDataTableView: UITableView {
     
     var busData: [BusDataModel] = []
     var isSortBookMark: Bool = false
+    weak var viewControllerDelegate: BusTableViewCellDelegate?
     
     // MARK: - Life Cycles
     
@@ -82,7 +83,7 @@ extension BusDataTableView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row % 2 == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "BusCellId", for: indexPath) as! BusTableViewCell
-            
+            cell.delegate = viewControllerDelegate
             cell.backgroundColor = .DarkModeSecondBackground
             cell.selectionStyle = .none
             cell.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
