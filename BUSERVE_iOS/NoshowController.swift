@@ -19,13 +19,16 @@ class Noshow: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.isNavigationBarHidden = false
         
+        self.navigationController?.setCustomBackButton(sfSymbol: "chevron.left", imageColor: .Body, weight: .bold)
+
         
         TitleLabel.font = UIFont(name: "Pretendard-Bold", size: 24)
-        TitleLabel.textColor = UIColor(red: 0.20, green: 0.23, blue: 0.25, alpha: 1.00)
+        TitleLabel.textColor = .Body // UIColor(red: 0.20, green: 0.23, blue: 0.25, alpha: 1.00)
         
         
-        InforView.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00).withAlphaComponent(0.75)
+//        InforView.backgroundColor = UIColor(red: 0.96, green: 0.96, blue: 0.96, alpha: 1.00).withAlphaComponent(0.75)
         InforView.layer.cornerRadius = 16
         
         let text =
@@ -74,10 +77,10 @@ class Noshow: UIViewController {
             i.layer.cornerRadius = i.layer.frame.size.width / 2
             i.tintColor = UIColor.white
             if i == ClickBtn.first{
-                i.backgroundColor = UIColor(red: 0.80, green: 0.83, blue: 0.85, alpha: 1.00)
-                i.setImage(UIImage(named: "Cancel.png"), for: .normal)
+                i.backgroundColor = .Tertiary_SecondaryColor // UIColor(red: 0.80, green: 0.83, blue: 0.85, alpha: 1.00)
+                i.setImage(UIImage(named: "cancel.png"), for: .normal)
             }else{
-                i.backgroundColor = UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
+                i.backgroundColor = .MainColor // UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
                 i.setImage(UIImage(named: "Check.png"), for: .normal)
             }
         }

@@ -27,8 +27,6 @@ class TabBarViewController: UITabBarController {
     
     override func viewDidLayoutSubviews() {
        super.viewDidLayoutSubviews()
-
-        self.tabBar.isHidden = false
         
         var tabFrame = self.tabBar.frame
         tabFrame.size.height = 100

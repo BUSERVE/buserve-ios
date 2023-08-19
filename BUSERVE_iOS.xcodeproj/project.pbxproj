@@ -16,6 +16,7 @@
 		3F22B5CB2A7D0C400067D01C /* TextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */; };
 		3F3624B02A7DF0EB0066E531 /* BusDataTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */; };
 		3F3624B22A7DF1FB0066E531 /* BusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */; };
+		3F72E80A2A8F973B008E2579 /* NavigationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F72E8092A8F973B008E2579 /* NavigationExtension.swift */; };
 		3F78D46F2A8BC40600815CCD /* PlaceHolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78D46E2A8BC40600815CCD /* PlaceHolderView.swift */; };
 		3F78D4712A8BC56900815CCD /* AnimationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F78D4702A8BC56900815CCD /* AnimationModel.swift */; };
 		3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */; };
@@ -108,6 +109,7 @@
 		3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldExtension.swift; sourceTree = "<group>"; };
 		3F3624AF2A7DF0EB0066E531 /* BusDataTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusDataTableView.swift; sourceTree = "<group>"; };
 		3F3624B12A7DF1FB0066E531 /* BusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTableViewCell.swift; sourceTree = "<group>"; };
+		3F72E8092A8F973B008E2579 /* NavigationExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationExtension.swift; sourceTree = "<group>"; };
 		3F78D46E2A8BC40600815CCD /* PlaceHolderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceHolderView.swift; sourceTree = "<group>"; };
 		3F78D4702A8BC56900815CCD /* AnimationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationModel.swift; sourceTree = "<group>"; };
 		3F7DBD012A80678B00410404 /* AuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticateAdapter.swift; sourceTree = "<group>"; };
@@ -476,6 +478,7 @@
 				3FD4F2C12A77560C0097E107 /* ButtonExtension.swift */,
 				3F22B5C42A7CE7710067D01C /* ImageExtension.swift */,
 				3F22B5CA2A7D0C400067D01C /* TextFieldExtension.swift */,
+				3F72E8092A8F973B008E2579 /* NavigationExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -708,6 +711,7 @@
 				BE2E57412A761DF500AF2C30 /* ReservationDetailCell.swift in Sources */,
 				BE2E57392A761DF500AF2C30 /* BuserveHelpViewController.swift in Sources */,
 				48FB18F22A8522BD00ABA58A /* BusStopTableViewCell.swift in Sources */,
+				3F72E80A2A8F973B008E2579 /* NavigationExtension.swift in Sources */,
 				BE2E57402A761DF500AF2C30 /* LogOutViewController.swift in Sources */,
 				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
