@@ -26,7 +26,7 @@ class CompletedSignUpLabelView: UIView {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.font = .body_Reading
-        label.textColor = .Secondary
+        label.textColor = .Secondary_TertiaryColor
         label.translatesAutoresizingMaskIntoConstraints = false
         label.sizeToFit()
         return label
@@ -61,5 +61,4 @@ class CompletedSignUpLabelView: UIView {
     
         ])
     }
-
 }

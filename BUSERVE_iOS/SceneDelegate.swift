@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .Background
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        window?.rootViewController = TabBarViewController()
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController()) // TabBarViewController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

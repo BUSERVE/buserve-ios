@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    // MARK: - Properties
+    
     private var kakaoLoginButton = SocialLoginButtonView(type: .kakao)
     private var googleLoginButton = SocialLoginButtonView(type: .google)
     private var appleLoginButton = SocialLoginButtonView(type: .apple)
@@ -24,7 +26,7 @@ class LoginViewController: UIViewController {
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 10
         
-        let attributedText = NSMutableAttributedString(string: "반가워요!\n오늘부터 출퇴근길\nBUSERVE와 함께해요!")
+        let attributedText = NSMutableAttributedString(string: "반가워요!\n오늘부터 출퇴근길\nBUSERVE 와 함께해요!")
         attributedText.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSRange(location: 0, length: attributedText.length))
 
         let rangeBUSERVE = (attributedText.string as NSString).range(of: "BUSERVE")
@@ -39,10 +41,13 @@ class LoginViewController: UIViewController {
         return label
     }()
     
+    // MARK: - Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .Background
+        self.navigationController?.navigationBar.isHidden = true
         
         [titleLabel, kakaoLoginButton, googleLoginButton, appleLoginButton].forEach { view.addSubview($0) }
         
@@ -51,7 +56,13 @@ class LoginViewController: UIViewController {
         appleLoginButton.translatesAutoresizingMaskIntoConstraints = false
 
         configureConstraints()
+        
+        kakaoLoginButton.addTarget(self, action: #selector(kakaoButtonTapped), for: .touchUpInside)
+        googleLoginButton.addTarget(self, action: #selector(googleButtonTapped), for: .touchUpInside)
+        appleLoginButton.addTarget(self, action: #selector(appleButtonTapped), for: .touchUpInside)
     }
+    
+    // MARK: - layouts
     
     private func configureConstraints() {
         NSLayoutConstraint.activate([
@@ -78,5 +89,53 @@ class LoginViewController: UIViewController {
             appleLoginButton.topAnchor.constraint(equalTo: googleLoginButton.safeAreaLayoutGuide.bottomAnchor, constant: 12),
             appleLoginButton.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -32),
         ])
+    }
+    
+    // MARK: - methods
+    
+    @objc func kakaoButtonTapped(_ sender: UIButton) {
+        print("kakoButton Tapped")
+    }
+    
+    @objc func googleButtonTapped(_ sender: UIButton) {
+        print("googleButton Tapped")
+    }
+    
+    @objc func appleButtonTapped(_ sender: UIButton) {
+        print("appleButton Tapped")
+        
+        let appleAdapter = AppleAuthenticateAdapter()
+        
+        Task {
+            do {
+                let result = try await SocialLoginManager.shared.login(with: appleAdapter)
+                switch result {
+                case .success:
+                    print("Successfully logged in with Apple.")
+                    
+                    let completedVC = CompletedSignUpViewController()
+                    navigationController?.pushViewController(completedVC, animated: true)
+                    
+                case .failure(let error):
+                    print("Failed to login with Apple. Error: \(error)")
+                }
+            } catch {
+                print("Login error: \(error)")
+            }
+        }
+    }
+}
+
+
+extension LoginViewController {
+    /// ( 라이트, 다크 ) 모드가 변경되었을 때 TableView 의 UI 색상을 업데이트
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            googleLoginButton.configuration?.background.strokeWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
+            
+            appleLoginButton.configuration?.background.strokeWidth = (traitCollection.userInterfaceStyle == .dark) ? 1 : 0
+        }
     }
 }

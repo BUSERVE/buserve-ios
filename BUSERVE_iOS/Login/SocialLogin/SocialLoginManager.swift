@@ -20,9 +20,17 @@ class SocialLoginManager {
     
     private init() {}
     
-    private(set) var isLoggedIn: Bool = false
+    private(set) var isLoggedIn: Bool = false {
+        didSet {
+            print(self)
+        }
+    }
 
     var currentUseCase: LoginUseCase?
+    
+    var currentAdapterType: String? {
+        return currentUseCase?.adapterType
+    }
     
     // MARK: - methods
     
@@ -35,7 +43,7 @@ class SocialLoginManager {
         
         do {
             let result = try await currentUseCase.login()
-            isLoggedIn = true
+            isLoggedIn = result
             return .success
         } catch let error {
             isLoggedIn = false

@@ -23,6 +23,10 @@ class TabBarViewController: UITabBarController {
         self.tabBar.layer.cornerRadius = 30.0
         self.tabBar.layer.masksToBounds = true
         setupTabItems()
+        
+        if let navigationController = self.navigationController {
+            navigationController.interactivePopGestureRecognizer?.isEnabled = false
+        }
     }
     
     override func viewDidLayoutSubviews() {
