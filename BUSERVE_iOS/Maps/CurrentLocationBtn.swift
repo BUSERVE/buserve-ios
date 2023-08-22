@@ -15,6 +15,8 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
     let marker = NMFMarker()
     var mapView: NMFMapView!
     
+    
+    
     func setMapView(_ mapView: NMFMapView) {
         self.mapView = mapView
     }
@@ -28,6 +30,7 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
         setUpView()
     }
     func setUpView(){
+        self.translatesAutoresizingMaskIntoConstraints = true
         self.layer.cornerRadius = self.layer.frame.width/2
         self.backgroundColor = .white
         self.setImage(UIImage(named: "location.png"), for: .normal)
@@ -38,7 +41,14 @@ class CurrentLocationBtn: UIButton, CLLocationManagerDelegate {
         self.layer.shadowOffset = CGSize(width: 2, height: 2) // 위치조정
         self.layer.shadowRadius = 8 // 반경
         self.layer.shadowOpacity = 1 // alpha값  */
+        
     }
+    
+    func sizeBtn(_ x: Double, _ y: Double, _ width: Double, _ height : Double){
+        self.frame = CGRect(x: x, y: y, width: width, height: height)
+    }
+    
+    
         
     @objc func locationInfor(){
         self.locationManager.delegate = self

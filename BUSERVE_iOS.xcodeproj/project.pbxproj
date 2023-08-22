@@ -59,6 +59,11 @@
 		48CBCA272A67988400765CE9 /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */; };
 		48CBCA2A2A6799AF00765CE9 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA292A6799AF00765CE9 /* Alamofire */; };
 		48CBCA2D2A679B5800765CE9 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 48CBCA2C2A679B5800765CE9 /* Then */; };
+		48E7B5B62A94F23F00CF49B2 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7B5B52A94F23F00CF49B2 /* SheetView.swift */; };
+		48E7B5B82A94F26400CF49B2 /* SheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7B5B72A94F26400CF49B2 /* SheetViewController.swift */; };
+		48E7B5BA2A94F28F00CF49B2 /* SheetInforViewInScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7B5B92A94F28F00CF49B2 /* SheetInforViewInScroll.swift */; };
+		48E7B5BC2A94F2BC00CF49B2 /* SheetScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7B5BB2A94F2BC00CF49B2 /* SheetScrollView.swift */; };
+		48E7B5BE2A94F2E700CF49B2 /* MapPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48E7B5BD2A94F2E700CF49B2 /* MapPageControl.swift */; };
 		48FB18912A85214300ABA58A /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB188F2A85214300ABA58A /* PopUpViewController.swift */; };
 		48FB18922A85214300ABA58A /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB18902A85214300ABA58A /* UIViewController.swift */; };
 		48FB18B52A85223B00ABA58A /* nextDay.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FB18AC2A85223B00ABA58A /* nextDay.png */; };
@@ -151,6 +156,11 @@
 		48CBCA1C2A67937600765CE9 /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
 		48CBCA1D2A67937700765CE9 /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
 		48CBCA1E2A67937700765CE9 /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		48E7B5B52A94F23F00CF49B2 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SheetView.swift; path = BUSERVE_iOS/Maps/SheetView.swift; sourceTree = SOURCE_ROOT; };
+		48E7B5B72A94F26400CF49B2 /* SheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetViewController.swift; sourceTree = "<group>"; };
+		48E7B5B92A94F28F00CF49B2 /* SheetInforViewInScroll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetInforViewInScroll.swift; sourceTree = "<group>"; };
+		48E7B5BB2A94F2BC00CF49B2 /* SheetScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetScrollView.swift; sourceTree = "<group>"; };
+		48E7B5BD2A94F2E700CF49B2 /* MapPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPageControl.swift; sourceTree = "<group>"; };
 		48FB188F2A85214300ABA58A /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		48FB18902A85214300ABA58A /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		48FB18AC2A85223B00ABA58A /* nextDay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextDay.png; sourceTree = "<group>"; };
@@ -393,6 +403,7 @@
 		48C5F7F52A6EBBEC001B4691 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				48E7B5B42A94F20E00CF49B2 /* SheetPopup */,
 				48BC70892A8520AD00C3BE97 /* MapsViewController.swift */,
 				48BC70832A85208B00C3BE97 /* CurrentLocationBtn.swift */,
 				48BC70842A85208B00C3BE97 /* ReserveBusMarker.swift */,
@@ -415,6 +426,18 @@
 			);
 			name = Font;
 			path = "글꼴";
+			sourceTree = "<group>";
+		};
+		48E7B5B42A94F20E00CF49B2 /* SheetPopup */ = {
+			isa = PBXGroup;
+			children = (
+				48E7B5B52A94F23F00CF49B2 /* SheetView.swift */,
+				48E7B5B72A94F26400CF49B2 /* SheetViewController.swift */,
+				48E7B5B92A94F28F00CF49B2 /* SheetInforViewInScroll.swift */,
+				48E7B5BB2A94F2BC00CF49B2 /* SheetScrollView.swift */,
+				48E7B5BD2A94F2E700CF49B2 /* MapPageControl.swift */,
+			);
+			path = SheetPopup;
 			sourceTree = "<group>";
 		};
 		48FB18CE2A85226800ABA58A /* BusReserveView */ = {
@@ -667,15 +690,19 @@
 				3F22B5C12A7CD4AE0067D01C /* HomeViewController.swift in Sources */,
 				48FB18DB2A85227E00ABA58A /* currentDay.swift in Sources */,
 				48BC70872A85208B00C3BE97 /* ReserveBusMarker.swift in Sources */,
+				48E7B5BE2A94F2E700CF49B2 /* MapPageControl.swift in Sources */,
 				4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */,
 				BECCE5B92A7CF52400693D19 /* ChargeCompleteViewController.swift in Sources */,
 				48FB18DE2A85227E00ABA58A /* BusStopName.swift in Sources */,
+				48E7B5B62A94F23F00CF49B2 /* SheetView.swift in Sources */,
 				BE2E573A2A761DF500AF2C30 /* ReservationDetailsViewController.swift in Sources */,
 				488199062A6791CD00D7C698 /* ViewController.swift in Sources */,
+				48E7B5BA2A94F28F00CF49B2 /* SheetInforViewInScroll.swift in Sources */,
 				3FD4F2BA2A7747A20097E107 /* BookmarkViewController.swift in Sources */,
 				48FB18EF2A8522BD00ABA58A /* BusStopTitle.swift in Sources */,
 				3FD4F2C22A77560C0097E107 /* ButtonExtension.swift in Sources */,
 				3F22B5CB2A7D0C400067D01C /* TextFieldExtension.swift in Sources */,
+				48E7B5BC2A94F2BC00CF49B2 /* SheetScrollView.swift in Sources */,
 				3F3624B22A7DF1FB0066E531 /* BusTableViewCell.swift in Sources */,
 				3F22B5C72A7CE83A0067D01C /* HomeTitleLabelView.swift in Sources */,
 				BE2E573B2A761DF500AF2C30 /* WithdrawViewController.swift in Sources */,
@@ -716,6 +743,7 @@
 				3FD3CDD52A703CED005C405C /* FontExtension.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				3FD3CDDA2A704265005C405C /* LoginViewController.swift in Sources */,
+				48E7B5B82A94F26400CF49B2 /* SheetViewController.swift in Sources */,
 				BE98EE0C2A6988F100FEA9E2 /* ColorExtension.swift in Sources */,
 				3FD3CDDC2A7042DE005C405C /* SocialLoginButtonView.swift in Sources */,
 				3F7DBD062A806E3200410404 /* LoginUseCase.swift in Sources */,

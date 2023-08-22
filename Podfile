@@ -5,6 +5,7 @@ target 'BUSERVE_iOS' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   pod 'NMapsMap'
+  pod 'FloatingPanel'
 
   use_frameworks!
 

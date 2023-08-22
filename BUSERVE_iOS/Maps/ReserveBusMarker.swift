@@ -9,25 +9,27 @@ import UIKit
 import NMapsMap
 import CoreLocation
 import MapKit
+import FloatingPanel
 
 
-class ReserveBusMarker: MapsViewController {
+class ReserveBusMarker: MapsViewController, FloatingPanelControllerDelegate {
     
-    var reserveLat = 37.57152 //예약한 버스 정류장 위도 <<-- 수정하면 됨
-    var reserveLng = 126.97714 //예약한 버스 정류장 경도 << -- 수정하면 됨
+    var reserveLat = 37.505158 //예약한 버스 정류장 위도 <<-- 수정하면 됨
+    var reserveLng = 126.957111 //예약한 버스 정류장 경도 << -- 수정하면 됨
     var naverCoordinates: [NMGLatLng] = []
     var pathOverlay = NMFPath()
     
-    
     required init?(coder aDecoder : NSCoder) {
         super.init(coder: aDecoder)
+    
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         mapPathSetup(mapView)
+        sheet()
+        setBtn()
     }
-    
     
     private func mapPathSetup(_ mapView : NMFMapView){
         guard let currentLocation = locationBtn.locationManager.location else {
@@ -40,7 +42,7 @@ class ReserveBusMarker: MapsViewController {
         
         
         let sourceCoordinate = CLLocationCoordinate2D(latitude: currentLat, longitude: currentLng) // 현재위치 좌표
-        let destinationReserveCoordinate = CLLocationCoordinate2D(latitude: reserveLat ?? 0, longitude: reserveLng ?? 0) // 예약한 버스정류장 위치 좌표
+        let destinationReserveCoordinate = CLLocationCoordinate2D(latitude: reserveLat , longitude: reserveLng ) // 예약한 버스정류장 위치 좌표
         
         let sourcePlacemark = MKPlacemark(coordinate: sourceCoordinate)
         let destinationPlaceMark = MKPlacemark(coordinate: destinationReserveCoordinate)
@@ -49,7 +51,7 @@ class ReserveBusMarker: MapsViewController {
         let destinationItem = MKMapItem(placemark: destinationPlaceMark)
         
         let destinationMark = NMFMarker()
-        destinationMark.position = NMGLatLng(lat: reserveLat ?? 0, lng: reserveLng ?? 0)
+        destinationMark.position = NMGLatLng(lat: reserveLat ?? 0, lng: reserveLng )
         destinationMark.iconImage = NMFOverlayImage(name: "reserveBus.png")
         destinationMark.captionText = "예약한 버스정류장"
         destinationMark.isHideCollidedSymbols = true
@@ -93,4 +95,38 @@ class ReserveBusMarker: MapsViewController {
         cameraUpdate.animation = .easeIn
         mapView.moveCamera(cameraUpdate)
     }
+    
+    private func sheet(){
+        let apper = SurfaceAppearance()
+        apper.cornerRadius = 16.0
+        
+        let fpc = FloatingPanelController()
+        fpc.delegate = self
+        fpc.layout = SetFloatingPanelLayout()
+        guard let contentVC = storyboard?.instantiateViewController(withIdentifier: "SheetViewController") as? SheetViewController
+        else{
+            return
+        }
+        fpc.surfaceView.appearance = apper
+        fpc.set(contentViewController: contentVC)
+        fpc.addPanel(toParent: self)
+        
+        
+    }
+    
+    func floatingPanelDidMove(_ fpc: FloatingPanelController) {
+        let yPos = fpc.surfaceView.frame.origin.y
+        self.locationBtn.frame.origin.y = yPos - self.locationBtn.frame.height - 15
+        print(yPos - self.locationBtn.frame.height - 10)
+    }
+}
+
+class SetFloatingPanelLayout: FloatingPanelLayout{
+    let position: FloatingPanelPosition = .bottom
+    let initialState: FloatingPanelState = .half
+    let anchors: [FloatingPanelState : FloatingPanelLayoutAnchoring] = [
+        .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),
+        .half: FloatingPanelLayoutAnchor(fractionalInset: 0.4, edge: .bottom, referenceGuide: .safeArea),
+        .tip: FloatingPanelLayoutAnchor(absoluteInset: 10, edge: .bottom, referenceGuide: .safeArea),
+    ]
 }
