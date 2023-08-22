@@ -13,26 +13,28 @@ import CoreLocation
 class MapsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     var locationManager = CLLocationManager()
-    var mapView: NMFMapView!
     let marker = NMFMarker()
     
     @IBOutlet weak var locationBtn: CurrentLocationBtn!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // mapView = NMFMapView(frame: view.frame)
-        mapView = NMFMapView(frame: view.frame)
+    lazy var mapView : NMFMapView = {
+        let mapView = NMFMapView(frame: view.frame)
         mapView.setLayerGroup(NMF_LAYER_GROUP_TRANSIT, isEnabled: true)
         mapView.allowsZooming = true
         mapView.allowsScrolling = true
         mapView.isIndoorMapEnabled = true
         mapView.zoomLevel = 15
-        
+        return mapView
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
         locationBtn.setMapView(mapView)
         
         view.addSubview(mapView)
         view.addSubview(locationBtn)
+        view.bringSubviewToFront(locationBtn)
         
         /* mapContraints */
         mapView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,6 +45,10 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, MKMapView
         setLoactionManager()
         
         locationBtn.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
+    }
+    
+    func setBtn(){
+        locationBtn.sizeBtn(335, 454, 50, 50)
     }
     
     func setLoactionManager(){
