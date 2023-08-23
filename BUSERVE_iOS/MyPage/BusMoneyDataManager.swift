@@ -62,7 +62,7 @@ class BusMoneyDataManager {
         }
     }
     
-    func asdfasdf(chargeMoney: Int) async throws -> Bool {
+    func changeBusCharginMoney(chargeMoney: Int) async throws -> Bool {
         
         let url = baseURL + "bus-money/charge"
         var urlComponents = URLComponents(string: url)!

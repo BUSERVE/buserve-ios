@@ -87,7 +87,7 @@ class BusMoneyChargeViewController: UIViewController {
             
         Task {
             do {
-                let result = try await busMoneyDataManager.asdfasdf(chargeMoney: busChargeMoney)
+                let result = try await busMoneyDataManager.changeBusCharginMoney(chargeMoney: busChargeMoney)
                 
                 if result {
                     await MainActor.run {
