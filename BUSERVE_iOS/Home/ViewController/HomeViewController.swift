@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class HomeViewController: UIViewController {
 
@@ -15,9 +16,13 @@ class HomeViewController: UIViewController {
     private lazy var onBoardBusButton = OnBoardBusButtonView()
     private lazy var homeTitleLabel = HomeTitleLabelView()
     private lazy var busSearchTextField =  BusSearchTextField()
-    private lazy var busTableView = BusDataTableView(data: busDataModel, isSortBookMark: false)
+//    private lazy var busTableView = BusDataTableView(data: busDataModel, isSortBookMark: false)
+    private lazy var busTableView = BusDataTableView(isSortBookMark: false)
     private lazy var searchBusTableView = BusDataTableView()
     private lazy var placeHolderView = PlaceHolderView()
+//    private let locationManager = CLLocationManager()
+    private let nearbyBusStopManager = NearByBusStopManager()
+    private var activityIndicator: UIActivityIndicatorView!
     
     private var busSearchTextFieldLeadingConstraint: NSLayoutConstraint!
     private var busSearchTextFieldTopConstraint: NSLayoutConstraint!
@@ -83,6 +88,14 @@ class HomeViewController: UIViewController {
         return button
     }()
     
+    private lazy var locationButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "location.fill")?.withConfiguration(UIImage.SymbolConfiguration(pointSize: 20, weight: .semibold)), for: .normal)
+        button.tintColor = .Body
+        button.addTarget(self, action: #selector(locationButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -96,11 +109,20 @@ class HomeViewController: UIViewController {
         busSearchTextField.searchDelegate = self
         busSearchTextField.delegate = self
         busTableView.viewControllerDelegate = self
+        nearbyBusStopManager.delegate = self
+        
+        onBoardBusButton.addTarget(self, action: #selector(getOnBusClicked), for: .touchUpInside)
+        
+        activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        
         addSubviews()
         configureConstraints()
         hideKeyboardWhenTappedAround()
         
-        onBoardBusButton.addTarget(self, action: #selector(getOnBusClicked), for: .touchUpInside)
+        showLoading()
+        nearbyBusStopManager.requestLocation()
         
         view.backgroundColor = .Background
     }
@@ -118,9 +140,9 @@ class HomeViewController: UIViewController {
         homeScrollView.addSubview(contentView)
         homeScrollView.addSubview(refreshControl)
 
-        [topStackView, busSearchTextField, butTableTitleLabel, busTableView, backButton, searchBusTableView, placeHolderView].forEach { contentView.addSubview($0) }
+        [topStackView, busSearchTextField, butTableTitleLabel, busTableView, backButton, searchBusTableView, placeHolderView, locationButton, activityIndicator].forEach { contentView.addSubview($0) }
         
-        [topStackView, homeScrollView, busSearchTextField, butTableTitleLabel ,busTableView, backButton, searchBusTableView, placeHolderView].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
+        [topStackView, homeScrollView, busSearchTextField, butTableTitleLabel ,busTableView, backButton, searchBusTableView, placeHolderView, locationButton].forEach { $0.translatesAutoresizingMaskIntoConstraints = false }
     }
     
     private func configureConstraints() {
@@ -156,7 +178,11 @@ class HomeViewController: UIViewController {
 
             butTableTitleLabel.topAnchor.constraint(equalTo: busSearchTextField.bottomAnchor, constant: 46),
             butTableTitleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            butTableTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+//            butTableTitleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            
+            locationButton.leadingAnchor.constraint(equalTo: butTableTitleLabel.trailingAnchor, constant: 223),
+            locationButton.centerYAnchor.constraint(equalTo: butTableTitleLabel.centerYAnchor),
+            locationButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30),
 
 
             busTableView.topAnchor.constraint(equalTo: butTableTitleLabel.bottomAnchor, constant: 20),
@@ -195,6 +221,23 @@ class HomeViewController: UIViewController {
     
     @objc func getOnBusClicked(_ sender: UIButton) {
         print("탑승하기 버튼 Clicked")
+    }
+    
+    @objc func locationButtonTapped(_ sender: UIButton) {
+        showLoading()  // 로딩 표시 시작
+        nearbyBusStopManager.requestLocation()
+    }
+    
+    func showLoading() {
+        activityIndicator.startAnimating()
+        busTableView.isUserInteractionEnabled = false  // tableView와 상호 작용 금지
+        busTableView.isHidden = true
+    }
+    
+    func hideLoading() {
+        activityIndicator.stopAnimating()
+        busTableView.isUserInteractionEnabled = true  // tableView와 상호 작용 허용
+        busTableView.isHidden = false
     }
 }
 
@@ -402,5 +445,30 @@ extension HomeViewController: BusTableViewCellDelegate {
         
         // 팝업 뷰 컨트롤러 띄우기
         self.present(popUpVC, animated: true, completion: nil)
+    }
+}
+
+extension HomeViewController: NearByBusStopManagerDelegate {
+    func didUpdateNearByBusStopRoutes(_ data: nearByBusStopRoutesData) {
+        // TODO: 여기에서 데이터를 테이블 뷰의 데이터 소스에 할당하고, 테이블 뷰를 리로드하세요.
+        
+        let busData: [BusDataModel] = data.result.map { busResultData in
+            return BusDataModel(
+                busNumber: busResultData.routeName,
+                Departure: busResultData.endPoint,
+                Arrival: busResultData.startPoint,
+                isBookmark: busResultData.favorite
+            )
+        }
+        
+        DispatchQueue.main.async {
+            self.busTableView.updateData(busData)
+            self.hideLoading()
+        }
+    }
+
+    func didFailWithError(_ error: Error) {
+        // TODO: 여기에서 오류를 처리하거나 사용자에게 알림을 표시하세요.
+        print("Failed to update data: \(error)")
     }
 }

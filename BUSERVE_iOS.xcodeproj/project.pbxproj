@@ -43,6 +43,7 @@
 		3FE4AFB22A93AC360045C548 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */; };
 		3FE4AFB42A9598600045C548 /* KakaoAuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */; };
 		3FE4AFB82A95F9560045C548 /* BusMoneyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */; };
+		3FE4AFBA2A96669E0045C548 /* NearByBusStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB92A96669E0045C548 /* NearByBusStopManager.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */; };
 		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
@@ -152,6 +153,7 @@
 		3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthenticateAdapter.swift; sourceTree = "<group>"; };
 		3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMoneyDataManager.swift; sourceTree = "<group>"; };
+		3FE4AFB92A96669E0045C548 /* NearByBusStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByBusStopManager.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatReservationComplete.swift; sourceTree = "<group>"; };
 		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 				3F22B5BF2A7CD4940067D01C /* ViewController */,
 				3F22B5BE2A7CD48C0067D01C /* View */,
 				3F78D4702A8BC56900815CCD /* AnimationModel.swift */,
+				3FE4AFB92A96669E0045C548 /* NearByBusStopManager.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -784,6 +787,7 @@
 				48FB18E82A85229800ABA58A /* SeatCollectionViewCell.swift in Sources */,
 				48FB18D72A85227E00ABA58A /* BusReserveViewController.swift in Sources */,
 				3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */,
+				3FE4AFBA2A96669E0045C548 /* NearByBusStopManager.swift in Sources */,
 				3FE4AFB82A95F9560045C548 /* BusMoneyDataManager.swift in Sources */,
 				3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */,
 				48BC708A2A8520AD00C3BE97 /* MapsViewController.swift in Sources */,

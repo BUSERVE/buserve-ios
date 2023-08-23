@@ -11,7 +11,8 @@ class BookmarkViewController: UIViewController {
     
     // MARK: - Properties
     
-    private lazy var busDataListView = BusDataTableView(data: busDataModel, isSortBookMark: true)
+//    private lazy var busDataListView = BusDataTableView(data: busDataModel, isSortBookMark: true)
+    private lazy var busDataListView = BusDataTableView(isSortBookMark: true)
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
