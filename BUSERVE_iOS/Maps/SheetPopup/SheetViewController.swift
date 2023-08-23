@@ -26,7 +26,7 @@ class SheetViewController: UIViewController {
         btn.backgroundColor = UIColor(red: 0.071, green: 0.408, blue: 0.984, alpha: 1)
         btn.layer.cornerRadius = 16
    //
-        btn.addTarget(self, action: #selector(sendData), for: .touchUpInside)
+//        btn.addTarget(self, action: #selector(sendData), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()

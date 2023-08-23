@@ -58,9 +58,7 @@ class MyInformationViewController: UIViewController {
     
     private func configureNavigationBar() {
         self.navigationItem.title = "내 정보 관리"
-        navigationController?.navigationBar.tintColor = UIColor.Body
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.leftBarButtonItem = backButton
+        self.navigationController?.setCustomBackButton(sfSymbol: "chevron.left", imageColor: .Body, weight: .bold)
     }
     
     private func configureView() {
@@ -72,9 +70,9 @@ class MyInformationViewController: UIViewController {
         self.accountDeletionButton.layer.borderWidth = 1.0
     }
     
-    @objc func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
-    }
+//    @objc func backButtonTapped() {
+//        self.navigationController?.popViewController(animated: true)
+//    }
     
     @IBAction func tapLogOutButton(_ sender: UIButton) {
         guard let logOutViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogOutViewController") as? LogOutViewController else { return }

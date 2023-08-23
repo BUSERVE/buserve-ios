@@ -42,6 +42,7 @@
 		3FE4AFB02A93A54B0045C548 /* DeleteUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFAF2A93A54B0045C548 /* DeleteUserInfoUseCase.swift */; };
 		3FE4AFB22A93AC360045C548 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */; };
 		3FE4AFB42A9598600045C548 /* KakaoAuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */; };
+		3FE4AFB82A95F9560045C548 /* BusMoneyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */; };
 		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
@@ -150,6 +151,7 @@
 		3FE4AFAF2A93A54B0045C548 /* DeleteUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfoUseCase.swift; sourceTree = "<group>"; };
 		3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthenticateAdapter.swift; sourceTree = "<group>"; };
+		3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMoneyDataManager.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatReservationComplete.swift; sourceTree = "<group>"; };
 		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
@@ -356,6 +358,29 @@
 			path = UseCase;
 			sourceTree = "<group>";
 		};
+		3FE4AFB52A95F8EC0045C548 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BE2E57332A761DF500AF2C30 /* ReservationDetail.swift */,
+				BE2E57382A761DF500AF2C30 /* ReservationDetailCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3FE4AFB62A95F8F60045C548 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE2E57362A761DF500AF2C30 /* MyPageViewController.swift */,
+				BE2E57312A761DF500AF2C30 /* ReservationDetailsViewController.swift */,
+				BE2E57322A761DF500AF2C30 /* WithdrawViewController.swift */,
+				BE2E57342A761DF500AF2C30 /* BusMoneyViewController.swift */,
+				BE2E57352A761DF500AF2C30 /* MyInformationViewController.swift */,
+				BE2E57372A761DF500AF2C30 /* LogOutViewController.swift */,
+				BE2E57302A761DF500AF2C30 /* BuserveHelpViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		4871B9582A6B9A2500309A11 /* Seat */ = {
 			isa = PBXGroup;
 			children = (
@@ -525,15 +550,9 @@
 		BE2E572F2A761DF500AF2C30 /* MyPage */ = {
 			isa = PBXGroup;
 			children = (
-				BE2E57362A761DF500AF2C30 /* MyPageViewController.swift */,
-				BE2E57312A761DF500AF2C30 /* ReservationDetailsViewController.swift */,
-				BE2E57322A761DF500AF2C30 /* WithdrawViewController.swift */,
-				BE2E57332A761DF500AF2C30 /* ReservationDetail.swift */,
-				BE2E57382A761DF500AF2C30 /* ReservationDetailCell.swift */,
-				BE2E57342A761DF500AF2C30 /* BusMoneyViewController.swift */,
-				BE2E57352A761DF500AF2C30 /* MyInformationViewController.swift */,
-				BE2E57372A761DF500AF2C30 /* LogOutViewController.swift */,
-				BE2E57302A761DF500AF2C30 /* BuserveHelpViewController.swift */,
+				3FE4AFB62A95F8F60045C548 /* ViewController */,
+				3FE4AFB52A95F8EC0045C548 /* View */,
+				3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -765,6 +784,7 @@
 				48FB18E82A85229800ABA58A /* SeatCollectionViewCell.swift in Sources */,
 				48FB18D72A85227E00ABA58A /* BusReserveViewController.swift in Sources */,
 				3FD3CDDE2A72565D005C405C /* CompletedSignUpViewController.swift in Sources */,
+				3FE4AFB82A95F9560045C548 /* BusMoneyDataManager.swift in Sources */,
 				3F7DBD022A80678B00410404 /* AuthenticateAdapter.swift in Sources */,
 				48BC708A2A8520AD00C3BE97 /* MapsViewController.swift in Sources */,
 				48BC70862A85208B00C3BE97 /* CurrentLocationBtn.swift in Sources */,

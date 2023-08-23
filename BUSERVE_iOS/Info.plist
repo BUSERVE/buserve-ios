@@ -20,6 +20,11 @@
 	</array>
 	<key>NMFClientId</key>
 	<string>u20em2fg3q</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Pretendard-Black.otf</string>
