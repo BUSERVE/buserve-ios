@@ -27,10 +27,9 @@ class BusDataTableView: UITableView {
         self.dataSource = self
     }
     
-    convenience init(data: [BusDataModel], isSortBookMark: Bool) {
+    convenience init(isSortBookMark: Bool) {
         self.init(frame: .zero, style: .plain)
         self.isSortBookMark = isSortBookMark
-        self.busData = data
         
         isSortBookMark ? self.filterBookmarkBusData() : self.sortBookmarkBusData()
         
@@ -39,8 +38,26 @@ class BusDataTableView: UITableView {
         } else {
             self.isScrollEnabled = false
         }
-        
     }
+    
+    func updateData(_ newData: [BusDataModel]) {
+        self.busData = newData
+        self.reloadData()
+    }
+    
+//    convenience init(data: [BusDataModel], isSortBookMark: Bool) {
+//        self.init(frame: .zero, style: .plain)
+//        self.isSortBookMark = isSortBookMark
+//        self.busData = data
+//
+//        isSortBookMark ? self.filterBookmarkBusData() : self.sortBookmarkBusData()
+//
+//        if isSortBookMark {
+//            self.isScrollEnabled = true
+//        } else {
+//            self.isScrollEnabled = false
+//        }
+//    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
