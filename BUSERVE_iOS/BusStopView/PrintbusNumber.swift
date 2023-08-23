@@ -1,13 +1,13 @@
 //
-//  BusNumber.swift
+//  PrintbusNumber.swift
 //  BUSERVE_iOS
 //
-//  Created by 정의찬 on 2023/07/31.
+//  Created by 정의찬 on 2023/08/23.
 //
 
 import UIKit
 
-class BusNumber: UIButton {
+class PrintbusNumber: UIButton {
 
     required init?(coder aDecorder : NSCoder) {
         super.init(coder: aDecorder)

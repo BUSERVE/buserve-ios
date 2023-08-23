@@ -89,7 +89,6 @@ extension BusDataTableView: UITableViewDelegate, UITableViewDataSource {
             cell.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
             cell.layer.cornerRadius = 16
             cell.layer.borderColor = UIColor.Tertiary.cgColor
-            
             let index = indexPath.row / 2
             let data = busData[index]
             let routeMap = "\(data.Departure + " ↔ " + data.Arrival)"

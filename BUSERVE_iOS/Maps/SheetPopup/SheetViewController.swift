@@ -8,10 +8,15 @@
 import UIKit
 import NMapsMap
 
+protocol SheetViewDelegate: AnyObject {
+    func updateCoordinatesAndRefreshUI(lat: Double, lng: Double)  // 새로 추가된 메서드
+}
+
 class SheetViewController: UIViewController {
     
     private var sheetUIView : SheetView!
-    private var reserve : ReserveBusMarker?
+
+    weak var delegate: SheetViewDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +30,8 @@ class SheetViewController: UIViewController {
         btn.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16)
         btn.backgroundColor = UIColor(red: 0.071, green: 0.408, blue: 0.984, alpha: 1)
         btn.layer.cornerRadius = 16
-   //
-//        btn.addTarget(self, action: #selector(sendData), for: .touchUpInside)
+        btn.addTarget(self, action: #selector(TouchDown), for: .touchDown)
+        btn.addTarget(self, action: #selector(TouchUp), for: .touchUpInside)
         btn.translatesAutoresizingMaskIntoConstraints = false
         return btn
     }()
@@ -51,6 +56,18 @@ class SheetViewController: UIViewController {
             checkBtn.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20)
         ])
         
+    }
+    
+    @objc func TouchUp (_sender : Any){
+        checkBtn.backgroundColor = UIColor(red: 0.071, green: 0.408, blue: 0.984, alpha: 1)
+        let newLatitude: Double = 37.592724  // 예시 값
+        let newLongitude: Double = 126.615294  // 예시 값
+            delegate?.updateCoordinatesAndRefreshUI(lat: newLatitude, lng: newLongitude)
+        
+    }
+    
+    @objc func TouchDown(_ sender: Any){
+        checkBtn.backgroundColor = .gray
     }
     
 }

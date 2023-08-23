@@ -41,9 +41,17 @@
 		3FE4AFAE2A93A5310045C548 /* LoadUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFAD2A93A5310045C548 /* LoadUserInfoUseCase.swift */; };
 		3FE4AFB02A93A54B0045C548 /* DeleteUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFAF2A93A54B0045C548 /* DeleteUserInfoUseCase.swift */; };
 		3FE4AFB22A93AC360045C548 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */; };
+
+		483962DB2A6E46F1006ADC6E /* Noshow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* Noshow.swift */; };
+		485247EA2A96286500355D10 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 485247E92A96286500355D10 /* back.png */; };
+		485247EC2A96290B00355D10 /* currentLocationSheetPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485247EB2A96290B00355D10 /* currentLocationSheetPop.swift */; };
+		485247F02A96321000355D10 /* CurrentLoactionAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485247EF2A96321000355D10 /* CurrentLoactionAuth.swift */; };
+		485247F22A96536100355D10 /* PrintbusNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485247F12A96536100355D10 /* PrintbusNumber.swift */; };
+
 		3FE4AFB42A9598600045C548 /* KakaoAuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */; };
 		3FE4AFB82A95F9560045C548 /* BusMoneyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
+
 		485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */; };
 		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
 		4871B95D2A6BA2AD00309A11 /* white_bus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4871B95C2A6BA2AD00309A11 /* white_bus.png */; };
@@ -86,7 +94,6 @@
 		48FB18BC2A85223B00ABA58A /* location.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FB18B32A85223B00ABA58A /* location.png */; };
 		48FB18BD2A85223B00ABA58A /* nextBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 48FB18B42A85223B00ABA58A /* nextBtn.png */; };
 		48FB18D72A85227E00ABA58A /* BusReserveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB18CF2A85227D00ABA58A /* BusReserveViewController.swift */; };
-		48FB18D82A85227E00ABA58A /* BusNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB18D02A85227D00ABA58A /* BusNumber.swift */; };
 		48FB18D92A85227E00ABA58A /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB18D12A85227D00ABA58A /* TopView.swift */; };
 		48FB18DA2A85227E00ABA58A /* BusInforCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB18D22A85227D00ABA58A /* BusInforCell.swift */; };
 		48FB18DB2A85227E00ABA58A /* currentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48FB18D32A85227E00ABA58A /* currentDay.swift */; };
@@ -150,9 +157,17 @@
 		3FE4AFAD2A93A5310045C548 /* LoadUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserInfoUseCase.swift; sourceTree = "<group>"; };
 		3FE4AFAF2A93A54B0045C548 /* DeleteUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfoUseCase.swift; sourceTree = "<group>"; };
 		3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+
+		483962DA2A6E46F1006ADC6E /* Noshow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noshow.swift; sourceTree = "<group>"; };
+		485247E92A96286500355D10 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		485247EB2A96290B00355D10 /* currentLocationSheetPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentLocationSheetPop.swift; sourceTree = "<group>"; };
+		485247EF2A96321000355D10 /* CurrentLoactionAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLoactionAuth.swift; sourceTree = "<group>"; };
+		485247F12A96536100355D10 /* PrintbusNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintbusNumber.swift; sourceTree = "<group>"; };
+
 		3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthenticateAdapter.swift; sourceTree = "<group>"; };
 		3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMoneyDataManager.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
+
 		485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatReservationComplete.swift; sourceTree = "<group>"; };
 		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
 		4871B95C2A6BA2AD00309A11 /* white_bus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white_bus.png; sourceTree = "<group>"; };
@@ -194,7 +209,6 @@
 		48FB18B32A85223B00ABA58A /* location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = location.png; sourceTree = "<group>"; };
 		48FB18B42A85223B00ABA58A /* nextBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nextBtn.png; sourceTree = "<group>"; };
 		48FB18CF2A85227D00ABA58A /* BusReserveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusReserveViewController.swift; sourceTree = "<group>"; };
-		48FB18D02A85227D00ABA58A /* BusNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusNumber.swift; sourceTree = "<group>"; };
 		48FB18D12A85227D00ABA58A /* TopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		48FB18D22A85227D00ABA58A /* BusInforCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusInforCell.swift; sourceTree = "<group>"; };
 		48FB18D32A85227E00ABA58A /* currentDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = currentDay.swift; sourceTree = "<group>"; };
@@ -404,6 +418,7 @@
 				48FB18B12A85223B00ABA58A /* throw.png */,
 				4871B95C2A6BA2AD00309A11 /* white_bus.png */,
 				4871B95E2A6BA2DA00309A11 /* black_bus.png */,
+				485247E92A96286500355D10 /* back.png */,
 			);
 			path = Icon;
 			sourceTree = "<group>";
@@ -449,7 +464,7 @@
 				488199012A6791CD00D7C698 /* AppDelegate.swift */,
 				488199032A6791CD00D7C698 /* SceneDelegate.swift */,
 				488199052A6791CD00D7C698 /* ViewController.swift */,
-				483962DA2A6E46F1006ADC6E /* NoshowController.swift */,
+				483962DA2A6E46F1006ADC6E /* Noshow.swift */,
 				488199072A6791CD00D7C698 /* Main.storyboard */,
 				4881990A2A6791CF00D7C698 /* Assets.xcassets */,
 				4881990C2A6791CF00D7C698 /* LaunchScreen.storyboard */,
@@ -477,6 +492,7 @@
 				48BC70892A8520AD00C3BE97 /* MapsViewController.swift */,
 				48BC70832A85208B00C3BE97 /* CurrentLocationBtn.swift */,
 				48BC70842A85208B00C3BE97 /* ReserveBusMarker.swift */,
+				485247EF2A96321000355D10 /* CurrentLoactionAuth.swift */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -506,6 +522,7 @@
 				48E7B5B92A94F28F00CF49B2 /* SheetInforViewInScroll.swift */,
 				48E7B5BB2A94F2BC00CF49B2 /* SheetScrollView.swift */,
 				48E7B5BD2A94F2E700CF49B2 /* MapPageControl.swift */,
+				485247EB2A96290B00355D10 /* currentLocationSheetPop.swift */,
 			);
 			path = SheetPopup;
 			sourceTree = "<group>";
@@ -514,10 +531,9 @@
 			isa = PBXGroup;
 			children = (
 				48FB18D22A85227D00ABA58A /* BusInforCell.swift */,
-				48FB18D02A85227D00ABA58A /* BusNumber.swift */,
+				48FB18D62A85227E00ABA58A /* BusStopName.swift */,
 				48FB18D52A85227E00ABA58A /* BusReserveTableViewCell.swift */,
 				48FB18CF2A85227D00ABA58A /* BusReserveViewController.swift */,
-				48FB18D62A85227E00ABA58A /* BusStopName.swift */,
 				48FB18D32A85227E00ABA58A /* currentDay.swift */,
 				48FB18D42A85227E00ABA58A /* TitleLabel.swift */,
 				48FB18D12A85227D00ABA58A /* TopView.swift */,
@@ -540,9 +556,10 @@
 		48FB18EA2A8522A500ABA58A /* BusStopView */ = {
 			isa = PBXGroup;
 			children = (
-				48FB18EE2A8522BD00ABA58A /* BusStopTableViewCell.swift */,
 				48FB18EB2A8522BD00ABA58A /* BusStopTitle.swift */,
+				48FB18EE2A8522BD00ABA58A /* BusStopTableViewCell.swift */,
 				48FB18ED2A8522BD00ABA58A /* BusStopViewController.swift */,
+				485247F12A96536100355D10 /* PrintbusNumber.swift */,
 			);
 			path = BusStopView;
 			sourceTree = "<group>";
@@ -686,6 +703,7 @@
 				48CBCA1F2A67986800765CE9 /* Pretendard-Black.otf in Resources */,
 				4881990B2A6791CF00D7C698 /* Assets.xcassets in Resources */,
 				4881990E2A6791CF00D7C698 /* LaunchScreen.storyboard in Resources */,
+				485247EA2A96286500355D10 /* back.png in Resources */,
 				488199092A6791CD00D7C698 /* Main.storyboard in Resources */,
 				48FB18B62A85223B00ABA58A /* marker.png in Resources */,
 				48FB18B92A85223B00ABA58A /* Check.png in Resources */,
@@ -747,11 +765,11 @@
 				3FE4AFA52A934D700045C548 /* UserInfoRepository.swift in Sources */,
 				3F7DBD042A80680000410404 /* SocialLoginManager.swift in Sources */,
 				48FB18912A85214300ABA58A /* PopUpViewController.swift in Sources */,
-				483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */,
+				483962DB2A6E46F1006ADC6E /* Noshow.swift in Sources */,
 				BE2E573E2A761DF500AF2C30 /* MyInformationViewController.swift in Sources */,
 				BECCE5B52A7CD94400693D19 /* BusMoneyChargeViewController.swift in Sources */,
-				48FB18D82A85227E00ABA58A /* BusNumber.swift in Sources */,
 				3FD3CDE22A72570D005C405C /* BottomButtonView.swift in Sources */,
+				485247EC2A96290B00355D10 /* currentLocationSheetPop.swift in Sources */,
 				3F22B5C12A7CD4AE0067D01C /* HomeViewController.swift in Sources */,
 				48FB18DB2A85227E00ABA58A /* currentDay.swift in Sources */,
 				48BC70872A85208B00C3BE97 /* ReserveBusMarker.swift in Sources */,
@@ -772,8 +790,10 @@
 				3F3624B22A7DF1FB0066E531 /* BusTableViewCell.swift in Sources */,
 				3FE4AFAC2A93A51B0045C548 /* SaveUserInfoUseCase.swift in Sources */,
 				3F22B5C72A7CE83A0067D01C /* HomeTitleLabelView.swift in Sources */,
+				485247F22A96536100355D10 /* PrintbusNumber.swift in Sources */,
 				BE2E573B2A761DF500AF2C30 /* WithdrawViewController.swift in Sources */,
 				3FD4F2C02A774B5A0097E107 /* BusDataModel.swift in Sources */,
+				485247F02A96321000355D10 /* CurrentLoactionAuth.swift in Sources */,
 				3FE4AFB02A93A54B0045C548 /* DeleteUserInfoUseCase.swift in Sources */,
 				48FB18D92A85227E00ABA58A /* TopView.swift in Sources */,
 				48FB18E52A85229800ABA58A /* TimeLabel.swift in Sources */,

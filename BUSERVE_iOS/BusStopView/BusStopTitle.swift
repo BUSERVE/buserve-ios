@@ -16,5 +16,6 @@ class BusStopTitle: currentDay{
     override func setTitle() {
         super.setTitle()
         self.text = "시민의숲.양재꽃시장 방면"
+        self.textAlignment = .center
     }
 }
