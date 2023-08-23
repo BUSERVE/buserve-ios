@@ -22,9 +22,11 @@ class SheetInforViewInScroll: UIView {
         let bus = UIButton()
         bus.setTitle("9802", for: .normal)
         bus.setTitleColor(UIColor.white, for: .normal)
+        bus.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16)
         bus.setImage(UIImage(named: "white_bus.png"), for: .normal)
         bus.backgroundColor = UIColor(red: 0.071, green: 0.408, blue: 0.984, alpha: 1)
         bus.layer.cornerRadius = 8
+        bus.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         bus.translatesAutoresizingMaskIntoConstraints = false
         return bus
     }()
@@ -34,10 +36,10 @@ class SheetInforViewInScroll: UIView {
         bus.setTitle("공단사거리", for: .normal)
         bus.setTitleColor(UIColor.black, for: .normal)
         bus.setImage(UIImage(named: "black_bus.png"), for: .normal)
+        bus.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 16)
         bus.backgroundColor = UIColor.white
         bus.layer.cornerRadius = 8
-        bus.layer.borderColor = UIColor.black.cgColor
-        bus.layer.borderWidth = 1
+        bus.titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 0)
         bus.translatesAutoresizingMaskIntoConstraints = false
         return bus
     }()

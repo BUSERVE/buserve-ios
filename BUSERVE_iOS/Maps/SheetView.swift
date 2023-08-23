@@ -8,6 +8,12 @@
 import UIKit
 
 class SheetView: UIView {
+    
+    let lat = 37.505158
+    let lng = 126.957111
+
+    
+    var reserveBusMarker: ReserveBusMarker?
 
     override init(frame: CGRect) {
         super.init(frame: .zero)
@@ -24,20 +30,10 @@ class SheetView: UIView {
     private lazy var titleText : UILabel = {
         let title = UILabel()
         title.text = "내 예약 길찾기"
-        // 폰트 작성하기
+        title.font = UIFont(name: "Pretendard-SemiBold", size: 18)
         title.textColor = UIColor(red: 0.204, green: 0.227, blue: 0.251, alpha: 1)
         title.translatesAutoresizingMaskIntoConstraints = false
         return title
-    }()
-    
-    private lazy var checkBtn : UIButton = {
-        let btn = UIButton()
-        btn.setTitle("길찾기", for: .normal)
-        btn.setTitleColor(.white, for: .normal)
-        btn.backgroundColor = UIColor(red: 0.071, green: 0.408, blue: 0.984, alpha: 1)
-        btn.layer.cornerRadius = 16
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        return btn
     }()
     
     private lazy var inforView : SheetInforViewInScroll = {
@@ -63,10 +59,10 @@ class SheetView: UIView {
         }
     
     
+    
     private func makeConstraints(){
-        [titleText, checkBtn, scrollView, pageControl].forEach { (self.addSubview($0))}
+        [titleText, scrollView, pageControl].forEach { (self.addSubview($0))}
         
-        checkBtn.heightAnchor.constraint(equalToConstant: 46).isActive = true
         scrollView.heightAnchor.constraint(greaterThanOrEqualToConstant: 158).isActive = true
         
         NSLayoutConstraint.activate([
@@ -81,12 +77,10 @@ class SheetView: UIView {
             pageControl.topAnchor.constraint(equalTo: scrollView.bottomAnchor, constant: 8),
             pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            checkBtn.topAnchor.constraint(equalTo: pageControl.bottomAnchor, constant: 20),
-            checkBtn.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20),
-            checkBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20),
-            
         ])
     }
+    
+    
 
 
 }
