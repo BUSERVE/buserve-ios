@@ -61,9 +61,7 @@ class BuserveHelpViewController: UIViewController {
     
     private func configureNavigationBar() {
         self.navigationItem.title = "BUSERVE 도움말"
-        navigationController?.navigationBar.tintColor = UIColor.Body
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.leftBarButtonItem = backButton
+        self.navigationController?.setCustomBackButton(sfSymbol: "chevron.left", imageColor: .Body, weight: .bold)
     }
     private func configureScrollView() {
         contentView.translatesAutoresizingMaskIntoConstraints = false

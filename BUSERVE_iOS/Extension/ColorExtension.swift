@@ -28,4 +28,5 @@ extension UIColor {
     static let ButtonAlertBackground = UIColor(named: "ButtonAlertBackground") ?? UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
     static let Tertiary_SecondaryColor = UIColor(named: "Tertiary_SecondaryColor") ?? UIColor(red: 206/255, green: 211/255, blue: 216/255, alpha: 1)
     static let Secondary_TertiaryColor = UIColor(named: "Secondary_TertiaryColor") ?? UIColor(red: 135/255, green: 142/255, blue: 149/255, alpha: 1)
+    static let Tertiary_Quaternary = UIColor(named: "Tertiary_Quaternary") ?? UIColor(red: 206/255, green: 211/255, blue: 216/255, alpha: 1)
 }

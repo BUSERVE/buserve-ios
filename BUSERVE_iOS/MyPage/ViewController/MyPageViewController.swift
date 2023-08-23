@@ -27,10 +27,22 @@ class MyPageViewController: UIViewController {
         self.busMoneyView.layer.cornerRadius = 16.0
         self.myInformationMangementView.layer.cornerRadius = 16.0
         self.buserveHelpView.layer.cornerRadius = 16.0
-        self.myInformationMangementView.layer.borderWidth = 1.0
+        self.myInformationMangementView.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
         self.myInformationMangementView.layer.borderColor = UIColor.Tertiary.cgColor
-        self.buserveHelpView.layer.borderWidth = 1.0
+        self.buserveHelpView.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
         self.buserveHelpView.layer.borderColor = UIColor.Tertiary.cgColor
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            
+            self.myInformationMangementView.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
+            self.buserveHelpView.layer.borderWidth = (traitCollection.userInterfaceStyle == .dark) ? 0 : 1
+            
+            self.view.layoutIfNeeded()
+        }
     }
     
     private func tapGestureRecognizer() {
@@ -43,6 +55,7 @@ class MyPageViewController: UIViewController {
         let buserveHelpTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapBuserveHelpView(_:)))
         buserveHelpView.addGestureRecognizer(buserveHelpTapGestureRecognizer)
     }
+    
     @objc func didTapReservationView(_ sender: UITapGestureRecognizer) {
         guard let reservationDetailsViewController = self.storyboard?.instantiateViewController(withIdentifier: "ReservationDetailsViewController") as? ReservationDetailsViewController else { return }
         self.navigationController?.pushViewController(reservationDetailsViewController, animated: true)
