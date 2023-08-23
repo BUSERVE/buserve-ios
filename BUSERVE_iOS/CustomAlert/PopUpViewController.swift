@@ -151,7 +151,7 @@ class PopUpViewController: UIViewController {
     private func setupViews() {
         view.addSubview(containerView)
         containerView.addSubview(containerStackView)
-        view.backgroundColor = .clear
+        view.backgroundColor = .gray.withAlphaComponent(0.8)
     }
 
     private func addSubviews() {

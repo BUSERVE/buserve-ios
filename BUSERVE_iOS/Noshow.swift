@@ -85,4 +85,17 @@ class Noshow: UIViewController {
             }
         }
     }
+    
+    
+    @IBAction func ChangeView(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CurrentLoactionAuth") as? CurrentLoactionAuth else {
+            return
+        }
+        
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .fullScreen
+        
+        self.present(nextVC, animated: true, completion: nil)
+    }
+    
 }

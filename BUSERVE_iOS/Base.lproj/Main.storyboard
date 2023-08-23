@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oCn-YF-5Qd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SQY-qy-cG7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -1442,10 +1442,10 @@
             </objects>
             <point key="canvasLocation" x="-5263" y="-1504"/>
         </scene>
-        <!--Noshow-->
+        <!--Title-->
         <scene sceneID="7i6-Qz-Hww">
             <objects>
-                <viewController storyboardIdentifier="Noshow" id="SQY-qy-cG7" customClass="Noshow" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoshowController" id="SQY-qy-cG7" customClass="Noshow" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0t-vT-gJE">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1490,6 +1490,9 @@
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="checkmark" catalog="system"/>
+                                <connections>
+                                    <action selector="ChangeView:" destination="SQY-qy-cG7" eventType="touchUpInside" id="DUz-yg-EZv"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ch-2g-QyY">
                                 <rect key="frame" x="102" y="696" width="56" height="56"/>
@@ -1500,12 +1503,22 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" image="xmark" catalog="system"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="umh-Ue-D7N">
+                                <rect key="frame" x="20" y="57" width="48" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Cdu-hI-kvg"/>
+                                    <constraint firstAttribute="height" constant="44" id="KPw-zA-hX2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back.png" title=""/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fSh-iB-OBv"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="9Ch-2g-QyY" firstAttribute="leading" secondItem="fSh-iB-OBv" secondAttribute="leading" constant="102" id="1iJ-p5-Rho"/>
                             <constraint firstItem="LQi-fs-xbm" firstAttribute="leading" secondItem="fSh-iB-OBv" secondAttribute="leading" constant="42" id="7DP-SX-4GM"/>
+                            <constraint firstItem="umh-Ue-D7N" firstAttribute="top" secondItem="fSh-iB-OBv" secondAttribute="top" constant="10" id="8Xz-vW-Fzf"/>
                             <constraint firstItem="eib-d6-mz4" firstAttribute="centerX" secondItem="i0t-vT-gJE" secondAttribute="centerX" id="RTS-VG-2vT"/>
                             <constraint firstItem="fSh-iB-OBv" firstAttribute="bottom" secondItem="9Ch-2g-QyY" secondAttribute="bottom" constant="58" id="SQZ-7T-Mib"/>
                             <constraint firstItem="LQi-fs-xbm" firstAttribute="top" secondItem="cxy-V6-t3l" secondAttribute="bottom" constant="62" id="XDH-BE-Tpi"/>
@@ -1514,9 +1527,11 @@
                             <constraint firstItem="fSh-iB-OBv" firstAttribute="bottom" secondItem="VLA-mr-Rp4" secondAttribute="bottom" constant="58" id="oCx-I8-au1"/>
                             <constraint firstItem="VLA-mr-Rp4" firstAttribute="top" secondItem="eib-d6-mz4" secondAttribute="bottom" constant="32" id="rCn-B9-cbp"/>
                             <constraint firstItem="fSh-iB-OBv" firstAttribute="trailing" secondItem="LQi-fs-xbm" secondAttribute="trailing" constant="42" id="s40-ot-4QI"/>
+                            <constraint firstItem="umh-Ue-D7N" firstAttribute="leading" secondItem="fSh-iB-OBv" secondAttribute="leading" constant="20" id="wDN-5Z-QpA"/>
                             <constraint firstItem="fSh-iB-OBv" firstAttribute="trailing" secondItem="VLA-mr-Rp4" secondAttribute="trailing" constant="103" id="zdM-7j-kZa"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="7oR-fD-gIU"/>
                     <connections>
                         <outlet property="CheckLabel" destination="eib-d6-mz4" id="2SS-A1-leA"/>
                         <outlet property="InforLabel" destination="SgN-lx-75U" id="xJB-Wb-m92"/>
@@ -1528,45 +1543,77 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ykk-iv-ce5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4477" y="-1504"/>
+            <point key="canvasLocation" x="-2587.6923076923076" y="-1504.2654028436018"/>
         </scene>
-        <!--Maps View Controller-->
-        <scene sceneID="7x4-MN-X3A">
+        <!--Current Loaction Auth-->
+        <scene sceneID="dqp-0D-DCk">
             <objects>
-                <viewController storyboardIdentifier="MapView" id="dB1-FH-nHs" customClass="MapsViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Vwr-4T-AFL">
+                <viewController storyboardIdentifier="CurrentLoactionAuth" id="ZL7-aa-zDy" customClass="CurrentLoactionAuth" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lIg-I3-QnV">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vhd-pW-X6t" customClass="CurrentLocationBtn" customModule="BUSERVE_iOS" customModuleProvider="target">
-                                <rect key="frame" x="320" y="452" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9mv-KP-yMi"/>
-                                    <constraint firstAttribute="width" constant="50" id="PxL-e1-mlO"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b1x-jJ-Uzw" customClass="CurrentLocationBtn" customModule="BUSERVE_iOS" customModuleProvider="target">
+                                <rect key="frame" x="303" y="464" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title=""/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치 인증하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SZ-Dx-ApH">
+                                <rect key="frame" x="146" y="57" width="98" height="21"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O5a-Is-b1D">
+                                <rect key="frame" x="20" y="57" width="48" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Mdf-CF-4If"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="YBt-3t-tDM"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back.png" title=""/>
+                                <connections>
+                                    <action selector="back:" destination="ZL7-aa-zDy" eventType="touchUpInside" id="WiJ-JG-qew"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="EdQ-yU-7wK"/>
+                        <viewLayoutGuide key="safeArea" id="Ss2-Y6-8cU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="EdQ-yU-7wK" firstAttribute="trailing" secondItem="Vhd-pW-X6t" secondAttribute="trailing" constant="20" id="8ar-bp-aSB"/>
-                            <constraint firstItem="EdQ-yU-7wK" firstAttribute="bottom" secondItem="Vhd-pW-X6t" secondAttribute="bottom" constant="308" id="Ab4-K6-cUm"/>
+                            <constraint firstItem="O5a-Is-b1D" firstAttribute="leading" secondItem="Ss2-Y6-8cU" secondAttribute="leading" constant="20" id="2kW-nk-XGY"/>
+                            <constraint firstItem="0SZ-Dx-ApH" firstAttribute="top" secondItem="Ss2-Y6-8cU" secondAttribute="top" constant="10" id="P2k-9a-wXb"/>
+                            <constraint firstItem="O5a-Is-b1D" firstAttribute="top" secondItem="Ss2-Y6-8cU" secondAttribute="top" constant="10" id="Y56-is-Xx5"/>
+                            <constraint firstItem="0SZ-Dx-ApH" firstAttribute="centerX" secondItem="lIg-I3-QnV" secondAttribute="centerX" id="tOZ-Xw-Nqf"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="locationBtn" destination="Vhd-pW-X6t" id="6Zm-j7-n3n"/>
+                        <outlet property="locationBtn" destination="b1x-jJ-Uzw" id="U1r-Fh-nDM"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vKE-JJ-UAT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQ6-7d-HhY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3637" y="-1504"/>
+            <point key="canvasLocation" x="-1780" y="-1504.2654028436018"/>
+        </scene>
+        <!--Current Location Sheet Pop-->
+        <scene sceneID="tNJ-kN-2GU">
+            <objects>
+                <viewController storyboardIdentifier="currentLocationSheetPop" id="zPl-di-KEe" customClass="currentLocationSheetPop" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tzU-mb-gqX">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ZMj-AY-vr9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KLU-Kc-RHW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1780" y="-2164"/>
         </scene>
         <!--Bus Reserve View Controller-->
         <scene sceneID="VWf-H1-FXO">
             <objects>
-                <viewController storyboardIdentifier="BusReserveView" id="Fax-rl-84A" customClass="BusReserveViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusReserveViewController" id="Fax-rl-84A" customClass="BusReserveViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pHP-ja-2B1">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1589,7 +1636,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-Sf-l4d" customClass="BusNumber" customModule="BUSERVE_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UP6-Sf-l4d">
                                         <rect key="frame" x="217" y="32" width="98" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="CYb-6F-68s"/>
@@ -1669,18 +1716,45 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="nextDay.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXV-ak-n9J">
+                                <rect key="frame" x="20" y="57" width="48" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="OJf-ss-xKN"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="24" id="QXE-Ss-G5N"/>
+                                    <constraint firstAttribute="height" constant="24" id="RoO-fI-5Bu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="oql-4U-9lw"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back.png" title=""/>
+                                <connections>
+                                    <action selector="back:" destination="ZL7-aa-zDy" eventType="touchUpInside" id="7iI-bI-n3T"/>
+                                    <action selector="backView:" destination="qcX-g9-45y" eventType="touchUpInside" id="w7q-Qi-Mdp"/>
+                                    <action selector="backView:" destination="Fax-rl-84A" eventType="touchUpInside" id="y8p-LE-RgC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약 시간 선택하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-Pv-8OL">
+                                <rect key="frame" x="128.66666666666669" y="57" width="132.99999999999994" height="21"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lS2-MS-aEI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="IXV-ak-n9J" firstAttribute="leading" secondItem="lS2-MS-aEI" secondAttribute="leading" constant="20" id="0Oi-Fs-qCd"/>
                             <constraint firstItem="qiQ-H2-xMR" firstAttribute="top" secondItem="EmM-Zt-ZGL" secondAttribute="bottom" constant="32" id="3lM-it-RlS"/>
+                            <constraint firstItem="EMa-Pv-8OL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IXV-ak-n9J" secondAttribute="trailing" constant="8" symbolic="YES" id="5V8-Qj-OZa"/>
                             <constraint firstItem="EmM-Zt-ZGL" firstAttribute="leading" secondItem="lS2-MS-aEI" secondAttribute="leading" constant="106" id="64W-Db-Nzh"/>
                             <constraint firstItem="qiQ-H2-xMR" firstAttribute="leading" secondItem="lS2-MS-aEI" secondAttribute="leading" constant="20" id="7L2-E1-3p7"/>
                             <constraint firstAttribute="bottom" secondItem="qiQ-H2-xMR" secondAttribute="bottom" id="8tU-Qo-bW4"/>
                             <constraint firstItem="oeJ-fU-Fdi" firstAttribute="top" secondItem="kW4-rR-Ipc" secondAttribute="bottom" constant="48" id="9vH-PY-BF1"/>
                             <constraint firstItem="lS2-MS-aEI" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oeJ-fU-Fdi" secondAttribute="trailing" constant="79" id="AU7-8s-fFw"/>
+                            <constraint firstItem="EMa-Pv-8OL" firstAttribute="centerX" secondItem="pHP-ja-2B1" secondAttribute="centerX" id="B8g-Ym-Xd2"/>
                             <constraint firstItem="EmM-Zt-ZGL" firstAttribute="top" secondItem="kW4-rR-Ipc" secondAttribute="bottom" constant="44" id="D2f-0H-7qP"/>
                             <constraint firstItem="oeJ-fU-Fdi" firstAttribute="leading" secondItem="EmM-Zt-ZGL" secondAttribute="trailing" constant="8" id="FZM-ce-6Q3"/>
+                            <constraint firstItem="EMa-Pv-8OL" firstAttribute="top" secondItem="lS2-MS-aEI" secondAttribute="top" constant="10" id="P9j-nJ-zNY"/>
+                            <constraint firstItem="IXV-ak-n9J" firstAttribute="top" secondItem="lS2-MS-aEI" secondAttribute="top" constant="10" id="bxW-xK-UzB"/>
                             <constraint firstItem="kW4-rR-Ipc" firstAttribute="leading" secondItem="lS2-MS-aEI" secondAttribute="leading" id="cdT-F1-ePG"/>
                             <constraint firstItem="lS2-MS-aEI" firstAttribute="trailing" secondItem="qiQ-H2-xMR" secondAttribute="trailing" constant="20" id="qCJ-Uz-4Z1"/>
                             <constraint firstItem="lS2-MS-aEI" firstAttribute="trailing" secondItem="kW4-rR-Ipc" secondAttribute="trailing" id="s7H-6S-sI3"/>
@@ -1688,17 +1762,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="BusName" destination="kzQ-Kd-8JT" id="vF2-GL-Rgi"/>
+                        <outlet property="BusNumber" destination="UP6-Sf-l4d" id="5Bm-hI-iB4"/>
                         <outlet property="BusStopTable" destination="qiQ-H2-xMR" id="9VH-TF-gK1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vPM-JC-a9x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1591" y="-1521"/>
+            <point key="canvasLocation" x="109" y="-1504"/>
         </scene>
         <!--Bus Seat Select View Controller-->
         <scene sceneID="6DK-Ee-ZuP">
             <objects>
-                <viewController storyboardIdentifier="BusSeatSelectView" id="3bu-iM-xSc" customClass="BusSeatSelectViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusSeatSelectViewController" id="3bu-iM-xSc" customClass="BusSeatSelectViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OIi-JV-l6n">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1837,7 +1913,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YiL-FM-9FI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597" y="-1527"/>
+            <point key="canvasLocation" x="1651" y="-1504"/>
         </scene>
         <!--Seat Pay View Controller-->
         <scene sceneID="gXe-bV-R5u">
@@ -2109,7 +2185,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJn-Xb-6VI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="-1527"/>
+            <point key="canvasLocation" x="2538" y="-1504"/>
         </scene>
         <!--Seat Reservation Complete-->
         <scene sceneID="Zwc-bp-ygx">
@@ -2285,12 +2361,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nde-wQ-JQ5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1157" y="-1527"/>
+            <point key="canvasLocation" x="3506" y="-1504"/>
         </scene>
         <!--Bus Stop View Controller-->
         <scene sceneID="CgO-YF-VfG">
             <objects>
-                <viewController storyboardIdentifier="BusStopView" id="qcX-g9-45y" customClass="BusStopViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusStopViewController" id="qcX-g9-45y" customClass="BusStopViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fNK-LC-wEq">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2304,7 +2380,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CP-a1-TvO" customClass="BusNumber" customModule="BUSERVE_iOS" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CP-a1-TvO" customClass="PrintbusNumber" customModule="BUSERVE_iOS" customModuleProvider="target">
                                         <rect key="frame" x="217" y="32" width="98" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="afn-XQ-C9z"/>
@@ -2341,6 +2417,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BTP-yH-7rB">
                                 <rect key="frame" x="20" y="286" width="350" height="558"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <inset key="scrollIndicatorInsets" minX="16" minY="16" maxX="16" maxY="16"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="버스 탑승 위치" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eyc-jP-3i1" customClass="TitleLabel" customModule="BUSERVE_iOS" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2371,31 +2448,58 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button" image="throw.png"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Oa-rQ-vQ2">
+                                <rect key="frame" x="20" y="57" width="48" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Lpw-Qh-ec3"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="Spw-9A-7p2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="back.png" title=""/>
+                                <connections>
+                                    <action selector="back:" destination="ZL7-aa-zDy" eventType="touchUpInside" id="JkK-Sz-uPX"/>
+                                    <action selector="backView:" destination="qcX-g9-45y" eventType="touchUpInside" id="Oaj-p4-o3w"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치 인증하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F5P-R3-CMO">
+                                <rect key="frame" x="146" y="57" width="98" height="21"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="B72-dw-n3s"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="BTP-yH-7rB" secondAttribute="bottom" id="17g-AH-aXq"/>
+                            <constraint firstItem="F5P-R3-CMO" firstAttribute="centerX" secondItem="fNK-LC-wEq" secondAttribute="centerX" id="2OL-XS-pAc"/>
                             <constraint firstItem="BTP-yH-7rB" firstAttribute="top" secondItem="bey-FD-7qk" secondAttribute="bottom" constant="32" id="5a4-OQ-fxU"/>
+                            <constraint firstItem="8Oa-rQ-vQ2" firstAttribute="top" secondItem="B72-dw-n3s" secondAttribute="top" constant="10" id="5go-gr-MKo"/>
                             <constraint firstItem="WLX-2s-4Zh" firstAttribute="top" secondItem="B72-dw-n3s" secondAttribute="top" constant="44" id="7VC-sL-hkh"/>
                             <constraint firstItem="B72-dw-n3s" firstAttribute="trailing" secondItem="WLX-2s-4Zh" secondAttribute="trailing" id="Hp9-uj-dOF"/>
                             <constraint firstItem="bey-FD-7qk" firstAttribute="top" secondItem="WLX-2s-4Zh" secondAttribute="bottom" constant="44" id="QPQ-KM-jsf"/>
                             <constraint firstItem="WLX-2s-4Zh" firstAttribute="leading" secondItem="B72-dw-n3s" secondAttribute="leading" id="RKH-8Z-SF9"/>
                             <constraint firstItem="LSi-Uv-xMI" firstAttribute="top" secondItem="WLX-2s-4Zh" secondAttribute="bottom" constant="48" id="RV9-pG-TMZ"/>
                             <constraint firstItem="LSi-Uv-xMI" firstAttribute="leading" secondItem="bey-FD-7qk" secondAttribute="trailing" constant="8" id="TI9-Hf-5eA"/>
+                            <constraint firstItem="F5P-R3-CMO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Oa-rQ-vQ2" secondAttribute="trailing" constant="8" symbolic="YES" id="UJE-ij-RHc"/>
                             <constraint firstItem="B72-dw-n3s" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LSi-Uv-xMI" secondAttribute="trailing" constant="79" id="Uc3-LO-Nsg"/>
                             <constraint firstItem="B72-dw-n3s" firstAttribute="trailing" secondItem="BTP-yH-7rB" secondAttribute="trailing" constant="20" id="YuX-Za-aYX"/>
+                            <constraint firstItem="LSi-Uv-xMI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bey-FD-7qk" secondAttribute="trailing" constant="8" symbolic="YES" id="Zus-DZ-sZ9"/>
+                            <constraint firstItem="bey-FD-7qk" firstAttribute="leading" secondItem="B72-dw-n3s" secondAttribute="leading" constant="106" id="f3l-7G-bTD"/>
+                            <constraint firstItem="F5P-R3-CMO" firstAttribute="top" secondItem="B72-dw-n3s" secondAttribute="top" constant="10" id="j5n-oh-yJs"/>
                             <constraint firstItem="BTP-yH-7rB" firstAttribute="leading" secondItem="B72-dw-n3s" secondAttribute="leading" constant="20" id="pr7-Eo-WaI"/>
-                            <constraint firstItem="bey-FD-7qk" firstAttribute="leading" secondItem="B72-dw-n3s" secondAttribute="leading" constant="106" id="qTn-8z-6o9"/>
+                            <constraint firstItem="8Oa-rQ-vQ2" firstAttribute="leading" secondItem="fNK-LC-wEq" secondAttribute="leading" constant="20" id="x3s-HO-aXh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="BusStopTable" destination="BTP-yH-7rB" id="Srk-Ih-q4c"/>
+                        <outlet property="busNumber" destination="0CP-a1-TvO" id="vyy-p2-akb"/>
+                        <outlet property="busStopNameText" destination="bey-FD-7qk" id="SKr-CF-BXJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apj-3F-OuI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2446" y="-1521"/>
+            <point key="canvasLocation" x="-806" y="-1504"/>
         </scene>
         <!--Reserve Bus Marker-->
         <scene sceneID="ujc-gE-wyA">
@@ -2405,21 +2509,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEp-ff-Gh2" customClass="CurrentLocationBtn" customModule="BUSERVE_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEp-ff-Gh2" customClass="CurrentLocationBtn" customModule="BUSERVE_iOS" customModuleProvider="target">
                                 <rect key="frame" x="320" y="452" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="XPo-54-33S"/>
-                                    <constraint firstAttribute="width" constant="50" id="dS6-Tj-1wu"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title=""/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 근처 버스정류장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4h-oq-1oJ">
+                                <rect key="frame" x="128.66666666666666" y="57" width="132.99999999999997" height="22"/>
+                                <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e9Q-1c-vfS"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="e9Q-1c-vfS" firstAttribute="trailing" secondItem="QEp-ff-Gh2" secondAttribute="trailing" constant="20" id="Fw6-UM-W3X"/>
-                            <constraint firstItem="e9Q-1c-vfS" firstAttribute="bottom" secondItem="QEp-ff-Gh2" secondAttribute="bottom" constant="308" id="Zo1-x3-CUT"/>
+                            <constraint firstItem="c4h-oq-1oJ" firstAttribute="centerX" secondItem="HKM-d3-dTf" secondAttribute="centerX" id="3Vq-5x-fvV"/>
+                            <constraint firstItem="c4h-oq-1oJ" firstAttribute="top" secondItem="e9Q-1c-vfS" secondAttribute="top" constant="10" id="lHf-ev-fkV"/>
                         </constraints>
                     </view>
                     <connections>
@@ -2428,7 +2535,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ar-Ei-wQ1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3638" y="-723"/>
+            <point key="canvasLocation" x="-3638.4615384615381" y="-723.69668246445497"/>
         </scene>
         <!--Sheet View Controller-->
         <scene sceneID="3XR-fw-XJB">
@@ -2449,6 +2556,7 @@
     <resources>
         <image name="BusIcon" width="16" height="16"/>
         <image name="BusStationIcon" width="18" height="18"/>
+        <image name="back.png" width="24" height="24"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>

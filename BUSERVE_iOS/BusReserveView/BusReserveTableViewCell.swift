@@ -98,6 +98,7 @@ class BusReserveTableViewCell: UITableViewCell {
         UIView.animate(withDuration: 0.1){
             sender.backgroundColor = UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
         }
+        
     }
     
     func setRemainig() {
