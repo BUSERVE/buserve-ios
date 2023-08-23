@@ -18,6 +18,7 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .Background
         self.configureView()
         self.tapGestureRecognizer()
     }

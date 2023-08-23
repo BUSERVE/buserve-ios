@@ -6,12 +6,20 @@
 //
 
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
+        }
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -45,19 +53,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        
         SocialLoginManager.shared.checkLoginState()
-//        let result = SocialLoginManager.shared.checkLoginState()
-//        DispatchQueue.main.async {
-//            self.showAppropriateViewController(isLoggedIn: result)
-//        }
-//        Task {
-//            let isLoggedIn = await SocialLoginManager.shared.checkLoginState()
-//
-//            // Main thread에서 UI 업데이트 수행
-//            DispatchQueue.main.async {
-//                self.showAppropriateViewController(isLoggedIn: isLoggedIn)
-//            }
-//        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -66,23 +63,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-    func showAppropriateViewController(isLoggedIn: Bool) {
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let delegate = windowScene.delegate as? SceneDelegate else {
-            return
-        }
-
-        if isLoggedIn {
-            // 로그인이 되어 있을 때 TabBarViewController 표시
-            let tabBarVC = TabBarViewController()
-            delegate.window?.rootViewController = tabBarVC
-        } else {
-            // 로그인이 되어 있지 않을 때 다른 뷰 컨트롤러 표시 (예: 로그인 페이지)
-            let loginVC = LoginViewController()
-            delegate.window?.rootViewController = loginVC
-        }
-
-        delegate.window?.makeKeyAndVisible()
-    }
+//    func showAppropriateViewController(isLoggedIn: Bool) {
+//        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//              let delegate = windowScene.delegate as? SceneDelegate else {
+//            return
+//        }
+//
+//        if isLoggedIn {
+//            // 로그인이 되어 있을 때 TabBarViewController 표시
+//            let tabBarVC = TabBarViewController()
+//            delegate.window?.rootViewController = tabBarVC
+//        } else {
+//            // 로그인이 되어 있지 않을 때 다른 뷰 컨트롤러 표시 (예: 로그인 페이지)
+//            let loginVC = LoginViewController()
+//            delegate.window?.rootViewController = loginVC
+//        }
+//
+//        delegate.window?.makeKeyAndVisible()
+//    }
 }
 

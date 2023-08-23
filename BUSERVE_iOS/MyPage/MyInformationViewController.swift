@@ -20,6 +20,8 @@ class MyInformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .Background
         self.configureNavigationBar()
         self.configureView()
         
@@ -35,6 +37,22 @@ class MyInformationViewController: UIViewController {
         await MainActor.run {
             self.nameLabel.text = user.name
             self.mailLabel.text = user.email
+            self.signUpMethodLabel.text = user.socialLoginType
+            
+            switch user.socialLoginType {
+            case "Apple":
+                self.signUpMethodImageView.image =  (traitCollection.userInterfaceStyle == .dark) ? UIImage(named: "DarkModeAppleLogoIcon") : UIImage(named: "LightModeAppleLogoIcon")
+                
+            case "Google":
+                self.signUpMethodImageView.image =  UIImage(named: "GoogleLogoIcon")
+            case "Kakao":
+                self.signUpMethodImageView.image =  UIImage(named: "KakaoLogoIcon")
+            default:
+                break
+            }
+            
+            self.signUpMethodImageView.contentMode = .scaleAspectFit
+//            self.signUpMethodImageView.clipsToBounds = true
         }
     }
     
@@ -68,4 +86,12 @@ class MyInformationViewController: UIViewController {
         self.navigationController?.pushViewController(withdrawViewController, animated: true)
     }
     
+    /// ( 라이트, 다크 ) 모드가 변경되었을 때 TableView 의 UI 색상을 업데이트
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+
+        if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+            self.signUpMethodImageView.image =  (traitCollection.userInterfaceStyle == .dark) ? UIImage(named: "DarkModeAppleLogoIcon") : UIImage(named: "LightModeAppleLogoIcon")
+        }
+    }
 }

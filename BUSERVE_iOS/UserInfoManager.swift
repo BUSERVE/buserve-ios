@@ -19,7 +19,7 @@ final class UserInfoManager {
         self.deleteUserInfoUsecase = deleteUsecase
     }
 
-    func saveUserInfo(name: String, email: String, token: Data, socialLoginType: String) async throws -> Bool {
+    func saveUserInfo(name: String, email: String, token: String, socialLoginType: String) async throws -> Bool {
         guard let useCase = saveUserInfoUseCase else {
             print("SaveUserInfoUseCase is not initialized.")
             return false

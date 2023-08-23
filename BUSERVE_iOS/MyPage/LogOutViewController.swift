@@ -14,6 +14,7 @@ class LogOutViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .Background
         self.configureNavigationBar()
         self.configureView()
     }

@@ -18,7 +18,7 @@ final class UserInfoHandler: UserInfoRepository {
  
     // MARK: - methods
     
-    func saveUserInfo(name: String, email: String, token: Data, socialLoginType: String) async throws -> Result<UserInfo, Error> {
+    func saveUserInfo(name: String, email: String, token: String, socialLoginType: String) async throws -> Result<UserInfo, Error> {
         let user: UserInfo = UserInfo(name: name, email: email, socialLoginType: socialLoginType)
         print(user)
         
