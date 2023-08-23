@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SQY-qy-cG7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1453,7 +1453,7 @@
         <!--Title-->
         <scene sceneID="7i6-Qz-Hww">
             <objects>
-                <viewController storyboardIdentifier="NoshowController" id="SQY-qy-cG7" customClass="Noshow" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoshowController" id="SQY-qy-cG7" customClass="NoShowController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i0t-vT-gJE">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2524,7 +2524,7 @@
                                 <state key="normal" title=""/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내 근처 버스정류장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c4h-oq-1oJ">
-                                <rect key="frame" x="128.66666666666666" y="57" width="132.99999999999997" height="22"/>
+                                <rect key="frame" x="128.66666666666669" y="57" width="132.99999999999994" height="21"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
