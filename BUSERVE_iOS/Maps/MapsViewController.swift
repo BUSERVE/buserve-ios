@@ -48,7 +48,7 @@ class MapsViewController: UIViewController, CLLocationManagerDelegate, MKMapView
     }
     
     func setBtn(){
-        locationBtn.sizeBtn(335, 454, 50, 50)
+        locationBtn.sizeBtn(335, 431.33333333333326, 50, 50)
     }
     
     func setLoactionManager(){
