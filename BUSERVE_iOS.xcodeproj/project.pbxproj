@@ -40,6 +40,7 @@
 		3FE4AFAC2A93A51B0045C548 /* SaveUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFAB2A93A51B0045C548 /* SaveUserInfoUseCase.swift */; };
 		3FE4AFAE2A93A5310045C548 /* LoadUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFAD2A93A5310045C548 /* LoadUserInfoUseCase.swift */; };
 		3FE4AFB02A93A54B0045C548 /* DeleteUserInfoUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFAF2A93A54B0045C548 /* DeleteUserInfoUseCase.swift */; };
+		3FE4AFB22A93AC360045C548 /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */; };
 		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
 		485DBAA02A6CCAEC00E1B3BE /* SeatReservationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */; };
 		4871B95A2A6B9A7800309A11 /* SeatPayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */; };
@@ -141,6 +142,7 @@
 		3FE4AFAB2A93A51B0045C548 /* SaveUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveUserInfoUseCase.swift; sourceTree = "<group>"; };
 		3FE4AFAD2A93A5310045C548 /* LoadUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadUserInfoUseCase.swift; sourceTree = "<group>"; };
 		3FE4AFAF2A93A54B0045C548 /* DeleteUserInfoUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteUserInfoUseCase.swift; sourceTree = "<group>"; };
+		3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
 		485DBA9F2A6CCAEC00E1B3BE /* SeatReservationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatReservationComplete.swift; sourceTree = "<group>"; };
 		4871B9592A6B9A7800309A11 /* SeatPayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatPayViewController.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				4881990F2A6791CF00D7C698 /* Info.plist */,
 				3F7DBD0B2A87380600410404 /* TabBarViewController.swift */,
 				3FE4AFA92A9365CF0045C548 /* UserInfoHandler.swift */,
+				3FE4AFB12A93AC360045C548 /* UserInfoManager.swift */,
 			);
 			path = BUSERVE_iOS;
 			sourceTree = "<group>";
@@ -749,6 +752,7 @@
 				BE2E573D2A761DF500AF2C30 /* BusMoneyViewController.swift in Sources */,
 				48FB18E62A85229800ABA58A /* BusSeatSelectViewController.swift in Sources */,
 				3FE4AFAE2A93A5310045C548 /* LoadUserInfoUseCase.swift in Sources */,
+				3FE4AFB22A93AC360045C548 /* UserInfoManager.swift in Sources */,
 				488199042A6791CD00D7C698 /* SceneDelegate.swift in Sources */,
 				48FB18E92A85229800ABA58A /* CollectionTitle.swift in Sources */,
 				3F78D46F2A8BC40600815CCD /* PlaceHolderView.swift in Sources */,

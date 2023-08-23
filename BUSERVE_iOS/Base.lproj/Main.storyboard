@@ -743,7 +743,7 @@
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃">
-                                    <color key="titleColor" name="Background"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="tapLogOutButton:" destination="eDD-YL-aKa" eventType="touchUpInside" id="blW-6a-TiF"/>
@@ -841,7 +841,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="SecondaryBackground"/>
+                                <color key="backgroundColor" name="Secondary_DarkModeBackground"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="zZW-RR-1yo" secondAttribute="bottom" constant="40" id="BMO-aL-kdg"/>
                                     <constraint firstItem="zZW-RR-1yo" firstAttribute="top" secondItem="3hF-Ko-exL" secondAttribute="bottom" constant="30" id="FT0-Sn-2K6"/>
@@ -860,8 +860,11 @@
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="로그아웃">
-                                    <color key="titleColor" name="Background"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="tapLogOutButton:" destination="olE-5Z-j8f" eventType="touchUpInside" id="L4q-zW-hCQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yYS-Ma-alm"/>
@@ -1299,7 +1302,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" name="SecondaryBackground"/>
+                                <color key="backgroundColor" name="Secondary_DarkModeBackground"/>
                                 <constraints>
                                     <constraint firstItem="jya-rK-cLy" firstAttribute="top" secondItem="6Aq-W0-JwQ" secondAttribute="bottom" constant="6" id="69N-hO-d8V"/>
                                     <constraint firstItem="6Aq-W0-JwQ" firstAttribute="top" secondItem="lI3-3I-N7X" secondAttribute="bottom" constant="8" id="6HA-fn-ge3"/>
@@ -1324,6 +1327,9 @@
                                 <state key="normal" title="계정 탈퇴">
                                     <color key="titleColor" name="Secondary"/>
                                 </state>
+                                <connections>
+                                    <action selector="asdf:" destination="ynV-GL-gfN" eventType="touchUpInside" id="Svq-Fy-qa6"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yqB-IC-koy"/>
@@ -1343,6 +1349,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GuV-6R-yPK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="ynV-GL-gfN" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2947.3282442748091" y="2714.7887323943664"/>
         </scene>
@@ -2453,7 +2460,7 @@
             <color red="0.9570000171661377" green="0.9570000171661377" blue="0.9570000171661377" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Secondary_DarkModeBackground">
-            <color red="0.52499997615814209" green="0.55699998140335083" blue="0.58799999952316284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tertiary">
             <color red="0.80400002002716064" green="0.82700002193450928" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

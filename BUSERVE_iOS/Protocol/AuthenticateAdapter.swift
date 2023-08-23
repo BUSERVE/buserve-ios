@@ -11,4 +11,6 @@ protocol AuthenticateAdapter {
     var adapterType: String { get }
     
     func login() async throws -> Bool
+    
+    func checkLoginState() async -> Bool
 }

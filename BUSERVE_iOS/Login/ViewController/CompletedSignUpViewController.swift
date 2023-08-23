@@ -63,7 +63,7 @@ class CompletedSignUpViewController: UIViewController {
     
     @objc func handleCompletedSignUpButtonTapped() {
         // TabBarViewController를 표시
-        let tabBarController = TabBarViewController()
-        navigationController?.pushViewController(tabBarController, animated: true)
+        let tabBarVC = TabBarViewController()
+        navigationController?.pushViewController(tabBarVC, animated: true)
     }
 }

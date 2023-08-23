@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct UserInfo {
+struct UserInfo: Codable {
     let name: String // 유저 이름
     let email: String // 유저 이메일
-    let token: String // 유저 인증을 위한 Token
+    let socialLoginType: String // 유저 인증을 위한 Token
 }

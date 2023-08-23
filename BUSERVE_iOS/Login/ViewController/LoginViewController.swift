@@ -112,9 +112,22 @@ class LoginViewController: UIViewController {
                 switch result {
                 case .success:
                     print("Successfully logged in with Apple.")
+                    UserDefaults.standard.set(true, forKey: "socialLoginState")
                     
-                    let completedVC = CompletedSignUpViewController()
-                    navigationController?.pushViewController(completedVC, animated: true)
+                    if UserDefaults.standard.bool(forKey: "AppleLoginState") {
+                        // AppleLoginState가 true로 설정되어 있으면 이 부분이 실행됩니다.
+                        SocialLoginManager.shared.checkLoginState()
+                    } else {
+                        // AppleLoginState가 false거나 설정되어 있지 않으면 이 부분이 실행됩니다.
+                        DispatchQueue.main.async {
+                            print("completedVC 로 이동")
+                            
+                            UserDefaults.standard.set(true, forKey: "AppleLoginState")
+                            let completedVC = CompletedSignUpViewController()
+                            self.navigationController?.pushViewController(completedVC, animated: true)
+                        }
+                    }
+                    
                     
                 case .failure(let error):
                     print("Failed to login with Apple. Error: \(error)")

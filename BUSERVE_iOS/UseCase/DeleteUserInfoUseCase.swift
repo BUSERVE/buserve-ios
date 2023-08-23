@@ -6,3 +6,15 @@
 //
 
 import Foundation
+
+struct DeleteUserInfoUseCase {
+    private let userInfoRepository: UserInfoRepository
+    
+    init(repository: UserInfoRepository = UserInfoHandler.shared) {
+        self.userInfoRepository = repository
+    }
+   
+    func execute() async throws -> Result<Bool, Error> {
+        return try await userInfoRepository.deleteUserInfo()
+    }
+}
