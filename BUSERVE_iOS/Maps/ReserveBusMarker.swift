@@ -14,8 +14,9 @@ import FloatingPanel
 
 class ReserveBusMarker: MapsViewController, FloatingPanelControllerDelegate {
     
-    var reserveLat = 37.505158 //예약한 버스 정류장 위도 <<-- 수정하면 됨
-    var reserveLng = 126.957111 //예약한 버스 정류장 경도 << -- 수정하면 됨
+    var reserveLat = 37.590428 //예약한 버스 정류장 위도 <<-- 수정하면 됨
+    var reserveLng = 126.620488 //예약한 버스 정류장 경도 << -- 수정하면 됨
+    
     var naverCoordinates: [NMGLatLng] = []
     var pathOverlay = NMFPath()
     
@@ -26,12 +27,12 @@ class ReserveBusMarker: MapsViewController, FloatingPanelControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapPathSetup(mapView)
+       mapPathSetup(mapView)
         sheet()
         setBtn()
     }
     
-    private func mapPathSetup(_ mapView : NMFMapView){
+    func mapPathSetup(_ mapView : NMFMapView){
         guard let currentLocation = locationBtn.locationManager.location else {
             print("Failed to get current location")
             return
@@ -42,7 +43,7 @@ class ReserveBusMarker: MapsViewController, FloatingPanelControllerDelegate {
         
         
         let sourceCoordinate = CLLocationCoordinate2D(latitude: currentLat, longitude: currentLng) // 현재위치 좌표
-        let destinationReserveCoordinate = CLLocationCoordinate2D(latitude: reserveLat , longitude: reserveLng ) // 예약한 버스정류장 위치 좌표
+        let destinationReserveCoordinate = CLLocationCoordinate2D(latitude: reserveLat ?? 37.5670135 , longitude: reserveLng ?? 126.9783740 ) // 예약한 버스정류장 위치 좌표
         
         let sourcePlacemark = MKPlacemark(coordinate: sourceCoordinate)
         let destinationPlaceMark = MKPlacemark(coordinate: destinationReserveCoordinate)
@@ -51,7 +52,7 @@ class ReserveBusMarker: MapsViewController, FloatingPanelControllerDelegate {
         let destinationItem = MKMapItem(placemark: destinationPlaceMark)
         
         let destinationMark = NMFMarker()
-        destinationMark.position = NMGLatLng(lat: reserveLat ?? 0, lng: reserveLng )
+        destinationMark.position = NMGLatLng(lat: reserveLat ?? 37.5670135, lng: reserveLng ?? 126.9783740)
         destinationMark.iconImage = NMFOverlayImage(name: "reserveBus.png")
         destinationMark.captionText = "예약한 버스정류장"
         destinationMark.isHideCollidedSymbols = true
@@ -90,8 +91,8 @@ class ReserveBusMarker: MapsViewController, FloatingPanelControllerDelegate {
     }
     
     override func mapCameraControll() {
-        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: reserveLat,
-                                                           lng: reserveLng))
+        let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: reserveLat ?? 37.5670135,
+                                                           lng: reserveLng ?? 126.9783740))
         cameraUpdate.animation = .easeIn
         mapView.moveCamera(cameraUpdate)
     }
@@ -126,7 +127,7 @@ class SetFloatingPanelLayout: FloatingPanelLayout{
     let initialState: FloatingPanelState = .half
     let anchors: [FloatingPanelState : FloatingPanelLayoutAnchoring] = [
         .full: FloatingPanelLayoutAnchor(absoluteInset: 16.0, edge: .top, referenceGuide: .safeArea),
-        .half: FloatingPanelLayoutAnchor(fractionalInset: 0.4, edge: .bottom, referenceGuide: .safeArea),
+        .half: FloatingPanelLayoutAnchor(fractionalInset: 0.43, edge: .bottom, referenceGuide: .safeArea),
         .tip: FloatingPanelLayoutAnchor(absoluteInset: 10, edge: .bottom, referenceGuide: .safeArea),
     ]
 }
