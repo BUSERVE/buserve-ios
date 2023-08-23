@@ -6,11 +6,14 @@
 //
 
 import UIKit
+import NMapsMap
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let map = NMFMapView(frame: view.frame)
+        view.addSubview(map)
         
     }
 

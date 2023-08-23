@@ -7,12 +7,20 @@
 
 import UIKit
 
-class BusStopTableViewCell: UITableViewCell {
+protocol BusStopTableViewCellDelegate: AnyObject {
+    func didTapNextButton(in cell: BusStopTableViewCell)
+}
 
+
+class BusStopTableViewCell: UITableViewCell, UITableViewDelegate {
+    
     var BusImage : UIImageView!
     var BusStopTitle : UILabel!
     var SubTitle : UILabel!
     var nextBtn : UIButton!
+    
+    weak var delegate: BusStopTableViewCellDelegate?
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,20 +29,14 @@ class BusStopTableViewCell: UITableViewCell {
         setTitle()
         setSub()
         setBtn()
+        self.frame = contentView.frame.inset(by: UIEdgeInsets(top:0, left:0, bottom: 10, right: 0))
     }
-
-/*
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    
-    }
-  */
     
     func setCell(){
-            self.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
-            self.layer.cornerRadius = 16
-            self.layer.borderWidth = 1
-            self.layer.borderColor = UIColor(red: 0.804, green: 0.827, blue: 0.851, alpha: 1).cgColor
+        self.layer.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1).cgColor
+        self.layer.cornerRadius = 16
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor(red: 0.804, green: 0.827, blue: 0.851, alpha: 1).cgColor
     }
     
     
@@ -55,7 +57,6 @@ class BusStopTableViewCell: UITableViewCell {
     
     func setTitle(){
         BusStopTitle = UILabel()
-        BusStopTitle.text = "공단사거리"
         BusStopTitle.textColor = UIColor(red: 0.204, green: 0.227, blue: 0.251, alpha: 1)
         BusStopTitle.font = UIFont(name: "Pretendard-SemiBold", size: 16)
         
@@ -70,10 +71,8 @@ class BusStopTableViewCell: UITableViewCell {
     
     func setSub(){
         SubTitle = UILabel()
-        SubTitle.text = "89070"
         SubTitle.textColor = UIColor(red: 0.525, green: 0.557, blue: 0.588, alpha: 1)
         SubTitle.font = UIFont(name: "Pretendard-SemiBold", size: 14)
-        
         SubTitle.widthAnchor.constraint(greaterThanOrEqualToConstant: 44).isActive = true
         SubTitle.translatesAutoresizingMaskIntoConstraints = false
         addSubview(SubTitle)
@@ -86,23 +85,29 @@ class BusStopTableViewCell: UITableViewCell {
         nextBtn = UIButton()
         nextBtn.setImage(UIImage(named: "nextBtn.png"), for: .normal)
         nextBtn.tintColor = UIColor.black
-        nextBtn.setTitle("하하", for: .normal)
         
         nextBtn.widthAnchor.constraint(equalToConstant: 26).isActive = true
         nextBtn.heightAnchor.constraint(equalToConstant: 26).isActive = true
         nextBtn.translatesAutoresizingMaskIntoConstraints = false
         
         nextBtn.isUserInteractionEnabled = true
-        nextBtn.addTarget(self, action: #selector(nextBtnClicked(_:)), for: .touchUpInside)
+        nextBtn.addTarget(self, action: #selector(nextView), for: .touchUpInside)
+        nextBtn.addTarget(self, action: #selector(clickOut), for: .touchDown)
         
         addSubview(nextBtn)
-      
+        
         nextBtn.topAnchor.constraint(equalTo: self.topAnchor, constant: 25).isActive = true
         nextBtn.leadingAnchor.constraint(greaterThanOrEqualTo: self.BusStopTitle.trailingAnchor, constant: 149).isActive = true
         nextBtn.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20).isActive = true
     }
     
-    @objc func nextBtnClicked(_ sender: UIButton) {
-        print("click")
+    @objc func nextView(_ sender: Any) {
+        nextBtn.tintColor = UIColor.black
+        delegate?.didTapNextButton(in: self)
     }
+
+    @objc func clickOut(_ sender : Any){
+        nextBtn.tintColor = .blue
+    }
+    
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Noshow: UIViewController {
+class NoShowController: UIViewController {
 
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var CheckLabel: UILabel!
