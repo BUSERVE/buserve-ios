@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SQY-qy-cG7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -167,12 +167,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dh6-Dx-ZYE">
-                                                        <rect key="frame" x="284" y="2" width="26" height="22.333333333333332"/>
-                                                        <color key="tintColor" name="Background"/>
+                                                        <rect key="frame" x="284" y="1.3333333333333321" width="26" height="23.333333333333332"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="26" id="15i-cQ-M4Y"/>
                                                             <constraint firstAttribute="height" constant="26" id="WEV-FU-2g4"/>
                                                         </constraints>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
@@ -199,12 +200,13 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0o8-2L-aGk">
-                                                        <rect key="frame" x="284" y="2" width="26" height="22.333333333333332"/>
-                                                        <color key="tintColor" name="Background"/>
+                                                        <rect key="frame" x="284" y="1.3333333333333321" width="26" height="23.333333333333332"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="26" id="sjF-bJ-jpx"/>
                                                             <constraint firstAttribute="width" constant="26" id="xl4-NT-O1Z"/>
                                                         </constraints>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="medium"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
@@ -256,13 +258,14 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
-                                                            <color key="baseForegroundColor" name="Tertiary"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="medium"/>
+                                                            <color key="baseForegroundColor" name="Tertiary_Quaternary"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="DarkModeSecondBackground"/>
                                         <color key="tintColor" name="Tertiary"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="oI9-E8-61r" secondAttribute="trailing" constant="20" id="CPA-EH-PsB"/>
@@ -292,13 +295,14 @@
                                                         </constraints>
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
-                                                            <color key="baseForegroundColor" name="Tertiary"/>
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" weight="medium"/>
+                                                            <color key="baseForegroundColor" name="Tertiary_Quaternary"/>
                                                         </buttonConfiguration>
                                                     </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" name="DarkModeSecondBackground"/>
                                         <constraints>
                                             <constraint firstItem="lia-38-QyX" firstAttribute="centerY" secondItem="zpv-gB-gXT" secondAttribute="centerY" id="50j-QM-tWl"/>
                                             <constraint firstItem="lia-38-QyX" firstAttribute="centerX" secondItem="zpv-gB-gXT" secondAttribute="centerX" id="7lF-Ud-WcD"/>
@@ -582,9 +586,12 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="버정머니 충전하기" titleAlignment="center">
-                                    <color key="baseForegroundColor" name="Background"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" name="MainColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tapChargeBusMoneyButton:" destination="JrS-4j-zpc" eventType="touchUpInside" id="7sJ-XZ-c6G"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-1K-Oac">
                                 <rect key="frame" x="20" y="357" width="350" height="1"/>
@@ -623,7 +630,7 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="충전 수단 변경하기" titleAlignment="center">
-                                    <color key="baseForegroundColor" name="Background"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" name="MainColor"/>
                                 </buttonConfiguration>
                             </button>
@@ -657,6 +664,7 @@
                         <outlet property="chargeBusMoneyButton" destination="kn1-MZ-Zm7" id="AlK-kH-30f"/>
                         <outlet property="myBusMoneyLabel" destination="FBZ-pg-7zG" id="YrP-y6-Ot0"/>
                         <outlet property="myBusMoneyView" destination="WGh-v4-Gck" id="YpB-v8-mcg"/>
+                        <outlet property="paymentMethodLabel" destination="W5O-6N-tNb" id="Xbq-Gx-ow1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qNA-uA-JcL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -820,7 +828,7 @@
         <!--Log Out View Controller-->
         <scene sceneID="SHd-MC-9Up">
             <objects>
-                <viewController storyboardIdentifier="LogOutViewController" id="olE-5Z-j8f" customClass="LogOutViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogOutViewController" hidesBottomBarWhenPushed="YES" id="olE-5Z-j8f" customClass="LogOutViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZLR-5v-m6C">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1068,7 +1076,7 @@
         <!--Bus Money Charge View Controller-->
         <scene sceneID="nDf-47-r2G">
             <objects>
-                <viewController id="Zoh-10-QSy" customClass="BusMoneyChargeViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BusMoneyChargeViewController" hidesBottomBarWhenPushed="YES" id="Zoh-10-QSy" customClass="BusMoneyChargeViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KfZ-kh-TPA">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1181,7 +1189,7 @@
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="충전하기">
-                                    <color key="titleColor" name="Background"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="tapBusMoneyChargeButton:" destination="Zoh-10-QSy" eventType="touchUpInside" id="PNO-FU-O6C"/>
@@ -1230,7 +1238,7 @@
         <!--Withdraw View Controller-->
         <scene sceneID="DHH-dz-kfy">
             <objects>
-                <viewController storyboardIdentifier="WithdrawViewController" id="e4F-do-LCd" customClass="WithdrawViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WithdrawViewController" hidesBottomBarWhenPushed="YES" id="e4F-do-LCd" customClass="WithdrawViewController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hCk-XB-3IO">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1279,7 +1287,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="6Aq-W0-JwQ">
-                                        <rect key="frame" x="44.666666666666686" y="179.66666666666669" width="267.99999999999994" height="19.333333333333343"/>
+                                        <rect key="frame" x="44.666666666666686" y="179.66666666666669" width="268" height="19.333333333333343"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="·" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ObY-m7-aOw">
                                                 <rect key="frame" x="0.0" y="0.0" width="4.666666666666667" height="19.333333333333332"/>
@@ -1379,7 +1387,7 @@
                                         <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="확인">
-                                            <color key="titleColor" name="Background"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="tapBusMoneyChargeButton:" destination="Zoh-10-QSy" eventType="touchUpInside" id="Z1W-Af-l3s"/>
@@ -2570,6 +2578,9 @@
         <namedColor name="Body">
             <color red="0.20399999618530273" green="0.22699999809265137" blue="0.25099998712539673" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="DarkModeSecondBackground">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainColor">
             <color red="0.071000002324581146" green="0.40799999237060547" blue="0.98400002717971802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -2586,6 +2597,9 @@
             <color red="0.95686274509803926" green="0.95686274509803926" blue="0.95686274509803926" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Tertiary">
+            <color red="0.80400002002716064" green="0.82700002193450928" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Tertiary_Quaternary">
             <color red="0.80400002002716064" green="0.82700002193450928" blue="0.85100001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">

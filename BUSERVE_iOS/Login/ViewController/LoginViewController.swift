@@ -95,6 +95,37 @@ class LoginViewController: UIViewController {
     
     @objc func kakaoButtonTapped(_ sender: UIButton) {
         print("kakoButton Tapped")
+        
+        let kakaoAdapter = KakaoAuthenticateAdapter()
+        
+        Task {
+            do {
+                let result = try await SocialLoginManager.shared.login(with: kakaoAdapter)
+                switch result {
+                case .success:
+                    print("Successfully logged in with kakao.")
+                    UserDefaults.standard.set(true, forKey: "socialLoginState")
+                    
+                    if UserDefaults.standard.bool(forKey: "KakaoLoginState") {
+                        // AppleLoginState가 true로 설정되어 있으면 이 부분이 실행됩니다.
+                        SocialLoginManager.shared.checkLoginState()
+                    } else {
+                        // AppleLoginState가 false거나 설정되어 있지 않으면 이 부분이 실행됩니다.
+                        DispatchQueue.main.async {
+                            print("completedVC 로 이동")
+                            
+                            UserDefaults.standard.set(true, forKey: "KakaoLoginState")
+                            let completedVC = CompletedSignUpViewController()
+                            self.navigationController?.pushViewController(completedVC, animated: true)
+                        }
+                    }
+                case .failure(let error):
+                    print("Failed to login with kakao. Error: \(error)")
+                }
+            } catch {
+                print("Login error: \(error)")
+            }
+        }
     }
     
     @objc func googleButtonTapped(_ sender: UIButton) {
@@ -115,10 +146,10 @@ class LoginViewController: UIViewController {
                     UserDefaults.standard.set(true, forKey: "socialLoginState")
                     
                     if UserDefaults.standard.bool(forKey: "AppleLoginState") {
-                        // AppleLoginState가 true로 설정되어 있으면 이 부분이 실행됩니다.
+                        // KakoLoginState가 true로 설정되어 있으면 이 부분이 실행됩니다.
                         SocialLoginManager.shared.checkLoginState()
                     } else {
-                        // AppleLoginState가 false거나 설정되어 있지 않으면 이 부분이 실행됩니다.
+                        // KakoLoginState가 false거나 설정되어 있지 않으면 이 부분이 실행됩니다.
                         DispatchQueue.main.async {
                             print("completedVC 로 이동")
                             

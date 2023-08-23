@@ -8,7 +8,7 @@
 import Foundation
 import AuthenticationServices
 
-class AppleAuthenticateAdapter: NSObject, AuthenticateAdapter {
+final class AppleAuthenticateAdapter: NSObject, AuthenticateAdapter {
     
     private var continuation: CheckedContinuation<Bool, Error>?
     private var userInfoManager = UserInfoManager(saveUseCase: SaveUserInfoUseCase(), loadUseCase: LoadUserInfoUseCase())
@@ -64,7 +64,12 @@ extension AppleAuthenticateAdapter: ASAuthorizationControllerDelegate {
                     print("Error: Missing identity token.")
                     return
                 }
-
+                
+                guard let tokenString = String(data: token, encoding: .utf8) else {
+                    print("Error: Could not convert token to string.")
+                    return
+                }
+                
                 if let savedData = UserDefaults.standard.data(forKey: "userInfo") {
                     
                     print("재 로그인")
@@ -75,7 +80,7 @@ extension AppleAuthenticateAdapter: ASAuthorizationControllerDelegate {
                     let savedFullName = loadedUser.name
                     let savedEmail = loadedUser.email
                     
-                    let result = try await userInfoManager.saveUserInfo(name: savedFullName, email: savedEmail, token: token, socialLoginType: adapterType)
+                    let result = try await userInfoManager.saveUserInfo(name: savedFullName, email: savedEmail, token: tokenString, socialLoginType: adapterType)
                     
                     continuation?.resume(returning: result)
                     continuation = nil
@@ -92,7 +97,7 @@ extension AppleAuthenticateAdapter: ASAuthorizationControllerDelegate {
                         print("Failed to retrieve full name.")
                     }
 
-                    let result = try await userInfoManager.saveUserInfo(name: fullName ?? "정보없음", email: email  ?? "정보없음", token: token, socialLoginType: adapterType)
+                    let result = try await userInfoManager.saveUserInfo(name: fullName ?? "정보없음", email: email  ?? "정보없음", token: tokenString, socialLoginType: adapterType)
                     
                     continuation?.resume(returning: result)
                     continuation = nil

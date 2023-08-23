@@ -14,7 +14,7 @@ struct SaveUserInfoUseCase {
         self.userInfoRepository = repository
     }
    
-    func execute(name: String, email: String, token: Data, socialLoginType: String) async throws -> Result<UserInfo, Error> {
+    func execute(name: String, email: String, token: String, socialLoginType: String) async throws -> Result<UserInfo, Error> {
         return try await userInfoRepository.saveUserInfo(name: name, email: email, token: token, socialLoginType: socialLoginType)
     }
 }

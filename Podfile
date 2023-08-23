@@ -6,7 +6,9 @@ target 'BUSERVE_iOS' do
 
   pod 'NMapsMap'
   pod 'FloatingPanel'
-
+  pod 'KakaoSDKCommon'
+  pod 'KakaoSDKAuth'
+  pod 'KakaoSDKUser'
   use_frameworks!
 
   # Pods for BUSERVE_iOS

@@ -37,9 +37,7 @@ class ReservationDetailsViewController: UIViewController {
     private func configureNavigationBar() {
         self.title = ""
         self.navigationItem.title = "예약 내역"
-        navigationController?.navigationBar.tintColor = UIColor.Body
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.leftBarButtonItem = backButton
+        self.navigationController?.setCustomBackButton(sfSymbol: "chevron.left", imageColor: .Body, weight: .bold)
     }
     private func configureView() {
         self.busNumberView.layer.cornerRadius = 8.0

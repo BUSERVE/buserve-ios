@@ -17,9 +17,15 @@ class BusMoneyChargeViewController: UIViewController {
     @IBOutlet weak var afterChargeMoneyLabel: UILabel!
     @IBOutlet weak var busMoneyChargeButton: UIButton!
     
+    let busMoneyDataManager = BusMoneyDataManager()
     
-    var busChargeMoney: Int = 0
     var currentMoney: Int = 0
+    var busChargeMoney: Int = 0 {
+        didSet {
+            updateUI()
+        }
+    }
+    var paymentMethod: String?
     
     let numberFormatter: NumberFormatter = {
         let formatter = NumberFormatter()
@@ -30,17 +36,21 @@ class BusMoneyChargeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .Background
         self.configureNavigationBar()
         self.configureView()
+        
+        chargeMethodLabel.text = paymentMethod
+        currentMoneyLabel.text = "\(formatToWon(currentMoney))"
+        afterChargeMoneyLabel.text =  "\(formatToWon(currentMoney))"
+        
         busMoneyChargeTextField.delegate = self
     }
     
     private func configureNavigationBar() {
         self.title = ""
         self.navigationItem.title = "버정머니 충전하기"
-        navigationController?.navigationBar.tintColor = UIColor.Body
-        let backButton = UIBarButtonItem(image: UIImage(systemName: "chevron.left"), style: .plain, target: self, action: #selector(backButtonTapped))
-        navigationItem.leftBarButtonItem = backButton
+        self.navigationController?.setCustomBackButton(sfSymbol: "chevron.left", imageColor: .Body, weight: .bold)
     }
     
     private func configureView() {
@@ -60,10 +70,6 @@ class BusMoneyChargeViewController: UIViewController {
         self.eraseButton.isHidden = true
     }
     
-    @objc func backButtonTapped() {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
     func updateButtonVisibility() {
         if let text = busMoneyChargeTextField.text, !text.isEmpty {
             eraseButton.isHidden = false
@@ -78,12 +84,41 @@ class BusMoneyChargeViewController: UIViewController {
     }
     
     @IBAction func tapBusMoneyChargeButton(_ sender: UIButton) {
-        guard let chargeCompleteViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChargeCompleteViewController") as? ChargeCompleteViewController else { return }
-        self.navigationController?.pushViewController(chargeCompleteViewController, animated: true)
+            
+        Task {
+            do {
+                let result = try await busMoneyDataManager.changeBusCharginMoney(chargeMoney: busChargeMoney)
+                
+                if result {
+                    await MainActor.run {
+                        guard let chargeCompleteViewController = self.storyboard?.instantiateViewController(withIdentifier: "ChargeCompleteViewController") as? ChargeCompleteViewController else { return }
+                        self.navigationController?.pushViewController(chargeCompleteViewController, animated: true)
+                    }
+                } else {
+                    print("요청 처리 실패")
+                }
+            } catch {
+                print("요청 처리 실패")
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    func formatToWon(_ value: Int) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        if let formattedAmount = formatter.string(from: NSNumber(value: value)) {
+            return "\(formattedAmount)원"
+        } else {
+            return "\(value)원"
+        }
+    }
+    
+    func updateUI() {
+        afterChargeMoneyLabel.text = "\(formatToWon(busChargeMoney + currentMoney))"
     }
 }
 
@@ -113,6 +148,7 @@ extension BusMoneyChargeViewController: UITextFieldDelegate {
         print(busChargeMoney)
         return false
     }
+    
     func textFieldDidChangeSelection(_ textField: UITextField) {
         updateButtonVisibility()
     }

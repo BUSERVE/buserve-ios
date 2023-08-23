@@ -9,7 +9,7 @@ import Foundation
 
 protocol UserInfoRepository {
     
-    func saveUserInfo(name: String, email: String, token: Data, socialLoginType: String) async throws -> Result<UserInfo, Error>
+    func saveUserInfo(name: String, email: String, token: String, socialLoginType: String) async throws -> Result<UserInfo, Error>
     
     func loadUserInfo() async throws -> Result<UserInfo, Error>
     
