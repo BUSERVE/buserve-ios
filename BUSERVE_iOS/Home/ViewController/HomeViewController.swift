@@ -101,6 +101,8 @@ class HomeViewController: UIViewController {
         hideKeyboardWhenTappedAround()
         
         onBoardBusButton.addTarget(self, action: #selector(getOnBusClicked), for: .touchUpInside)
+        
+        view.backgroundColor = .Background
     }
     
     override func viewWillAppear(_ animated: Bool) {

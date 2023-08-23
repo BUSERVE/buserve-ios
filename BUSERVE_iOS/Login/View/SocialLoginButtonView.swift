@@ -37,10 +37,48 @@ class SocialLoginButtonView: UIButton {
         configuration.baseBackgroundColor = type.backColor
         configuration.imagePadding = 6
 
-        if type == .google {
+        switch type {
+        case .google:
+            print("google 버튼 생성")
             configuration.background.strokeColor = .Body
-            configuration.background.strokeWidth = 1
+            if self.traitCollection.userInterfaceStyle == .dark {
+                configuration.background.strokeWidth = 0
+                print("google Dark")
+            } else {
+                print("google")
+                configuration.background.strokeWidth = 1
+                self.setNeedsLayout()
+            }
+        case .apple:
+            print("Apple 버튼 생성")
+            configuration.background.strokeColor = .white
+            if self.traitCollection.userInterfaceStyle == .dark {
+                print("Apple Dark")
+                configuration.background.strokeWidth = 1
+            } else {
+                print("Apple")
+                configuration.background.strokeWidth = 0
+            }
+            
+            self.setNeedsLayout()
+        default:
+            break
         }
+        
+//        if self.traitCollection.userInterfaceStyle == .dark && type == .google {
+//            configuration.background.strokeWidth = 0
+//        } else if type == .google {
+//            configuration.background.strokeColor = .Body
+//            configuration.background.strokeWidth = 1
+//        }
+//
+//
+//        if self.traitCollection.userInterfaceStyle == .dark && type == .apple {
+//            configuration.background.strokeColor = .white // or your desired color
+//            configuration.background.strokeWidth = 1
+//        } else if type == .apple {
+//            configuration.background.strokeWidth = 0
+//        }
 
         self.titleLabel?.font = UIFont.systemFont(ofSize: 16)
         self.configuration = configuration
@@ -76,9 +114,9 @@ enum socialLoginType: String {
     var titleColor: UIColor {
         switch self {
         case .kakao, .google:
-            return .Body
+            return .LoginTextColor
         case .apple:
-            return .Background
+            return .white
         }
     }
     

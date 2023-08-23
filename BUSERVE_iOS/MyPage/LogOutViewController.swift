@@ -11,6 +11,7 @@ class LogOutViewController: UIViewController {
     
     @IBOutlet weak var logOutView: UIView!
     @IBOutlet weak var logOutButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationBar()
@@ -23,5 +24,9 @@ class LogOutViewController: UIViewController {
     private func configureView() {
         self.logOutView.layer.cornerRadius = 16.0
         self.logOutButton.layer.cornerRadius = 16.0
+    }
+    
+    @IBAction func tapLogOutButton(_ sender: Any) {
+        SocialLoginManager.shared.logout()
     }
 }

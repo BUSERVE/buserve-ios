@@ -16,11 +16,26 @@ class MyInformationViewController: UIViewController {
     @IBOutlet weak var signUpMethodLabel: UILabel!
     @IBOutlet weak var signUpMethodImageView: UIImageView!
     
+    private var userInfoManager = UserInfoManager(loadUseCase: LoadUserInfoUseCase())
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureNavigationBar()
         self.configureView()
+        
+        Task {
+            guard let userInfo = try await userInfoManager.loadUserInfo() else {
+                return
+            }
+            await updateUI(with: userInfo)
+        }
+    }
+    
+    func updateUI(with user: UserInfo) async {
+        await MainActor.run {
+            self.nameLabel.text = user.name
+            self.mailLabel.text = user.email
+        }
     }
     
     private func configureNavigationBar() {

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.backgroundColor = .Background
         window?.windowScene = windowScene
         window?.makeKeyAndVisible()
-        window?.rootViewController = TabBarViewController()
+        window?.rootViewController = UINavigationController(rootViewController: LoginViewController()) // TabBarViewController()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -45,6 +45,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_ scene: UIScene) {
         // Called as the scene transitions from the background to the foreground.
         // Use this method to undo the changes made on entering the background.
+        SocialLoginManager.shared.checkLoginState()
+//        let result = SocialLoginManager.shared.checkLoginState()
+//        DispatchQueue.main.async {
+//            self.showAppropriateViewController(isLoggedIn: result)
+//        }
+//        Task {
+//            let isLoggedIn = await SocialLoginManager.shared.checkLoginState()
+//
+//            // Main thread에서 UI 업데이트 수행
+//            DispatchQueue.main.async {
+//                self.showAppropriateViewController(isLoggedIn: isLoggedIn)
+//            }
+//        }
     }
 
     func sceneDidEnterBackground(_ scene: UIScene) {
@@ -53,6 +66,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    func showAppropriateViewController(isLoggedIn: Bool) {
+        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+              let delegate = windowScene.delegate as? SceneDelegate else {
+            return
+        }
 
+        if isLoggedIn {
+            // 로그인이 되어 있을 때 TabBarViewController 표시
+            let tabBarVC = TabBarViewController()
+            delegate.window?.rootViewController = tabBarVC
+        } else {
+            // 로그인이 되어 있지 않을 때 다른 뷰 컨트롤러 표시 (예: 로그인 페이지)
+            let loginVC = LoginViewController()
+            delegate.window?.rootViewController = loginVC
+        }
+
+        delegate.window?.makeKeyAndVisible()
+    }
 }
 
