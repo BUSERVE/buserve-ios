@@ -19,13 +19,16 @@ class HomeViewController: UIViewController {
 //    private lazy var busTableView = BusDataTableView(data: busDataModel, isSortBookMark: false)
     private lazy var busTableView = BusDataTableView(isSortBookMark: false)
     private lazy var searchBusTableView = BusDataTableView()
-    private lazy var placeHolderView = PlaceHolderView()
+    private lazy var placeHolderView = PlaceHolderView(placeholderText: "예약하려는\n버스를 검색해주세요.")
 //    private let locationManager = CLLocationManager()
     private let nearbyBusStopManager = NearByBusStopManager()
     private var activityIndicator: UIActivityIndicatorView!
     
     private var busSearchTextFieldLeadingConstraint: NSLayoutConstraint!
     private var busSearchTextFieldTopConstraint: NSLayoutConstraint!
+    private var busTableViewHeightConstraint: NSLayoutConstraint!
+    
+    private var busDataCount = 0
     
     private lazy var homeScrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -153,6 +156,9 @@ class HomeViewController: UIViewController {
         busSearchTextFieldTopConstraint = busSearchTextField.topAnchor.constraint(equalTo: topStackView.bottomAnchor, constant: 32)
         busSearchTextFieldTopConstraint.isActive = true
         
+        busTableViewHeightConstraint = busTableView.heightAnchor.constraint(equalToConstant: CGFloat(busDataCount) * 160.0)
+        busTableViewHeightConstraint.isActive = true
+        
         NSLayoutConstraint.activate([
             homeScrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             homeScrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
@@ -189,7 +195,7 @@ class HomeViewController: UIViewController {
             busTableView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             busTableView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             busTableView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            busTableView.heightAnchor.constraint(equalToConstant: CGFloat(busDataModel.count) * 160.0),
+            
             
             backButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             backButton.centerYAnchor.constraint(equalTo: busSearchTextField.centerYAnchor),
@@ -296,12 +302,14 @@ extension HomeViewController {
             self.topStackView.alpha = 1
             self.busTableView.alpha = 1
             self.butTableTitleLabel.alpha = 1
+            self.locationButton.alpha = 1
             self.searchBusTableView.alpha = 0
             self.placeHolderView.alpha = 0
             
             self.topStackView.isHidden = false
             self.busTableView.isHidden = false
             self.butTableTitleLabel.isHidden = false
+            self.locationButton.isHidden = false
             self.searchBusTableView.isHidden = true
             self.placeHolderView.isHidden = true
             
@@ -309,12 +317,14 @@ extension HomeViewController {
             self.topStackView.alpha = 0
             self.busTableView.alpha = 0
             self.butTableTitleLabel.alpha = 0
+            self.locationButton.alpha = 0
             self.searchBusTableView.alpha = 1
             self.placeHolderView.alpha = 1
             
             self.topStackView.isHidden = true
             self.busTableView.isHidden = true
             self.butTableTitleLabel.isHidden = true
+            self.locationButton.isHidden = true
         }
     }
     
@@ -431,7 +441,7 @@ extension HomeViewController: BusTableViewCellDelegate {
         
         // 버튼 및 동작 추가 (옵션)
         popUpVC.addActionBtn(title: "위치 인증하기", titleColor: .white, backgroundColor: .MainColor) {
-            guard let noshow = storyboard.instantiateViewController(withIdentifier: "NoShow") as? Noshow else {
+            guard let noshow = storyboard.instantiateViewController(withIdentifier: "NoShow") as? NoShowController else {
                 print("Failed to instantiate Noshow")
                 return
             }
@@ -449,7 +459,7 @@ extension HomeViewController: BusTableViewCellDelegate {
 }
 
 extension HomeViewController: NearByBusStopManagerDelegate {
-    func didUpdateNearByBusStopRoutes(_ data: nearByBusStopRoutesData) {
+    func didUpdateNearByBusStopRoutes(_ data: BusStopRoutesData) {
         // TODO: 여기에서 데이터를 테이블 뷰의 데이터 소스에 할당하고, 테이블 뷰를 리로드하세요.
         
         let busData: [BusDataModel] = data.result.map { busResultData in
@@ -457,11 +467,19 @@ extension HomeViewController: NearByBusStopManagerDelegate {
                 busNumber: busResultData.routeName,
                 Departure: busResultData.endPoint,
                 Arrival: busResultData.startPoint,
-                isBookmark: busResultData.favorite
+                isBookmark: busResultData.favorite,
+                busRouteId: busResultData.routeId
             )
         }
         
         DispatchQueue.main.async {
+            self.busDataCount = busData.count
+            
+            self.busTableViewHeightConstraint.isActive = false
+            self.busTableViewHeightConstraint = self.busTableView.heightAnchor.constraint(equalToConstant: CGFloat(self.busDataCount) * 160.0)
+            self.busTableViewHeightConstraint.isActive = true
+            
+            self.busTableView.reloadData()
             self.busTableView.updateData(busData)
             self.hideLoading()
         }

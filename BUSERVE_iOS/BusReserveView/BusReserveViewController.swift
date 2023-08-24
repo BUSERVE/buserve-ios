@@ -38,9 +38,7 @@ class BusReserveViewController: UIViewController, UITableViewDelegate, UITableVi
         BusNumber.layer.cornerRadius = 8
         
     }
-    
-    
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
            return 3
        }

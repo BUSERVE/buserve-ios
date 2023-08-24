@@ -9,14 +9,14 @@ import Foundation
 import CoreLocation
 import Alamofire
 
-struct nearByBusStopRoutesData: Codable {
+struct BusStopRoutesData: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: [nearByBusStopRoutesResultData]
+    let result: [BusStopRoutesResultData]
 }
 
-struct nearByBusStopRoutesResultData: Codable {
+struct BusStopRoutesResultData: Codable {
     let endPoint: String
     let favorite: Bool
     let routeId: String
@@ -25,7 +25,7 @@ struct nearByBusStopRoutesResultData: Codable {
 }
 
 protocol NearByBusStopManagerDelegate: AnyObject {
-    func didUpdateNearByBusStopRoutes(_ data: nearByBusStopRoutesData)
+    func didUpdateNearByBusStopRoutes(_ data: BusStopRoutesData)
     func didFailWithError(_ error: Error)
 }
 
@@ -46,7 +46,7 @@ class NearByBusStopManager: NSObject, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-    func nearByBusStopRoutes() async throws -> nearByBusStopRoutesData {
+    func nearByBusStopRoutes() async throws -> BusStopRoutesData {
         let url = baseURL + "routes/nearby"
         let name = try await userInfoManager.loadUserInfo()?.name
         
@@ -68,7 +68,7 @@ class NearByBusStopManager: NSObject, CLLocationManagerDelegate {
                           "name": unwrappedName] as [String : Any]
         
         return try await withCheckedThrowingContinuation { continuation in
-            AF.request(url, method: .get, parameters: parameters).responseDecodable(of: nearByBusStopRoutesData.self) { response in
+            AF.request(url, method: .get, parameters: parameters).responseDecodable(of: BusStopRoutesData.self) { response in
                 switch response.result {
                 case .success(let data):
                     print("성공")

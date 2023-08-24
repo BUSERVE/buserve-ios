@@ -66,7 +66,7 @@ class BusMoneyDataManager {
         
         let url = baseURL + "bus-money/charge"
         var urlComponents = URLComponents(string: url)!
-        urlComponents.queryItems = [URLQueryItem(name: "name", value: "박준혁")]
+        urlComponents.queryItems = [URLQueryItem(name: "name", value: name)]
         let parameters: [String: Any] = ["amount": chargeMoney]
         
         let headers: HTTPHeaders = [
