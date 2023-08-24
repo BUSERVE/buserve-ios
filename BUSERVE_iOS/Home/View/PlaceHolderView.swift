@@ -21,23 +21,29 @@ class PlaceHolderView: UIView {
     }()
     
     lazy var placeHolderLabel: UILabel = {
-        var label = UILabel()
-        label.numberOfLines = 2
-        
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 3
-        paragraphStyle.alignment = .center
-        
-        let attributedString = NSAttributedString(string: "예약하려는\n버스를 검색해주세요.",
-                                                  attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle,
-                                                               NSAttributedString.Key.font: UIFont.body,
-                                                               NSAttributedString.Key.foregroundColor: UIColor.Secondary_TertiaryColor])
-        
-        label.attributedText = attributedString
-        label.numberOfLines = 2
+        let label = UILabel()
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+//    lazy var placeHolderLabel: UILabel = {
+//        var label = UILabel()
+//
+//        let paragraphStyle = NSMutableParagraphStyle()
+//        paragraphStyle.lineSpacing = 3
+//        paragraphStyle.alignment = .center
+//
+//        let attributedString = NSAttributedString(string: "예약하려는\n버스를 검색해주세요.",
+//                                                  attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle,
+//                                                               NSAttributedString.Key.font: UIFont.body,
+//                                                               NSAttributedString.Key.foregroundColor: UIColor.Secondary_TertiaryColor])
+//
+//        label.attributedText = attributedString
+//        label.numberOfLines = 0
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        return label
+//    }()
     
     
     // MARK: - Life Cycles
@@ -45,6 +51,11 @@ class PlaceHolderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: .zero)
         configurePlaceHolder()
+    }
+    
+    convenience init(placeholderText: String) {
+        self.init(frame: .zero)
+        setPlaceholderText(placeholderText)
     }
     
     required init?(coder: NSCoder) {
@@ -62,10 +73,23 @@ class PlaceHolderView: UIView {
             busImage.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             busImage.bottomAnchor.constraint(equalTo: self.placeHolderLabel.topAnchor, constant: -20),
             
-            placeHolderLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
-            placeHolderLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
+            placeHolderLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 50),
+            placeHolderLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor, constant: -50),
             placeHolderLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+    
+    func setPlaceholderText(_ text: String) {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 3
+        paragraphStyle.alignment = .center
+        
+        let attributedString = NSAttributedString(string: text,
+                                                  attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle,
+                                                               NSAttributedString.Key.font: UIFont.body,
+                                                               NSAttributedString.Key.foregroundColor: UIColor.Secondary_TertiaryColor])
+        
+        placeHolderLabel.attributedText = attributedString
     }
     
     /// ( 라이트, 다크 ) 모드가 변경되었을 때 TableView 의 UI 색상을 업데이트
