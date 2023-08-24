@@ -6,21 +6,58 @@
 //
 
 import UIKit
+import CoreLocation
 
-class currentLocationSheetPop: UIViewController {
+class currentLocationSheetPop: UIViewController, CLLocationManagerDelegate {
     
+    var locationManager = CLLocationManager()
     var current : String?
+    var name: String = " "
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchLocation()
         makeConstrain()
+    }
+    
+    func getSubLocalityName(latitude: CLLocationDegrees, longitude: CLLocationDegrees, completion: @escaping (String?) -> Void) {
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        let geocoder = CLGeocoder()
         
+        geocoder.reverseGeocodeLocation(location) { (placemarks, error) in
+            if error != nil {
+                completion(nil)
+                return
+            }
+            
+            if let placemark = placemarks?.first {
+                completion(placemark.subLocality)
+            } else {
+                completion(nil)
+            }
+        }
+    }
+    
+    func searchLocation(){
+        let locationLatitude = self.locationManager.location?.coordinate.latitude
+        let locationLogitude = self.locationManager.location?.coordinate.longitude
+        
+        getSubLocalityName(latitude: locationLatitude ?? 0, longitude: locationLogitude ?? 0) { subLocalityName in
+            if let name = subLocalityName {
+                self.name = name
+                self.titleText.text = "현재 위치는 \(name)이에요"
+                self.inforText.text = "현재 위치로 설정되어 있는 \(name)에서만 위치\n인증을 할 수 있어요. 현재 위치를 확인해주세요.\n(위치인증을 한 곳에서만 예약이 가능합니다.)"
+        
+                
+            } else {
+                print("동 이름을 찾을 수 없습니다.")
+            }
+        }
     }
     
     
     private lazy var titleText : UILabel = {
         let title = UILabel()
-        title.text = "현재 위치는 무슨무슨 동이에요"
         title.textColor = UIColor(red: 0.204, green: 0.227, blue: 0.251, alpha: 1)
         title.font = UIFont(name: "Pretendard-SemiBold", size: 18)
         title.translatesAutoresizingMaskIntoConstraints = false
@@ -35,7 +72,7 @@ class currentLocationSheetPop: UIViewController {
         infor.lineBreakMode = .byWordWrapping
         var paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineHeightMultiple = 1.36
-        infor.attributedText = NSMutableAttributedString(string: "현재 위치로 설정되어 있는 ___동에서만 위치\n인증을 할 수 있어요. 현재 위치를 확인해주세요.\n(위치인증을 한 곳에서만 예약이 가능합니다.)", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+        infor.attributedText = NSMutableAttributedString(string: "현재 위치로 설정되어 있는 \(name)에서만 위치\n인증을 할 수 있어요. 현재 위치를 확인해주세요.\n(위치인증을 한 곳에서만 예약이 가능합니다.)", attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
         infor.translatesAutoresizingMaskIntoConstraints = false
         return infor
     }()
