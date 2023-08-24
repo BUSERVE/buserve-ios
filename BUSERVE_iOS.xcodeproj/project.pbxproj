@@ -44,7 +44,7 @@
 		3FE4AFB42A9598600045C548 /* KakaoAuthenticateAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */; };
 		3FE4AFB82A95F9560045C548 /* BusMoneyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */; };
 		3FE4AFBA2A96669E0045C548 /* NearByBusStopManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFB92A96669E0045C548 /* NearByBusStopManager.swift */; };
-		483962DB2A6E46F1006ADC6E /* NoshowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 483962DA2A6E46F1006ADC6E /* NoshowController.swift */; };
+		3FE4AFBC2A967B660045C548 /* FavoriteBusRoutesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE4AFBB2A967B650045C548 /* FavoriteBusRoutesManager.swift */; };
 		48207A872A96654600A2E3D4 /* NoShowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48207A862A96654600A2E3D4 /* NoShowController.swift */; };
 		485247EA2A96286500355D10 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 485247E92A96286500355D10 /* back.png */; };
 		485247EC2A96290B00355D10 /* currentLocationSheetPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485247EB2A96290B00355D10 /* currentLocationSheetPop.swift */; };
@@ -158,7 +158,7 @@
 		3FE4AFB32A9598600045C548 /* KakaoAuthenticateAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoAuthenticateAdapter.swift; sourceTree = "<group>"; };
 		3FE4AFB72A95F9560045C548 /* BusMoneyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusMoneyDataManager.swift; sourceTree = "<group>"; };
 		3FE4AFB92A96669E0045C548 /* NearByBusStopManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearByBusStopManager.swift; sourceTree = "<group>"; };
-		483962DA2A6E46F1006ADC6E /* NoshowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoshowController.swift; sourceTree = "<group>"; };
+		3FE4AFBB2A967B650045C548 /* FavoriteBusRoutesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBusRoutesManager.swift; sourceTree = "<group>"; };
 		48207A862A96654600A2E3D4 /* NoShowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoShowController.swift; sourceTree = "<group>"; };
 		485247E92A96286500355D10 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		485247EB2A96290B00355D10 /* currentLocationSheetPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentLocationSheetPop.swift; sourceTree = "<group>"; };
@@ -329,6 +329,7 @@
 				3FD4F2BF2A774B5A0097E107 /* BusDataModel.swift */,
 				3FD4F2B72A77476A0097E107 /* ViewController */,
 				3FD4F2B82A7747750097E107 /* View */,
+				3FE4AFBB2A967B650045C548 /* FavoriteBusRoutesManager.swift */,
 			);
 			path = BookMark;
 			sourceTree = "<group>";
@@ -784,6 +785,7 @@
 				3FD4F2C22A77560C0097E107 /* ButtonExtension.swift in Sources */,
 				3F22B5CB2A7D0C400067D01C /* TextFieldExtension.swift in Sources */,
 				48E7B5BC2A94F2BC00CF49B2 /* SheetScrollView.swift in Sources */,
+				3FE4AFBC2A967B660045C548 /* FavoriteBusRoutesManager.swift in Sources */,
 				3F3624B22A7DF1FB0066E531 /* BusTableViewCell.swift in Sources */,
 				3FE4AFAC2A93A51B0045C548 /* SaveUserInfoUseCase.swift in Sources */,
 				3F22B5C72A7CE83A0067D01C /* HomeTitleLabelView.swift in Sources */,

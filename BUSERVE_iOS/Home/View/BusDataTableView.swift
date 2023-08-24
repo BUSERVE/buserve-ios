@@ -11,6 +11,7 @@ class BusDataTableView: UITableView {
 
     // MARK: - Properties
     
+    private let favoriteBusRoutesManager = FavoriteBusRoutesManager()
     var busData: [BusDataModel] = []
     var isSortBookMark: Bool = false
     weak var viewControllerDelegate: BusTableViewCellDelegate?
@@ -77,7 +78,7 @@ class BusDataTableView: UITableView {
     
     /// BookMark 페이지에서 Bookmark 된 데이터만 정렬해주는 함수
     func searchBusData(busNumber: String) {
-        self.busData = busDataModel.filter{ $0.busNumber.contains(busNumber) }
+        self.busData = busData.filter{ $0.busNumber.contains(busNumber) }
     }
 }
 
@@ -117,8 +118,31 @@ extension BusDataTableView: UITableViewDelegate, UITableViewDataSource {
             
             /// 클로저를 사용하여 버튼이 눌렸을 때 수행하는 작업
             cell.onBookmarkButtonTap = { [weak self] in
-                self?.busData[index].isBookmark.toggle()
-                self?.reloadRows(at: [indexPath], with: .automatic)
+                if self?.busData[index].isBookmark == false {
+                    Task {
+                        do {
+                            print(data.busRouteId)
+                            let result = try await self?.favoriteBusRoutesManager.addFavortieBusRoutes(routeID: data.busRouteId)
+                            
+                            self?.busData[index].isBookmark.toggle()
+                            self?.reloadRows(at: [indexPath], with: .automatic)
+                        } catch {
+                            print("즐겨찾기 추가가 되지 않았음")
+                        }
+                    }
+                } else {
+                    Task {
+                        do {
+                            print(data.busRouteId)
+                            let result = try await self?.favoriteBusRoutesManager.deleteFavortieBusRoutes(routeID: data.busRouteId)
+                            
+                            self?.busData[index].isBookmark.toggle()
+                            self?.reloadRows(at: [indexPath], with: .automatic)
+                        } catch {
+                            print("즐겨찾기 삭제가 되지 않았음")
+                        }
+                    }
+                }
             }
             return cell
             
