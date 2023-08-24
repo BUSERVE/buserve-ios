@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="SQY-qy-cG7">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -36,10 +36,10 @@
             </objects>
             <point key="canvasLocation" x="175" y="-756"/>
         </scene>
-        <!--Noshow-->
+        <!--No Show Controller-->
         <scene sceneID="y6Y-v8-cja">
             <objects>
-                <viewController storyboardIdentifier="NoShow" hidesBottomBarWhenPushed="YES" id="gQ3-ti-rW8" customClass="Noshow" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoShow" hidesBottomBarWhenPushed="YES" id="gQ3-ti-rW8" customClass="NoShowController" customModule="BUSERVE_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yYq-LI-RYk">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1741,7 +1741,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예약 시간 선택하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMa-Pv-8OL">
-                                <rect key="frame" x="128.66666666666669" y="57" width="132.99999999999994" height="21"/>
+                                <rect key="frame" x="128.66666666666666" y="57" width="132.99999999999997" height="21"/>
                                 <fontDescription key="fontDescription" name="Pretendard-SemiBold" family="Pretendard" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1771,7 +1771,6 @@
                     </view>
                     <connections>
                         <outlet property="BusName" destination="kzQ-Kd-8JT" id="vF2-GL-Rgi"/>
-                        <outlet property="BusNumber" destination="UP6-Sf-l4d" id="5Bm-hI-iB4"/>
                         <outlet property="BusStopTable" destination="qiQ-H2-xMR" id="9VH-TF-gK1"/>
                     </connections>
                 </viewController>

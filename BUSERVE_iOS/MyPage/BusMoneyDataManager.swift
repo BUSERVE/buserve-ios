@@ -66,6 +66,15 @@ class BusMoneyDataManager {
         
         let url = baseURL + "bus-money/charge"
         var urlComponents = URLComponents(string: url)!
+        
+        let name = try await userInfoManager.loadUserInfo()?.name
+        
+        guard let unwrappedName = name else {
+            throw NSError(domain: "com.umc.BUS", code: 999, userInfo: [NSLocalizedDescriptionKey: "User info not found"])
+        }
+        
+        self.name = unwrappedName
+        
         urlComponents.queryItems = [URLQueryItem(name: "name", value: name)]
         let parameters: [String: Any] = ["amount": chargeMoney]
         
@@ -79,6 +88,7 @@ class BusMoneyDataManager {
                 switch response.result {
                 case .success(let data):
                     print("버스머니 충전성공")
+                    print(data)
                     continuation.resume(returning: data.isSuccess)
                 case .failure(let error):
                     print("버스머니 충전실패")

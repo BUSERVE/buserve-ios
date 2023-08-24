@@ -36,7 +36,6 @@ class BusReserveViewController: UIViewController, UITableViewDelegate, UITableVi
         BusNumber.titleLabel?.font = UIFont(name: "Pretendard-SemiBold", size: 18)
         BusNumber.backgroundColor = UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
         BusNumber.layer.cornerRadius = 8
-        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {

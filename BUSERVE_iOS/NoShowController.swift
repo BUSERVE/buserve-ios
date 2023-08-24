@@ -79,10 +79,26 @@ class NoShowController: UIViewController {
             if i == ClickBtn.first{
                 i.backgroundColor = .Tertiary_SecondaryColor // UIColor(red: 0.80, green: 0.83, blue: 0.85, alpha: 1.00)
                 i.setImage(UIImage(named: "cancel.png"), for: .normal)
+                
+                i.addTarget(self, action: #selector(CancelButtonClicked), for: .touchUpInside)
             }else{
                 i.backgroundColor = .MainColor // UIColor(red: 0.07, green: 0.41, blue: 0.98, alpha: 1.00)
                 i.setImage(UIImage(named: "Check.png"), for: .normal)
+                
+                i.addTarget(self, action: #selector(CheckButtonClicked), for: .touchUpInside)
             }
         }
+    }
+    
+    @objc func CancelButtonClicked(_ sender: UIButton) {
+        print("취소하기 버튼 버튼 Clicked")
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func CheckButtonClicked(_ sender: UIButton) {
+        print("예약하기 버튼 Clicked")
+        
+        guard let busReserveViewController = self.storyboard?.instantiateViewController(withIdentifier: "BusReserveViewController") as? BusReserveViewController else { return }
+        self.navigationController?.pushViewController(busReserveViewController, animated: true)
     }
 }
