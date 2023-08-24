@@ -431,7 +431,7 @@ extension HomeViewController: BusTableViewCellDelegate {
         
         // 버튼 및 동작 추가 (옵션)
         popUpVC.addActionBtn(title: "위치 인증하기", titleColor: .white, backgroundColor: .MainColor) {
-            guard let noshow = storyboard.instantiateViewController(withIdentifier: "NoShow") as? Noshow else {
+            guard let noshow = storyboard.instantiateViewController(withIdentifier: "NoshowController") as? NoShowController else {
                 print("Failed to instantiate Noshow")
                 return
             }

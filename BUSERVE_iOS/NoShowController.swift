@@ -84,5 +84,17 @@ class NoShowController: UIViewController {
                 i.setImage(UIImage(named: "Check.png"), for: .normal)
             }
         }
+        
+        
+    }
+    @IBAction func changeView(_ sender: Any) {
+        guard let nextVC = self.storyboard?.instantiateViewController(identifier: "CurrentLoactionAuth") as? CurrentLoactionAuth else{
+            return
+        }
+        
+        nextVC.modalTransitionStyle = .coverVertical
+        nextVC.modalPresentationStyle = .fullScreen
+        
+        present(nextVC, animated: true, completion: nil)
     }
 }
